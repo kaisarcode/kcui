@@ -111,10 +111,18 @@ spacing, larger input targets, and fixed light/dark palettes.
 | `demo.html` | Reference markup. |
 | `LICENSE` | GPLv3 license text. |
 
-## Status
+---
 
-This is a beta project. No stability or support guarantees are provided.
+## Beta Notice
+
+This is a beta project created for personal needs, no guarantees are provided regarding its stability or future support. You are free to test it, use it, and modify it as you please.
+
+If you'd like to reach out, you can send an email to kaisar@kaisarcode.com. Please note that I do not accept pull requests; the goal is to avoid long-term dependency on platforms like GitHub, and I do not maintain fixed infrastructure to guarantee long-term stability for these projects.
+
+---
 
 ## License
 
-KCUI is distributed under the GNU General Public License version 3.
+[![GPLv3](https://www.gnu.org/graphics/gplv3-127x51.png)](https://www.gnu.org/licenses/gpl-3.0.html)
+
+This project is distributed under the **GNU General Public License version 3 (GPLv3)**.
