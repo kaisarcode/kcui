@@ -1,6 +1,6 @@
 /**
- * KCUI Native Dark Theme
- * Summary: Dark desktop theme for WebView applications.
+ * KCUI Mobile Dark Theme
+ * Summary: Dark touch-oriented theme for mobile WebView applications.
  *
  * Author: KaisarCode
  * Website: https://kaisarcode.com
@@ -11,12 +11,12 @@
 :root {
     color-scheme: dark;
 
-    --fsz: 13px;
-    --pad: 0.625;
-    --rad: 0.25;
+    --fsz: 15px;
+    --pad: 0.75;
+    --rad: 0.5;
     --min: 0;
     --max: none;
-    --col: 14rem;
+    --col: 16rem;
 
     --bg: #101010;
     --bd: #3a3a3a;
@@ -80,28 +80,22 @@
     --tx-blk: #eeeeee;
 }
 
-html,
-body,
 button,
-input,
-select,
-textarea {
-    font-family: system-ui, sans-serif;
-}
-
-input,
+.btn,
+input:not([type="checkbox"]):not([type="radio"]),
 select,
 textarea,
 .ipt {
-    background-color: var(--bg-sys);
-    color: var(--tx-sys);
+    min-height: 2.75rem;
 }
 
-::selection {
-    background-color: var(--bg-prm);
-    color: var(--tx-prm);
+[type="checkbox"],
+[type="radio"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    min-height: 1.25rem;
 }
 
-*:focus-visible {
-    outline-color: var(--bg-prm);
+body {
+    -webkit-tap-highlight-color: transparent;
 }

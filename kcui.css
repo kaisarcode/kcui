@@ -301,9 +301,9 @@ nav a:not(.btn) {
 .btn,
 button {
     display: inline-block;
-    background-color: var(--bg-prm);
-    border-color: var(--bd-prm);
-    color: var(--tx-prm);
+    background-color: var(--bg-sys);
+    border-color: var(--bd-sys);
+    color: var(--tx-sys);
     cursor: pointer;
     text-align: center;
     white-space: nowrap;
@@ -628,6 +628,11 @@ body.wrp {
     height: 100vh;
     overflow: hidden;
     padding: 0;
+}
+
+body.wrp > .hdr,
+body.wrp > .ftr {
+    border-radius: 0;
 }
 
 body.wrp > main {

@@ -82,12 +82,18 @@ Use `--pnl-cols` on a `.bdy` container to control auto-grid columns for child
 ## Themes
 
 The `theme/native/` themes are for desktop applications rendered through a
-WebView. They use CSS system colors such as `Canvas`, `ButtonFace`, `Field`,
-and `Highlight` so controls follow the host system where supported.
+WebView. They use compact spacing and fixed light/dark palettes.
 
 - `theme/native/auto.css`: follows the system light/dark mode.
 - `theme/native/light.css`: forces native light mode.
 - `theme/native/dark.css`: forces native dark mode.
+
+The `theme/mobile/` themes are for mobile WebView applications. They use larger
+spacing, larger input targets, and fixed light/dark palettes.
+
+- `theme/mobile/auto.css`: follows the system light/dark mode.
+- `theme/mobile/light.css`: forces mobile light mode.
+- `theme/mobile/dark.css`: forces mobile dark mode.
 
 ## Files
 
@@ -96,9 +102,12 @@ and `Highlight` so controls follow the host system where supported.
 | `vars.css` | CSS variables for spacing, colors, and sizing. |
 | `reset.css` | Base reset and semantic element normalization. |
 | `kcui.css` | Main stylesheet. |
-| `theme/native/auto.css` | System-color theme for desktop WebView applications. |
-| `theme/native/light.css` | Light system-color theme for desktop WebView applications. |
-| `theme/native/dark.css` | Dark system-color theme for desktop WebView applications. |
+| `theme/native/auto.css` | Desktop theme for WebView applications. |
+| `theme/native/light.css` | Light desktop theme for WebView applications. |
+| `theme/native/dark.css` | Dark desktop theme for WebView applications. |
+| `theme/mobile/auto.css` | Touch-oriented theme for mobile WebView applications. |
+| `theme/mobile/light.css` | Light touch-oriented theme for mobile WebView applications. |
+| `theme/mobile/dark.css` | Dark touch-oriented theme for mobile WebView applications. |
 | `demo.html` | Reference markup. |
 | `LICENSE` | GPLv3 license text. |
 
