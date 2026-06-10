@@ -16,7 +16,7 @@ Themes are loaded after `kcui.css`:
 
 ```html
 <link rel="stylesheet" href="kcui.css">
-<link rel="stylesheet" href="theme/native.css">
+<link rel="stylesheet" href="theme/native/auto.css">
 ```
 
 ## Structure
@@ -81,9 +81,13 @@ Use `--pnl-cols` on a `.bdy` container to control auto-grid columns for child
 
 ## Themes
 
-`theme/native.css` is for desktop applications rendered through a WebView. It
-uses CSS system colors such as `Canvas`, `ButtonFace`, `Field`, and `Highlight`
-so controls follow the host system where supported.
+The `theme/native/` themes are for desktop applications rendered through a
+WebView. They use CSS system colors such as `Canvas`, `ButtonFace`, `Field`,
+and `Highlight` so controls follow the host system where supported.
+
+- `theme/native/auto.css`: follows the system light/dark mode.
+- `theme/native/light.css`: forces native light mode.
+- `theme/native/dark.css`: forces native dark mode.
 
 ## Files
 
@@ -92,7 +96,9 @@ so controls follow the host system where supported.
 | `vars.css` | CSS variables for spacing, colors, and sizing. |
 | `reset.css` | Base reset and semantic element normalization. |
 | `kcui.css` | Main stylesheet. |
-| `theme/native.css` | System-color theme for desktop WebView applications. |
+| `theme/native/auto.css` | System-color theme for desktop WebView applications. |
+| `theme/native/light.css` | Light system-color theme for desktop WebView applications. |
+| `theme/native/dark.css` | Dark system-color theme for desktop WebView applications. |
 | `demo.html` | Reference markup. |
 | `LICENSE` | GPLv3 license text. |
 
