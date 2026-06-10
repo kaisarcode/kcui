@@ -12,6 +12,13 @@ steps.
 
 `kcui.css` imports `vars.css` and `reset.css`.
 
+Themes are loaded after `kcui.css`:
+
+```html
+<link rel="stylesheet" href="kcui.css">
+<link rel="stylesheet" href="theme/native.css">
+```
+
 ## Structure
 
 KCUI uses a small panel grammar:
@@ -72,6 +79,12 @@ Theme values live in `vars.css`. Override them after `kcui.css`:
 Use `--pnl-cols` on a `.bdy` container to control auto-grid columns for child
 `.pnl` blocks.
 
+## Themes
+
+`theme/native.css` is for desktop applications rendered through a WebView. It
+uses CSS system colors such as `Canvas`, `ButtonFace`, `Field`, and `Highlight`
+so controls follow the host system where supported.
+
 ## Files
 
 | File | Description |
@@ -79,6 +92,7 @@ Use `--pnl-cols` on a `.bdy` container to control auto-grid columns for child
 | `vars.css` | CSS variables for spacing, colors, and sizing. |
 | `reset.css` | Base reset and semantic element normalization. |
 | `kcui.css` | Main stylesheet. |
+| `theme/native.css` | System-color theme for desktop WebView applications. |
 | `demo.html` | Reference markup. |
 | `LICENSE` | GPLv3 license text. |
 

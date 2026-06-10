@@ -1,0 +1,115 @@
+/**
+ * KCUI Native Theme
+ * Summary: System-color theme for desktop WebView applications.
+ *
+ * Author: KaisarCode
+ * Website: https://kaisarcode.com
+ * License: GNU General Public License v3.0
+ * License URL: https://www.gnu.org/licenses/gpl-3.0.txt
+ */
+
+:root {
+    color-scheme: light dark;
+
+    --fsz: 13px;
+    --pad: 0.625;
+    --rad: 0.25;
+    --min: 0;
+    --max: none;
+    --col: 14rem;
+
+    --bg: Canvas;
+    --bd: ButtonBorder;
+    --tx: CanvasText;
+    --tx-lnk: LinkText;
+
+    --bg-sys: Field;
+    --bd-sys: ButtonBorder;
+    --tx-sys: FieldText;
+
+    --bg-cod: Canvas;
+    --bd-cod: ButtonBorder;
+    --tx-cod: CanvasText;
+
+    --bg-hdr: ButtonFace;
+    --bd-hdr: ButtonBorder;
+    --tx-hdr: ButtonText;
+
+    --bg-bdy: Canvas;
+    --bd-bdy: ButtonBorder;
+    --tx-bdy: CanvasText;
+
+    --bg-ftr: ButtonFace;
+    --bd-ftr: ButtonBorder;
+    --tx-ftr: ButtonText;
+
+    --bg-pnl: Canvas;
+    --bd-pnl: ButtonBorder;
+    --tx-pnl: CanvasText;
+
+    --bg-prm: Highlight;
+    --bd-prm: Highlight;
+    --tx-prm: HighlightText;
+
+    --bg-sec: ButtonFace;
+    --bd-sec: ButtonBorder;
+    --tx-sec: ButtonText;
+
+    --bg-inf: ButtonFace;
+    --bd-inf: ButtonBorder;
+    --tx-inf: ButtonText;
+
+    --bg-scc: ButtonFace;
+    --bd-scc: ButtonBorder;
+    --tx-scc: ButtonText;
+
+    --bg-wrn: ButtonFace;
+    --bd-wrn: ButtonBorder;
+    --tx-wrn: ButtonText;
+
+    --bg-dng: ButtonFace;
+    --bd-dng: ButtonBorder;
+    --tx-dng: ButtonText;
+
+    --bg-wht: Canvas;
+    --bd-wht: ButtonBorder;
+    --tx-wht: CanvasText;
+
+    --bg-blk: CanvasText;
+    --bd-blk: ButtonBorder;
+    --tx-blk: Canvas;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: system-ui, sans-serif;
+}
+
+button,
+.btn,
+input[type="submit"] {
+    background-color: ButtonFace;
+    border-color: ButtonBorder;
+    color: ButtonText;
+}
+
+input,
+select,
+textarea,
+.ipt {
+    background-color: Field;
+    color: FieldText;
+}
+
+::selection {
+    background-color: Highlight;
+    color: HighlightText;
+}
+
+*:focus-visible {
+    outline-color: Highlight;
+}
