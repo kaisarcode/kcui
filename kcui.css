@@ -195,6 +195,7 @@ legend {
 
 .col {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
     gap: calc(var(--pad)*1rem);
@@ -629,15 +630,18 @@ body.wrp {
     padding: 0;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
+body.wrp > main {
     flex: 1;
     min-height: 0;
     overflow: auto;
 }
 
-main > .pnl:last-child {
+body.wrp > main:not(.col):not(.row):not(.mry) {
+    display: flex;
+    flex-direction: column;
+}
+
+body.wrp > main:not(.col):not(.row):not(.mry) > .pnl:last-child {
     flex: 1;
 }
 
