@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>KCUI Demo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Semantic showcase of KCUI">
+        <link rel="stylesheet" href="kcui.css">
+    </head>
+    <body class="wrp">
+        <header class="hdr">
+            <h1>
+                <a href="/">
+                    <span>KCUI Demo</span>
+                </a>
+            </h1>
+            <nav>
+                <menu>
+                    <li>
+                        <a href="#">
+                            <span>Menu item</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Menu item</span>
+                        </a>
+                    </li>
+                </menu>
+            </nav>
+        </header>
+        <main>
+            <article id="art1" class="pnl">
+                <header class="hdr">
+                    <h2>
+                        <span>Main article</span>
+                    </h2>
+                    <nav>
+                        <a href="#">
+                            <span>Nav item</span>
+                        </a>
+                    </nav>
+                </header>
+                <section class="bdy">
+                    <form method="post">
+                        <fieldset class="pnl">
+                            <legend class="hdr">Base form</legend>
+
+                            <section class="bdy">
+                                <label class="lbl">Input text</label>
+                                <input class="ipt" type="text" value="Initial value" autocomplete="off">
+
+                                <label class="lbl">Select</label>
+                                <select class="ipt">
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                </select>
+
+                                <label class="lbl">Text area</label>
+                                <textarea class="ipt">Editable text</textarea>
+
+                                <label>
+                                    <input type="checkbox" checked>
+                                    I accept the terms
+                                </label>
+
+                                <label class="lbl" for="browser">Choose a browser:</label>
+                                <input class="ipt" list="browsers" id="browser" name="browser" placeholder="Start typing...">
+                                <datalist id="browsers">
+                                    <option value="Firefox">
+                                    <option value="Brave">
+                                    <option value="Chrome">
+                                    <option value="Edge">
+                                    <option value="Safari">
+                                </datalist>
+                            </section>
+
+                            <footer class="ftr">
+                                <a class="btn pnl" href="#art1">Cancel</a>
+                                <button>Submit</button>
+                            </footer>
+
+                        </fieldset>
+                    </form>
+                </section>
+                <footer class="ftr">
+                    <p><small>Article footer note</small></p>
+                </footer>
+            </article>
+            <section id="sect-2" class="pnl">
+                <header class="hdr">
+                    <h2>Related content</h2>
+                </header>
+                <section class="bdy">
+                    <article class="pnl">
+                        <header class="hdr">
+                            <h3><a href="/doc-1">Document 1</a></h3>
+                        </header>
+                        <section class="bdy">
+                            <p>Document 1 summary.</p>
+                        </section>
+                    </article>
+                    <article class="pnl">
+                        <header class="hdr">
+                            <h3><a href="/doc-2">Document 2</a></h3>
+                        </header>
+                        <section class="bdy">
+                            <p>Document 2 summary.</p>
+                        </section>
+                    </article>
+                    <article class="pnl">
+                        <header class="hdr">
+                            <h3><a href="/doc-3">Document 3</a></h3>
+                        </header>
+                        <section class="bdy">
+                            <p>Document 3 summary.</p>
+                        </section>
+                    </article>
+                    <article class="pnl">
+                        <header class="hdr">
+                            <h3><a href="/doc-4">Document 4</a></h3>
+                        </header>
+                        <section class="bdy">
+                            <p>Document 4 summary.</p>
+                        </section>
+                    </article>
+                </section>
+                <footer class="ftr">
+                    <p><small>Pagination or footer info</small></p>
+                </footer>
+            </section>
+
+        </main>
+        <footer class="ftr">
+            <p>&copy; 2025 KaisarCode</p>
+            <nav>
+                <menu>
+                    <li><a href="#art1">Back to article</a></li>
+                </menu>
+            </nav>
+        </footer>
+        <dialog class="dlg">
+            Modal content
+        </dialog>
+    </body>
+</html>

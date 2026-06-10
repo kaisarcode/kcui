@@ -1,0 +1,784 @@
+/**
+ * KCUI - KaisarCode User Interface
+ * Summary: Minimalist, semantic, and responsive CSS framework.
+ *
+ * Author: KaisarCode
+ * Website: https://kaisarcode.com
+ * License: GNU General Public License v3.0
+ * License URL: https://www.gnu.org/licenses/gpl-3.0.txt
+ */
+@import url("vars.css");
+@import url("reset.css");
+
+/* Global layout and structural styles */
+.wrp {
+    min-width: var(--min);
+    max-width: var(--max);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Base panels and semantic blocks */
+.pnl,
+.btn,
+.ipt,
+button,
+input,
+select,
+textarea,
+fieldset,
+legend,
+.dlg,
+dialog,
+code,
+kbd,
+samp,
+var,
+output,
+.prg,
+progress,
+label,
+.lbl {
+    display: block;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: calc(var(--rad)*1rem);
+    padding: calc(var(--pad)*1rem);
+    background-color: var(--bg-pnl);
+    border-color: var(--bd-pnl);
+    color: var(--tx);
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.hdr,
+.ftr,
+.bdy {
+    display: block;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: calc(var(--rad)*1rem);
+    padding: calc(var(--pad)*1rem);
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.hdr {
+    margin-bottom: 0;
+}
+
+label,
+.lbl {
+    display: block;
+    margin-bottom: calc(var(--pad)*1rem);
+}
+
+fieldset {
+    padding: calc(var(--pad)*1rem);
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset.pnl {
+    display: block;
+    padding: 0;
+    border: 0;
+}
+
+fieldset:has(>legend) {
+    padding-top: 0;
+}
+
+/* Panel grammar */
+.pnl:has(> :is(.hdr, .ftr)) {
+    width: 100%;
+}
+
+.pnl>.pnl {
+    border: 0;
+    padding: 0;
+}
+
+.pnl:has(> .hdr) {
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+fieldset.pnl:has(> legend.hdr) {
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.pnl:has(> .ftr) {
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.pnl:has(> :is(.hdr, .ftr))>* {
+    margin-bottom: calc(var(--pad)*1rem);
+}
+
+.pnl>.hdr {
+    margin-bottom: 0;
+}
+
+.pnl:has(> :is(.hdr, .ftr))>*:last-child:not(.pnl) {
+    margin-bottom: 0;
+}
+
+:is(.hdr, .ftr)>* {
+    margin: 0;
+}
+
+/* Contextual color areas */
+.hdr,
+legend {
+    background-color: var(--bg-hdr);
+    border-color: var(--bd-hdr);
+    color: var(--tx-hdr);
+}
+
+.ftr {
+    background-color: var(--bg-ftr);
+    border-color: var(--bd-ftr);
+    color: var(--tx-ftr);
+}
+
+.hdr,
+.ftr,
+legend {
+    white-space: nowrap;
+}
+
+.bdy {
+    background-color: var(--bg-bdy);
+    border-color: var(--bd-bdy);
+    color: var(--tx-bdy);
+}
+
+/* Grid and column layouts */
+.bdy:has(> .pnl):not(.col):not(.row):not(.mry) {
+    display: grid;
+    gap: calc(var(--pad)*1rem);
+    grid-template-columns: var(--pnl-cols, repeat(auto-fit, minmax(min(100%, var(--col)), 1fr)));
+}
+
+.bdy:has(> .pnl)>.pnl {
+    padding: 0;
+    border: 0;
+}
+
+.bdy:has(> .pnl)>.pnl {
+    min-width: 0;
+}
+
+.mry {
+    display: block;
+    columns: var(--col) 3;
+    column-gap: calc(var(--pad)*1rem);
+    width: 100%;
+}
+
+.bdy.mry > .pnl {
+    display: block;
+    break-inside: avoid;
+    margin-bottom: calc(var(--pad)*1rem);
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.bdy.mry > .pnl:last-child {
+    margin-bottom: 0;
+}
+
+.col {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: calc(var(--pad)*1rem);
+}
+
+.col > * {
+    flex: 1 1 var(--col);
+    min-width: min(100%, var(--col));
+    min-height: 0;
+}
+
+.col>:first-child {
+    flex: 2 1 calc(var(--col) * 1.3);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: calc(var(--pad)*1rem);
+}
+
+.row>* {
+    min-width: 0;
+    min-height: 0;
+}
+
+:is(.hdr, .ftr) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    gap: calc(var(--pad)*1rem);
+}
+
+/* Content alignment */
+:is(.hdr, .ftr)>* {
+    justify-self: center;
+    min-width: 0;
+}
+
+:is(.hdr, .ftr)>*:last-child {
+    justify-self: end;
+}
+
+:is(.hdr, .ftr)>*:first-child {
+    justify-self: start;
+}
+
+/* Typography elements */
+:is(.hdr, .ftr) h1,
+:is(.hdr, .ftr) h2,
+:is(.hdr, .ftr) h3,
+:is(.hdr, .ftr) h4,
+:is(.hdr, .ftr) h5,
+:is(.hdr, .ftr) h6 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    color: var(--tx-hdr);
+}
+
+.ftr h1,
+.ftr h2,
+.ftr h3,
+.ftr h4,
+.ftr h5,
+.ftr h6 {
+    color: var(--tx-ftr);
+}
+
+/* Navigation lists */
+:is(.hdr, .ftr) :is(ul, menu) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--pad)*1rem);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+:is(.hdr, .ftr) li {
+    display: inline-block;
+}
+
+/* Hyperlinks */
+a:not(.btn),
+:is(.hdr, .ftr) nav a:not(.btn):hover {
+    color: var(--bg-prm);
+    text-decoration: none;
+}
+
+h1 a:not(.btn),
+h2 a:not(.btn),
+h3 a:not(.btn),
+h4 a:not(.btn),
+h5 a:not(.btn),
+h6 a:not(.btn),
+nav a:not(.btn) {
+    color: inherit;
+}
+
+/* Command buttons */
+.btn,
+button {
+    display: inline-block;
+    background-color: var(--bg-prm);
+    border-color: var(--bd-prm);
+    color: var(--tx-prm);
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Form input elements */
+.ipt,
+input,
+select,
+textarea {
+    color: var(--tx-sys);
+    border-color: var(--bd-sys);
+    background-color: var(--bg-sys);
+    width: 100%;
+    display: inline-block;
+}
+
+textarea {
+    resize: vertical;
+}
+
+[type="radio"],
+[type="checkbox"] {
+    margin-top: -4px;
+    border-color: var(--bd-sys);
+    background-color: var(--bg-sys);
+}
+
+input:invalid,
+select:invalid,
+textarea:invalid {
+    border-color: var(--bd-dng);
+}
+
+/* Overlay dialogs */
+dialog,
+.dlg {
+    display: none;
+    min-width: var(--min);
+    max-width: var(--max);
+}
+
+dialog[open],
+.dlg[open] {
+    display: block;
+}
+
+/* Technical input and output */
+code,
+kbd,
+samp,
+var,
+output,
+.cod {
+    display: inline-block;
+    padding: calc(var(--pad) * 0.25rem) calc(var(--pad) * 0.5rem);
+    border-color: var(--bd-cod);
+    background-color: var(--bg-cod);
+    border-radius: calc(var(--rad) * 0.5rem);
+}
+
+pre code,
+pre kbd,
+pre samp,
+pre var,
+pre output,
+pre .cod {
+    padding: calc(var(--pad)*1rem);
+    margin-bottom: 0;
+    overflow: auto;
+}
+
+/* Interaction indicators */
+progress,
+.prg {
+    display: block;
+    width: 100%;
+    height: 2rem;
+    border: 1px solid var(--bd-sys);
+    border-radius: calc(var(--rad)*1rem);
+    background-color: var(--bg-sys);
+    overflow: hidden;
+    padding: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+progress::-webkit-progress-bar,
+.prg::-webkit-progress-bar {
+    background-color: var(--bg-sys);
+}
+
+progress::-webkit-progress-value,
+.prg::-webkit-progress-value {
+    background-color: var(--bg-prm);
+    border-radius: 0;
+    box-shadow: none;
+}
+
+progress::-moz-progress-bar,
+.prg::-moz-progress-bar {
+    background-color: var(--bg-prm);
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Compound component overrides */
+.hdr {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 0;
+}
+
+.hdr+:is(.bdy, .pnl) {
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+:is(.bdy, .pnl):has(+.ftr) {
+    margin-bottom: 0;
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+:is(.bdy, .pnl):has(+.ftr)+.ftr {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+main+.ftr,
+:is(.hdr, .bdy, .pnl, .ftr)+.ftr {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+legend:not(.hdr) {
+    margin-bottom: calc(var(--pad) * 1rem);
+}
+
+fieldset.pnl>legend.hdr {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: calc(var(--pad)*1rem);
+    border: 1px solid var(--bd-hdr);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: calc(var(--rad)*1rem);
+    border-top-right-radius: calc(var(--rad)*1rem);
+    box-shadow: none;
+}
+
+fieldset.pnl>.bdy,
+fieldset.pnl>.ftr {
+    clear: both;
+}
+
+fieldset.pnl>.bdy>:is(label, .lbl, .ipt, input, select, textarea) {
+    margin-bottom: 0;
+}
+
+fieldset.pnl>.bdy>:is(label, .lbl, .ipt, input, select, textarea):has(~ :is(label, .lbl, .ipt, input, select, textarea)) {
+    margin-bottom: calc(var(--pad)*1rem);
+}
+
+fieldset.pnl>.bdy>:is(label, .lbl):has(+ :is(.ipt, input, select, textarea)) {
+    margin-bottom: 0;
+}
+
+.pnl:has(+.pnl) {
+    margin-bottom: 0;
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.pnl>.pnl:has(+.pnl) {
+    margin-bottom: calc(var(--pad)*1rem);
+}
+
+.pnl:has(+.pnl) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+form:has(> :is(.ipt, input, select, textarea)+:is(.btn, button, .lbl)) {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    min-width: 0;
+}
+
+.lbl:has(+.ipt) {
+    margin-bottom: 0;
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.lbl+.ipt {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-bottom: 0;
+}
+
+.ipt+:is(.btn, button, .lbl),
+:is(.btn, button, .lbl):has(+.ipt),
+:is(.btn, button, .lbl)+.ipt {
+    margin-bottom: 0;
+}
+
+/* Color utility classes */
+.pnl {
+    background-color: var(--bg-pnl);
+    border-color: var(--bd-pnl);
+    color: var(--tx-pnl);
+}
+
+.prm {
+    background-color: var(--bg-prm);
+    border-color: var(--bd-prm);
+    color: var(--tx-prm);
+}
+
+.sec {
+    background-color: var(--bg-sec);
+    border-color: var(--bd-sec);
+    color: var(--tx-sec);
+}
+
+.inf {
+    background-color: var(--bg-inf);
+    border-color: var(--bd-inf);
+    color: var(--tx-inf);
+}
+
+.scc {
+    background-color: var(--bg-scc);
+    border-color: var(--bd-scc);
+    color: var(--tx-scc);
+}
+
+.wrn {
+    background-color: var(--bg-wrn);
+    border-color: var(--bd-wrn);
+    color: var(--tx-wrn);
+}
+
+.dng {
+    background-color: var(--bg-dng);
+    border-color: var(--bd-dng);
+    color: var(--tx-dng);
+}
+
+.wht {
+    background-color: var(--bg-wht);
+    border-color: var(--bd-wht);
+    color: var(--tx-wht);
+}
+
+.blk {
+    background-color: var(--bg-blk);
+    border-color: var(--bd-blk);
+    color: var(--tx-blk);
+}
+
+.sys {
+    background-color: var(--bg-sys);
+    border-color: var(--bd-sys);
+    color: var(--tx-sys);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--bd-pnl);
+}
+
+thead {
+    background-color: var(--bg-hdr);
+    color: var(--tx-hdr);
+}
+
+tfoot {
+    background-color: var(--bg-ftr);
+    color: var(--tx-ftr);
+}
+
+th,
+td {
+    padding: calc(var(--pad)*1rem);
+    text-align: left;
+    border-right: 1px solid var(--bd-pnl);
+}
+
+th:last-child,
+td:last-child {
+    border-right: none;
+}
+
+th {
+    font-weight: bold;
+    border-bottom: 1px solid var(--bd-hdr);
+}
+
+tfoot td {
+    border-top: 1px solid var(--bd-ftr);
+}
+
+tbody tr + tr {
+    border-top: 1px solid var(--bd-pnl);
+}
+
+/* App-layout defaults */
+body.wrp {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+}
+
+main > .pnl:last-child {
+    flex: 1;
+}
+
+/* Flat visual style */
+.pnl,
+.btn,
+.ipt,
+button,
+input,
+select,
+textarea,
+fieldset,
+legend,
+.dlg,
+dialog,
+code,
+kbd,
+samp,
+var,
+output,
+.prg,
+progress,
+label,
+.lbl {
+    box-shadow: none;
+}
+
+.hdr,
+.ftr,
+.bdy {
+    box-shadow: none;
+}
+
+.hdr h1,
+.hdr h2,
+.hdr h3,
+.hdr h4,
+.hdr h5,
+.hdr h6,
+.ftr h1,
+.ftr h2,
+.ftr h3,
+.ftr h4,
+.ftr h5,
+.ftr h6 {
+    text-transform: none;
+    font-size: inherit;
+}
+
+.hdr,
+.ftr {
+    white-space: normal;
+}
+
+label:not(.btn),
+.lbl {
+    background-color: var(--bg-hdr);
+    border-color: var(--bd-hdr);
+    color: var(--tx-hdr);
+}
+
+button,
+.btn,
+input[type="submit"] {
+    font-weight: normal;
+}
+
+button:hover,
+.btn:hover,
+input[type="submit"]:hover {
+    filter: brightness(1.15);
+}
+
+button:active,
+.btn:active,
+input[type="submit"]:active {
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+}
+
+*:focus-visible {
+    outline: 1px solid var(--tx);
+    outline-offset: -1px;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.ipt:focus-visible {
+    border-color: var(--bg-prm);
+    outline: 1px solid var(--bg-prm);
+    outline-offset: -1px;
+}
+
+/* Visual animations */
+@media (prefers-reduced-motion: no-preference) {
+
+    html,
+    body {
+        scroll-behavior: smooth;
+    }
+
+    a {
+        transition: color 0.1s ease;
+    }
+
+    .btn,
+    button,
+    .ipt,
+    input,
+    select,
+    textarea {
+        transition:
+            border-color 0.1s ease,
+            background-color 0.1s ease,
+            color 0.1s ease;
+    }
+
+    progress::-webkit-progress-value,
+    .prg::-webkit-progress-value,
+    progress::-moz-progress-bar,
+    .prg::-moz-progress-bar {
+        transition: all 0.1s ease-in-out;
+    }
+
+    dialog,
+    .dlg {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    dialog[open],
+    .dlg[open] {
+        opacity: 1;
+        transform: scale(1);
+        transition:
+            opacity 0.1s ease,
+            transform 0.1s ease;
+
+        @starting-style {
+            opacity: 0;
+            transform: scale(0);
+        }
+    }
+}
