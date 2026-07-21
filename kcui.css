@@ -23,7 +23,7 @@
 .btn,
 .ipt,
 button,
-input:not([type="hidden"]),
+:where(input:not([type="hidden"])),
 select,
 textarea,
 fieldset,
@@ -313,7 +313,7 @@ button {
 
 /* Form input elements */
 .ipt,
-input:not([type="hidden"]),
+:where(input:not([type="hidden"])),
 select,
 textarea {
     color: var(--tx-sys);
