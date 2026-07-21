@@ -186,7 +186,7 @@ fieldset {
     margin-right: 0;
 }
 
-input:not([type="hidden"]),
+:where(input:not([type="hidden"])),
 select,
 textarea,
 button,
