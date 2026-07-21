@@ -65,7 +65,6 @@ a {
 ::before,
 ::after {
     box-sizing: border-box;
-    tap-highlight-color: transparent;
 }
 
 a,
@@ -77,7 +76,7 @@ dfn,
 em,
 i,
 img,
-input,
+input:not([type="hidden"]),
 kbd,
 label,
 output,
@@ -187,7 +186,7 @@ fieldset {
     margin-right: 0;
 }
 
-input,
+input:not([type="hidden"]),
 select,
 textarea,
 button,
