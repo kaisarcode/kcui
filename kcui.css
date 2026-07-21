@@ -468,7 +468,7 @@ fieldset.pnl>.bdy>:is(label, .lbl, .ipt, input:not([type="hidden"]), select, tex
     margin-bottom: 0;
 }
 
-fieldset.pnl>.bdy>:is(label, .lbl, .ipt, input:not([type="hidden"]), select, textarea):has(~ :is(label, .lbl, .ipt, input:not([type="hidden"]), select, textarea)) {
+fieldset.pnl>.bdy>:is(label, .lbl, .ipt, input:not([type="hidden"]), select, textarea):has(~ :is(label, .lbl, .ipt, input:not([type="hidden"]), select, textarea)):not(:is(label, .lbl):has(+ :is(.ipt, input:not([type="hidden"]), select, textarea))) {
     margin-bottom: calc(var(--pad)*1rem);
 }
 
