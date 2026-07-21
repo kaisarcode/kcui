@@ -23,7 +23,7 @@
 .btn,
 .ipt,
 button,
-input,
+input:not([type="hidden"]),
 select,
 textarea,
 fieldset,
@@ -311,7 +311,7 @@ button {
 
 /* Form input elements */
 .ipt,
-input,
+input:not([type="hidden"]),
 select,
 textarea {
     color: var(--tx-sys);
@@ -464,15 +464,15 @@ fieldset.pnl>.ftr {
     clear: both;
 }
 
-fieldset.pnl>.bdy>:is(label, .lbl, .ipt, input, select, textarea) {
+fieldset.pnl>.bdy>:is(label, .lbl, .ipt, input:not([type="hidden"]), select, textarea) {
     margin-bottom: 0;
 }
 
-fieldset.pnl>.bdy>:is(label, .lbl, .ipt, input, select, textarea):has(~ :is(label, .lbl, .ipt, input, select, textarea)) {
+fieldset.pnl>.bdy>:is(label, .lbl, .ipt, input:not([type="hidden"]), select, textarea):has(~ :is(label, .lbl, .ipt, input:not([type="hidden"]), select, textarea)) {
     margin-bottom: calc(var(--pad)*1rem);
 }
 
-fieldset.pnl>.bdy>:is(label, .lbl):has(+ :is(.ipt, input, select, textarea)) {
+fieldset.pnl>.bdy>:is(label, .lbl):has(+ :is(.ipt, input:not([type="hidden"]), select, textarea)) {
     margin-bottom: 0;
 }
 
@@ -487,12 +487,12 @@ fieldset.pnl>.bdy>:is(label, .lbl):has(+ :is(.ipt, input, select, textarea)) {
     margin-bottom: calc(var(--pad)*1rem);
 }
 
-.pnl:has(+.pnl) {
+.pnl+.pnl {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
 
-form:has(> :is(.ipt, input, select, textarea)+:is(.btn, button, .lbl)) {
+form:has(> :is(.ipt, input:not([type="hidden"]), select, textarea)+:is(.btn, button, .lbl)) {
     display: flex;
     align-items: stretch;
     gap: 0;
@@ -655,7 +655,7 @@ body.wrp > main:not(.col):not(.row):not(.mry) > .pnl:last-child {
 .btn,
 .ipt,
 button,
-input,
+input:not([type="hidden"]),
 select,
 textarea,
 fieldset,
@@ -731,7 +731,7 @@ input[type="submit"]:active {
     outline-offset: -1px;
 }
 
-input:focus-visible,
+input:not([type="hidden"]):focus-visible,
 select:focus-visible,
 textarea:focus-visible,
 .ipt:focus-visible {
@@ -755,7 +755,7 @@ textarea:focus-visible,
     .btn,
     button,
     .ipt,
-    input,
+    input:not([type="hidden"]),
     select,
     textarea {
         transition:
@@ -774,20 +774,20 @@ textarea:focus-visible,
     dialog,
     .dlg {
         opacity: 0;
-        transform: scale(0);
+        transform: translateY(-50%) scale(0);
     }
 
     dialog[open],
     .dlg[open] {
         opacity: 1;
-        transform: scale(1);
+        transform: translateY(-50%) scale(1);
         transition:
             opacity 0.1s ease,
             transform 0.1s ease;
 
         @starting-style {
             opacity: 0;
-            transform: scale(0);
+            transform: translateY(-50%) scale(0);
         }
     }
 }
