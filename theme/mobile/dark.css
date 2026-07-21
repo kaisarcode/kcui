@@ -14,7 +14,7 @@
     --fsz: 15px;
     --pad: 0.75;
     --rad: 0.5;
-    --min: 420px;
+    --min: 0;
     --max: none;
     --col: 16rem;
 
@@ -82,7 +82,7 @@
 
 button,
 .btn,
-input:not([type="checkbox"]):not([type="radio"]),
+input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]),
 select,
 textarea,
 .ipt {
