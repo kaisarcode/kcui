@@ -58,7 +58,7 @@ KCUI uses a small panel grammar:
 - `.mry`: CSS multi-column layout.
 - `.btn`, `.ipt`, `.lbl`, `.dlg`, `.prg`, `.cod`: control aliases.
 - `.prm`, `.sec`, `.inf`, `.scc`, `.wrn`, `.dng`, `.wht`, `.blk`, `.sys`: color
-  utility classes.
+    utility classes.
 
 KCUI also styles common semantic elements directly, including `fieldset`,
 `legend`, `label`, `dialog`, `progress`, `table`, `code`, `kbd`, `samp`, `var`,
