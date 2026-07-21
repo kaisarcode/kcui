@@ -137,7 +137,7 @@ label:has(> input[type="checkbox"])::before {
     width: 2.5rem;
     height: 1.4rem;
 
-    border: 1px solid var(--bd-sys);
+    border: 2px solid var(--bd-sys);
     border-radius: 999px;
     background-color: var(--bg-sys);
 
