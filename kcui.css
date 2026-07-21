@@ -301,6 +301,8 @@ nav a:not(.btn) {
 .btn,
 button {
     display: inline-block;
+    align-content: center;
+    text-box: trim-both cap alphabetic;
     background-color: var(--bg-sys);
     border-color: var(--bd-sys);
     color: var(--tx-sys);
