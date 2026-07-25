@@ -292,49 +292,6 @@ dialog::backdrop {
     background: rgba(0, 0, 0, 0.5);
 }
 
-/* Grail layout */
-
-.grl {
-    height: 100%;
-    display: flex;
-    overflow: hidden;
-    flex-direction: column;
-    width: max(100%, var(--min));
-}
-
-.grl > :first-child,
-.grl > :last-child {
-    flex: 0 0 auto;
-}
-
-.grl > :nth-child(2) {
-    flex: 1 1 auto;
-    overflow: auto;
-    min-width: 0;
-    min-height: 0;
-}
-
-/* Sidebar layout */
-
-.sbl {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    align-items: flex-start;
-    gap: var(--pad);
-}
-
-.sbl > :first-child {
-    min-width: min(100%, var(--min));
-    flex: 1 1 var(--min);
-}
-
-.sbl > :last-child {
-    min-width: min(100%, var(--col));
-    max-width: var(--col);
-    flex: 1 1 var(--col);
-}
-
 /* Panels */
 
 .pnl {
@@ -348,8 +305,8 @@ dialog::backdrop {
     border: var(--bdw) solid var(--bd-pnl);
 }
 
-.col > .pnl,
-.sbl > .pnl,
+.grd > .pnl,
+.row > .pnl,
 .bdy > .pnl:last-child {
     margin-bottom: 0;
 }
@@ -420,6 +377,43 @@ dialog::backdrop {
     justify-self: start;
 }
 
+/* Grail layout */
+
+.grl {
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    width: max(100%, var(--min));
+}
+
+.grl > :first-child,
+.grl > :last-child {
+    flex: 0 0 auto;
+}
+
+.grl > :nth-child(2) {
+    flex: 1 1 auto;
+    overflow: auto;
+    min-width: 0;
+    min-height: 0;
+}
+
+/* Horizontal layout */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    gap: var(--pad);
+}
+
+.row > * {
+    min-width: min(100%, var(--col));
+    flex: 1 1 0;
+}
+
 /* Width wrapper */
 
 .wrp {
@@ -428,9 +422,71 @@ dialog::backdrop {
     margin-inline: auto;
 }
 
-/* Automatic columns */
+/* Columns */
 
-.col {
+.col, .col1 {
+    max-width: var(--col);
+    flex: 0 1 var(--col);
+}
+
+.col2 {
+    max-width: calc(var(--col) * 2 + var(--pad));
+    flex: 0 1 calc(var(--col) * 2 + var(--pad));
+}
+
+.col3 {
+    max-width: calc(var(--col) * 3 + var(--pad) * 2);
+    flex: 0 1 calc(var(--col) * 3 + var(--pad) * 2);
+}
+
+.col4 {
+    max-width: calc(var(--col) * 4 + var(--pad) * 3);
+    flex: 0 1 calc(var(--col) * 4 + var(--pad) * 3);
+}
+
+.col5 {
+    max-width: calc(var(--col) * 5 + var(--pad) * 4);
+    flex: 0 1 calc(var(--col) * 5 + var(--pad) * 4);
+}
+
+.col6 {
+    max-width: calc(var(--col) * 6 + var(--pad) * 5);
+    flex: 0 1 calc(var(--col) * 6 + var(--pad) * 5);
+}
+
+.col7 {
+    max-width: calc(var(--col) * 7 + var(--pad) * 6);
+    flex: 0 1 calc(var(--col) * 7 + var(--pad) * 6);
+}
+
+.col8 {
+    max-width: calc(var(--col) * 8 + var(--pad) * 7);
+    flex: 0 1 calc(var(--col) * 8 + var(--pad) * 7);
+}
+
+.col9 {
+    max-width: calc(var(--col) * 9 + var(--pad) * 8);
+    flex: 0 1 calc(var(--col) * 9 + var(--pad) * 8);
+}
+
+.col10 {
+    max-width: calc(var(--col) * 10 + var(--pad) * 9);
+    flex: 0 1 calc(var(--col) * 10 + var(--pad) * 9);
+}
+
+.col11 {
+    max-width: calc(var(--col) * 11 + var(--pad) * 10);
+    flex: 0 1 calc(var(--col) * 11 + var(--pad) * 10);
+}
+
+.col12 {
+    max-width: calc(var(--col) * 12 + var(--pad) * 11);
+    flex: 0 1 calc(var(--col) * 12 + var(--pad) * 11);
+}
+
+/* Grid */
+
+.grd {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(var(--col), 1fr));
     align-content: start;
@@ -438,9 +494,23 @@ dialog::backdrop {
     gap: var(--pad);
 }
 
-.col > * {
+.grd > * {
     min-width: 0;
 }
+
+.grd > .col,
+.grd > .col1 { grid-column: span 1; }
+.grd > .col2 { grid-column: span 2; }
+.grd > .col3 { grid-column: span 3; }
+.grd > .col4 { grid-column: span 4; }
+.grd > .col5 { grid-column: span 5; }
+.grd > .col6 { grid-column: span 6; }
+.grd > .col7 { grid-column: span 7; }
+.grd > .col8 { grid-column: span 8; }
+.grd > .col9 { grid-column: span 9; }
+.grd > .col10 { grid-column: span 10; }
+.grd > .col11 { grid-column: span 11; }
+.grd > .col12 { grid-column: span 12; }
 
 /* Masonry columns */
 
@@ -732,7 +802,7 @@ pre .cod {
 
 /* Breakpoints */
 @media (max-width: 540px) {
-    .sbl > :last-child {
+    .row > :last-child {
         max-width: 100%;
     }
 }

@@ -9,13 +9,14 @@ is distributed as a single lightweight `kcui.css`.
 ## Features
 
 - Minimal CSS structure
-- Responsive page layout
+- Grail layout
+- Horizontal row layout
+- Column size utilities from `.col1` to `.col12`
 - Header, body, and footer regions
 - Panels
 - Width wrapper
-- Automatic columns
+- Automatic grid
 - Masonry columns
-- Horizontal article + aside layout
 - Form controls
 - Checkbox switch
 - Dialog, progress, and code styles
@@ -30,10 +31,10 @@ Add KCUI to your page:
 <link rel="stylesheet" href="kcui.css">
 ```
 
-Basic application structure:
+Basic layout structure:
 
 ```html
-<div class="lay">
+<div class="grl">
     <header class="hdr">
         <div class="wrp">
             <h1>KCUI</h1>
@@ -42,26 +43,31 @@ Basic application structure:
             </nav>
         </div>
     </header>
+
     <main class="bdy">
-        <div class="wrp sbl">
+        <div class="wrp row">
             <article class="pnl">
                 <header class="hdr">
                     <h2>Article</h2>
                 </header>
+
                 <section class="bdy">
                     Main content.
                 </section>
             </article>
-            <aside class="pnl">
+
+            <aside class="pnl col2">
                 <header class="hdr">
                     <h2>Aside</h2>
                 </header>
+
                 <section class="bdy">
                     Aside content.
                 </section>
             </aside>
         </div>
     </main>
+
     <footer class="ftr">
         <div class="wrp">
             Footer
@@ -88,33 +94,12 @@ KCUI uses CSS custom properties as its theme layer.
 
 The default theme also defines text, background, and border colors for system,
 code, header, body, footer, panel, primary, secondary, info, success, warning,
-danger, white, and black. A new theme can be created by overriding these variables
-without changing the structural rules.
+danger, white, and black.
+
+A new theme can be created by overriding these variables without changing the
+structural rules.
 
 ## Layout
-
-### `.grl`
-
-Holy Grail layout container. It fills the available height, keeps the header and
-footer in place, and lets the body use the remaining space with its own scrolling.
-
-```html
-<div class="grl">
-    <div>...</div>
-    <div>...</div>
-    <div>...</div>
-</div>
-```
-
-### `.wrp`
-
-Width wrapper.
-
-```html
-<div class="wrp">...</div>
-```
-
-It uses `--max` as its maximum width and centers itself horizontally.
 
 ### `.pnl`
 
@@ -136,43 +121,158 @@ Reusable page and panel regions.
 
 All three use `--pad` for consistent spacing.
 
-### `.sbl`
+### `.grl`
 
-Horizontal layout intended for a main content area and a secondary column.
+Holy Grail layout container.
+
+It fills the available height, keeps the first and last direct children in
+place, and lets the middle child use the remaining space with its own
+scrolling.
 
 ```html
-<main class="sbl">
-    <article>...</article>
-    <aside>...</aside>
-</main>
+<div class="grl">
+    <header>...</header>
+    <main>...</main>
+    <footer>...</footer>
+</div>
 ```
 
-The first child grows as the main region. The last child uses `--col` as its secondary-column width.
+The three direct children do not need to use `.hdr`, `.bdy`, or `.ftr`. The
+layout is based on their position inside `.grl`.
 
-### `.col`
+### `.row`
 
-Automatic responsive columns.
+Horizontal layout for distributing direct children across the available width.
+
+Direct children are flexible by default and share the available space.
 
 ```html
-<section class="col">
+<div class="row">
+    <section>...</section>
+    <section>...</section>
+    <section>...</section>
+</div>
+```
+
+Column utilities can be applied to any direct child when a constrained width
+is needed.
+
+```html
+<div class="row">
+    <aside class="col2">...</aside>
+    <article>...</article>
+</div>
+```
+
+### `.wrp`
+
+Width wrapper.
+
+```html
+<div class="wrp">...</div>
+```
+
+It uses `--max` as its maximum width and centers itself horizontally.
+
+### `.col`, `.col1` ... `.col12`
+
+Column size utilities based on `--col`.
+
+`.col` and `.col1` represent one column. `.col2` through `.col12` represent
+multiples of the base column size, including the gaps between columns.
+
+Inside `.row`, column utilities constrain the width of an element.
+
+```html
+<div class="row">
+    <aside class="col2">...</aside>
+    <article>...</article>
+</div>
+```
+
+They are agnostic to element type and semantic role. A column can be used for
+a sidebar, content area, panel, navigation block, or any other direct child of
+a `.row`.
+
+```html
+<div class="row">
+    <section class="col3">...</section>
+    <section>...</section>
+    <section class="col2">...</section>
+</div>
+```
+
+Inside `.grd`, the same utilities define how many grid tracks an element
+spans.
+
+```html
+<div class="grd">
+    <section>...</section>
+    <section class="col2">...</section>
+    <section>...</section>
+</div>
+```
+
+Available sizes:
+
+```text
+.col
+.col1
+.col2
+.col3
+.col4
+.col5
+.col6
+.col7
+.col8
+.col9
+.col10
+.col11
+.col12
+```
+
+### `.grd`
+
+Automatic responsive grid layout.
+
+```html
+<section class="grd">
     <article class="pnl">...</article>
     <article class="pnl">...</article>
     <article class="pnl">...</article>
 </section>
 ```
 
-Columns are generated with `--col` as the minimum column width.
+Columns are generated automatically using `--col` as the minimum track width.
+
+By default, each child occupies one grid track. Use `.col1` through `.col12`
+to make individual children span multiple tracks.
+
+```html
+<section class="grd">
+    <article class="pnl">...</article>
+    <article class="pnl col2">...</article>
+    <article class="pnl">...</article>
+</section>
+```
+
+The number of available tracks depends on the width of the grid container, so
+a column span is resolved within the current automatic grid.
 
 ### `.mry`
 
-CSS multi-column masonry layout.
+Multi-column masonry layout.
 
 ```html
 <section class="mry">
     <article class="pnl">...</article>
     <article class="pnl">...</article>
+    <article class="pnl">...</article>
 </section>
 ```
+
+Columns use `--col` as their base width, and children flow vertically according
+to their content.
 
 ## Controls
 
@@ -259,7 +359,8 @@ A fieldset can use panel styling:
 </fieldset>
 ```
 
-The legend acts as the fieldset header and uses the same spacing and header theme variables.
+The legend acts as the fieldset header and uses the same spacing and header
+theme variables.
 
 ## Color utilities
 
@@ -290,20 +391,28 @@ Available utilities:
 
 ## Responsive behavior
 
-The current stylesheet includes a minimum breakpoint.
+`.row` distributes its direct children horizontally and can use `.col1` through
+`.col12` to constrain individual elements.
 
-At that width, the secondary child of `.sbl` can expand to the full available width.
+`.grd` creates automatic columns according to the available width and `--col`,
+and the same column utilities can be used to span multiple grid tracks.
+
+`.mry` uses a multi-column flow and adapts vertically to the height of its
+content.
 
 ## Demo
 
 `demo.html` shows the current KCUI structure, including:
 
-- application header and footer
-- article + aside layout
-- form controls
-- switch
-- dialog
-- multi-panel column layout
+- Grail layout with header and footer
+- Flexible row layout
+- Column size utilities
+- Automatic grid
+- Masonry layout
+- Panels
+- Form controls
+- Switch
+- Dialog
 
 ---
 
