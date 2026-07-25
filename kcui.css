@@ -7,44 +7,56 @@
  * License: GNU General Public License v3.0
  * License URL: https://www.gnu.org/licenses/gpl-3.0.txt
  */
+
 @import url("vars.css");
 @import url("reset.css");
 
-.wrp {
+/* Page layout */
 
+html, body {
+    padding: 0;
+    margin : 0;
+    min-height: 100%;
 }
 
-.col {
-
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
-.row {
-
+body > .bdy {
+    flex: 1 1 auto;
 }
+
+/* Panel */
 
 .pnl {
-    display: block;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     background: var(--bg-pnl);
-    border-radius: var(--rad);
     border: var(--bdw) solid var(--bd-pnl);
+    border-radius: var(--rad);
 }
 
-.hdr,.bdy,.ftr {
+/* Regions */
+
+.hdr,.ftr {
     display: flex;
+    align-items: center;
     gap: var(--pad);
     padding: var(--pad);
-    align-items: center;
-    white-space: nowrap;
 }
 
 .hdr {
     color: var(--tx-hdr);
     background: var(--bg-hdr);
-    border-bottom: var(--bdw) solid var(--bd-pnl);
+    border-bottom: var(--bdw) solid var(--bd-hdr);
 }
 
 .bdy {
+    padding: var(--pad);
     color: var(--tx-bdy);
     background: var(--bg-bdy);
 }
@@ -52,5 +64,42 @@
 .ftr {
     color: var(--tx-ftr);
     background: var(--bg-ftr);
-    border-top: var(--bdw) solid var(--bd-pnl);
+    border-top: var(--bdw) solid var(--bd-ftr);
+}
+
+/* Width wrapper */
+
+.wrp {
+    width: 100%;
+    min-width: var(--min);
+    max-width: var(--max);
+    margin-inline: auto;
+}
+
+/* Wrapping columns */
+
+.col {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--pad);
+}
+
+.col > * {
+    min-width: 0;
+    flex: 1 1 var(--col);
+}
+
+/* Horizontal row */
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--pad);
+}
+
+.row > * {
+    min-width: 0;
 }

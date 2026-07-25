@@ -8,16 +8,16 @@
  * License URL: https://www.gnu.org/licenses/gpl-3.0.txt
  */
 
+html, body {
+    padding: 0;
+    margin : 0;
+}
+
 html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
     background-color: var(--bg);
-}
-
-body {
-    margin: 0;
-    padding: calc(var(--pad)*1rem);
 }
 
 button,
