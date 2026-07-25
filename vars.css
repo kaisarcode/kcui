@@ -10,11 +10,11 @@
 
 :root {
     --fsz: 13px;
-    --pad: 1rem;
+    --pad: 0.625rem;
     --bdw: 1px;
-    --rad: 0.5rem;
+    --rad: 0;
     --min: 360px;
-    --max: 1200px;
+    --max: 1280px;
     --col: 12rem;
 
     --bg: #1a1a1a;

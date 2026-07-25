@@ -40,15 +40,6 @@ html, body {
     overflow: auto;
 }
 
-/* Typography */
-
-h1 { font-size: 2rem; }
-h2 { font-size: 1.8rem; }
-h3 { font-size: 1.6rem; }
-h4 { font-size: 1.4rem; }
-h5 { font-size: 1.2rem; }
-h6 { font-size: 1rem; }
-
 /* Panel */
 
 .pnl {
@@ -179,9 +170,12 @@ h6 { font-size: 1rem; }
     border-radius: var(--rad);
 }
 
+.btn, .ipt, .lbl, .dlg {
+    padding: var(--pad);
+}
+
 .btn {
     display: inline-block;
-    padding: var(--pad);
     color: var(--tx-sys);
     background-color: var(--bg-sys);
     border-color: var(--bd-sys);
@@ -193,7 +187,6 @@ h6 { font-size: 1rem; }
 .ipt {
     display: inline-block;
     width: 100%;
-    padding: var(--pad);
     color: var(--tx-sys);
     background-color: var(--bg-sys);
     border-color: var(--bd-sys);
@@ -204,7 +197,6 @@ h6 { font-size: 1rem; }
 
 .lbl {
     display: block;
-    padding: var(--pad);
     color: var(--tx-hdr);
     background-color: var(--bg-hdr);
     border-color: var(--bd-hdr);
@@ -227,7 +219,25 @@ h6 { font-size: 1rem; }
     margin-bottom: 0;
 }
 
-/* Switch checkbox */
+fieldset.pnl {
+    display: block;
+    padding: 0;
+}
+
+fieldset.pnl > legend {
+    float: left;
+    width: 100%;
+    padding: var(--pad);
+    margin: 0;
+    color: var(--tx-hdr);
+    background-color: var(--bg-hdr);
+    border: 0;
+    border-bottom: var(--bdw) solid var(--bd-hdr);
+}
+
+fieldset.pnl > legend + .bdy, fieldset.pnl > .ftr {
+    clear: both;
+}
 
 label:has(> input[type="checkbox"].swi) {
     display: flex;
@@ -303,7 +313,6 @@ input[type="checkbox"].swi:disabled {
     position: fixed;
     min-width: var(--min);
     max-width: var(--max);
-    padding: var(--pad);
     margin-top: 0;
     color: var(--tx-pnl);
     background-color: var(--bg-pnl);
@@ -361,6 +370,14 @@ pre .cod {
     overflow: auto;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+    input[type="checkbox"].swi {
+        transition:
+            background-color 0.12s ease,
+            background-position 0.12s ease;
+    }
+}
+
 /* Color utilities */
 
 .prm {
@@ -415,16 +432,6 @@ pre .cod {
     color: var(--tx-sys);
     background-color: var(--bg-sys);
     border-color: var(--bd-sys);
-}
-
-/* Animations */
-
-@media (prefers-reduced-motion: no-preference) {
-    input[type="checkbox"].swi {
-        transition:
-            background-color 0.12s ease,
-            background-position 0.12s ease;
-    }
 }
 
 /* Breakpoints */
