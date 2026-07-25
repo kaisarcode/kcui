@@ -313,3 +313,5 @@ If you'd like to reach out, you can send an email to kaisar@kaisarcode.com. Plea
 [![GPLv3](https://www.gnu.org/graphics/gplv3-127x51.png)](https://www.gnu.org/licenses/gpl-3.0.html)
 
 This project is distributed under the **GNU General Public License version 3 (GPLv3)**.
+
+*2026 KaisarCode*
