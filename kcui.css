@@ -54,10 +54,6 @@ html, body {
 /* Regions */
 
 .hdr, .ftr {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-    align-items: center;
-    gap: var(--pad);
     padding: var(--pad);
     white-space: nowrap;
 }
@@ -80,17 +76,36 @@ html, body {
     border-top: var(--bdw) solid var(--bd-ftr);
 }
 
-.hdr > *, .ftr > * {
+.hdr > .wrp,
+.ftr > .wrp,
+.pnl > .hdr,
+.pnl > .ftr {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    align-items: center;
+    gap: var(--pad);
+}
+
+.hdr > .wrp > *,
+.ftr > .wrp > *,
+.pnl > .hdr > *,
+.pnl > .ftr > * {
     min-width: 0;
     margin-bottom: 0;
     justify-self: center;
 }
 
-.hdr > :last-child, .ftr > :last-child {
+.hdr > .wrp > :last-child,
+.ftr > .wrp > :last-child,
+.pnl > .hdr > :last-child,
+.pnl > .ftr > :last-child {
     justify-self: end;
 }
 
-.hdr > :first-child, .ftr > :first-child {
+.hdr > .wrp > :first-child,
+.ftr > .wrp > :first-child,
+.pnl > .hdr > :first-child,
+.pnl > .ftr > :first-child {
     justify-self: start;
 }
 
