@@ -33,7 +33,7 @@ Add KCUI to your page:
 Basic application structure:
 
 ```html
-<div class="app">
+<div class="lay">
     <header class="hdr">
         <div class="wrp">
             <h1>KCUI</h1>
