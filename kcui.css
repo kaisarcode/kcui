@@ -14,19 +14,30 @@
 /* Page layout */
 
 html, body {
+    width: 100%;
+    height: 100%;
     padding: 0;
-    margin : 0;
-    min-height: 100%;
+    margin: 0;
+    overflow: hidden;
 }
 
-body {
+.app {
     display: flex;
-    min-height: 100vh;
+    width: max(100%, var(--min));
+    height: 100%;
+    overflow: hidden;
     flex-direction: column;
 }
 
-body > .bdy {
+.app > .hdr, .app > .ftr {
+    flex: 0 0 auto;
+}
+
+.app > .bdy {
     flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+    overflow: auto;
 }
 
 /* Panel */
@@ -42,11 +53,13 @@ body > .bdy {
 
 /* Regions */
 
-.hdr,.ftr {
-    display: flex;
+.hdr, .ftr {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
     align-items: center;
     gap: var(--pad);
     padding: var(--pad);
+    white-space: nowrap;
 }
 
 .hdr {
@@ -67,39 +80,68 @@ body > .bdy {
     border-top: var(--bdw) solid var(--bd-ftr);
 }
 
+.hdr > *, .ftr > * {
+    min-width: 0;
+    margin-bottom: 0;
+    justify-self: center;
+}
+
+.hdr > :last-child, .ftr > :last-child {
+    justify-self: end;
+}
+
+.hdr > :first-child, .ftr > :first-child {
+    justify-self: start;
+}
+
 /* Width wrapper */
 
 .wrp {
     width: 100%;
-    min-width: var(--min);
     max-width: var(--max);
     margin-inline: auto;
 }
 
-/* Wrapping columns */
+/* Automatic columns */
 
 .col {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--col), 1fr));
+    align-content: start;
+    align-items: start;
     gap: var(--pad);
 }
 
 .col > * {
     min-width: 0;
-    flex: 1 1 var(--col);
 }
 
-/* Horizontal row */
+/* Masonry columns */
+
+.mry {
+    columns: var(--col);
+    column-gap: var(--pad);
+}
+
+.mry > * {
+    width: 100%;
+    break-inside: avoid;
+    margin-bottom: var(--pad);
+}
+
+/* Horizontal layout */
 
 .row {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     gap: var(--pad);
 }
 
 .row > * {
     min-width: 0;
+    flex: 0 0 var(--col);
+}
+
+.row > :nth-child(2) {
+    flex: 1 1 auto;
 }
