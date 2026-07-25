@@ -79,30 +79,44 @@ html, body {
     border-top: var(--bdw) solid var(--bd-ftr);
 }
 
-.hdr h1, .hdr h2, .hdr h3, .hdr h4, .hdr h5, .hdr h6, .ftr h1, .ftr h2, .ftr h3, .ftr h4, .ftr h5, .ftr h6 {
+.hdr h1, .hdr h2, .hdr h3, .hdr h4,
+.hdr h5, .hdr h6, .ftr h1, .ftr h2,
+.ftr h3, .ftr h4, .ftr h5, .ftr h6 {
     margin-bottom: 0;
     font-size: 1rem;
     font-weight: bold;
 }
 
-.hdr > .wrp, .ftr > .wrp, .pnl > .hdr, .pnl > .ftr {
+.hdr > .wrp,
+.ftr > .wrp,
+.pnl > .hdr,
+.pnl > .ftr {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
     align-items: center;
     gap: var(--pad);
 }
 
-.hdr > .wrp > *, .ftr > .wrp > *, .pnl > .hdr > *, .pnl > .ftr > * {
+.hdr > .wrp > *,
+.ftr > .wrp > *,
+.pnl > .hdr > *,
+.pnl > .ftr > * {
     min-width: 0;
     margin-bottom: 0;
     justify-self: center;
 }
 
-.hdr > .wrp > :last-child, .ftr > .wrp > :last-child, .pnl > .hdr > :last-child, .pnl > .ftr > :last-child {
+.hdr > .wrp > :last-child,
+.ftr > .wrp > :last-child,
+.pnl > .hdr > :last-child,
+.pnl > .ftr > :last-child {
     justify-self: end;
 }
 
-.hdr > .wrp > :first-child, .ftr > .wrp > :first-child, .pnl > .hdr > :first-child, .pnl > .ftr > :first-child {
+.hdr > .wrp > :first-child,
+.ftr > .wrp > :first-child,
+.pnl > .hdr > :first-child,
+.pnl > .ftr > :first-child {
     justify-self: start;
 }
 
@@ -164,13 +178,15 @@ html, body {
 
 /* Controls */
 
-.btn, .ipt, .lbl, .dlg, .prg, .cod {
+.btn, .ipt, .lbl,
+.dlg, .prg, .cod {
     border-width: var(--bdw);
     border-style: solid;
     border-radius: var(--rad);
 }
 
-.btn, .ipt, .lbl, .dlg {
+.btn, .ipt,
+.lbl, .dlg {
     padding: var(--pad);
 }
 
@@ -235,7 +251,8 @@ fieldset.pnl > legend {
     border-bottom: var(--bdw) solid var(--bd-hdr);
 }
 
-fieldset.pnl > legend + .bdy, fieldset.pnl > .ftr {
+fieldset.pnl > legend + .bdy,
+fieldset.pnl > .ftr {
     clear: both;
 }
 

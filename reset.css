@@ -15,7 +15,6 @@ html, body {
 
 html {
     line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
     background-color: var(--bg);
 }
@@ -41,11 +40,6 @@ button,
 [type="reset"],
 [type="submit"] {
     -webkit-appearance: button;
-}
-
-::-moz-focus-inner {
-    border-style: none;
-    padding: 0;
 }
 
 html,
@@ -237,11 +231,6 @@ input[type="submit"] {
 button,
 input[type="submit"] {
     background-color: var(--bg-sys);
-}
-
-button::-moz-focus-inner,
-a::-moz-focus-inner {
-    border: none;
 }
 
 ::placeholder {
