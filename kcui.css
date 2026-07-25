@@ -344,14 +344,37 @@ dialog::backdrop {
     font-weight: bold;
 }
 
+.hdr,
+.ftr,
 .hdr > .wrp,
-.ftr > .wrp,
-.pnl > .hdr,
-.pnl > .ftr {
+.ftr > .wrp {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
     align-items: center;
     gap: var(--pad);
+}
+
+.hdr > *,
+.ftr > *,
+.hdr > .wrp > *,
+.ftr > .wrp > * {
+    min-width: 0;
+    margin-bottom: 0;
+    justify-self: center;
+}
+
+.hdr > :last-child,
+.ftr > :last-child,
+.hdr > .wrp > :last-child,
+.ftr > .wrp > :last-child {
+    justify-self: end;
+}
+
+.hdr > :first-child,
+.ftr > :first-child,
+.hdr > .wrp > :first-child,
+.ftr > .wrp > :first-child {
+    justify-self: start;
 }
 
 .hdr > .wrp > *,
@@ -747,6 +770,11 @@ pre .cod {
     color: var(--tx-sys);
     border-color: var(--bd-sys);
     background-color: var(--bg-sys);
+}
+
+/* Helpes */
+.mar {
+    margin-bottom: var(--pad);
 }
 
 /* Breakpoints */
