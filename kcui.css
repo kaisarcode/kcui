@@ -50,6 +50,13 @@ html, body {
     background: var(--bg-pnl);
     border: var(--bdw) solid var(--bd-pnl);
     border-radius: var(--rad);
+    margin-bottom: var(--pad);
+}
+
+.col > .pnl,
+.row > .pnl,
+.bdy > .pnl:last-child {
+    margin-bottom: 0;
 }
 
 /* Regions */
