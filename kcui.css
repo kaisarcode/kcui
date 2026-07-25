@@ -1,6 +1,6 @@
 /**
  * KCUI - KaisarCode User Interface
- * Summary: Minimalist, semantic, and responsive CSS framework.
+ * Summary: Minimal and responsive CSS framework.
  *
  * Author: KaisarCode
  * Website: https://kaisarcode.com
@@ -8,49 +8,323 @@
  * License URL: https://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-@import url("vars.css");
-@import url("reset.css");
+/* Vars */
+:root {
+    --fsz: 13px;
+    --pad: 0.625rem;
+    --bdw: 1px;
+    --rad: 0;
+    --min: 360px;
+    --max: 1024px;
+    --col: 12rem;
+
+    --bg: #1a1a1a;
+    --bd: #444444;
+    --tx: #cccccc;
+    --tx-lnk: #ffffff;
+
+    --bg-sys: #1a1a1a;
+    --bd-sys: #555555;
+    --tx-sys: #cccccc;
+
+    --bg-cod: #121212;
+    --bd-cod: #444444;
+    --tx-cod: #cccccc;
+
+    --bg-hdr: #121212;
+    --bd-hdr: #444444;
+    --tx-hdr: #cccccc;
+
+    --bg-bdy: #1a1a1a;
+    --bd-bdy: #444444;
+    --tx-bdy: #cccccc;
+
+    --bg-ftr: #121212;
+    --bd-ftr: #444444;
+    --tx-ftr: #cccccc;
+
+    --bg-pnl: #1a1a1a;
+    --bd-pnl: #444444;
+    --tx-pnl: #cccccc;
+
+    --bg-prm: #F24600;
+    --bd-prm: #F24600;
+    --tx-prm: #ffffff;
+
+    --bg-sec: #A05F2C;
+    --bd-sec: #A05F2C;
+    --tx-sec: #ffffff;
+
+    --bg-inf: #198B9B;
+    --bd-inf: #198B9B;
+    --tx-inf: #ffffff;
+
+    --bg-scc: #23963C;
+    --bd-scc: #23963C;
+    --tx-scc: #ffffff;
+
+    --bg-wrn: #D4A500;
+    --bd-wrn: #D4A500;
+    --tx-wrn: #ffffff;
+
+    --bg-dng: #C5303F;
+    --bd-dng: #C5303F;
+    --tx-dng: #ffffff;
+
+    --bg-wht: #ffffff;
+    --bd-wht: #ffffff;
+    --tx-wht: #555555;
+
+    --bg-blk: #000000;
+    --bd-blk: #000000;
+    --tx-blk: #ffffff;
+}
+
+/* Elements */
+
+html {
+    color: var(--tx);
+    line-height: 1.15;
+    font-size: var(--fsz);
+    font-family: sans-serif;
+    background-color: var(--bg);
+    text-rendering: optimizeLegibility;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+input,
+button,
+select,
+textarea,
+optgroup {
+    margin: 0;
+    font-size: 100%;
+    line-height: 1.15;
+    font-family: inherit;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+}
+
+a {
+    color: var(--tx-lnk);
+    text-decoration: none;
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+a, abbr, b, cite, code, dfn, em,
+i, img, kbd, label, output, q,
+samp, select, small, span, strong,
+sub, sup, textarea, time, var,
+:where(input:not([type="hidden"])) {
+    display: inline;
+    vertical-align: baseline;
+}
+
+code, kbd, samp, var, output {
+    border-color: var(--bd-cod);
+    background-color: var(--bg-cod);
+}
+
+pre code,
+pre kbd,
+pre samp,
+pre var,
+pre output {
+    width: 100%;
+    display: block;
+}
+
+datalist {
+    display: none;
+}
+
+input[list]::-webkit-calendar-picker-indicator {
+    display: none !important;
+}
+
+ul, ol, p, blockquote, menu,
+h1, h2, h3, h4, h5, h6, pre {
+    margin-top: 0;
+    font-weight: normal;
+    line-height: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+br {
+    line-height: 2rem;
+}
+
+hr {
+    height: 1px;
+    border: none;
+    margin: 1rem 0;
+    background-color: var(--bd-sys);
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+
+small, sup, sub {
+    font-size: 0.8rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    font-weight: normal;
+}
+
+th, td {
+    padding: 0;
+    vertical-align: middle;
+}
+
+fieldset {
+    margin-left: 0;
+    margin-right: 0;
+    margin-inline-end: 0;
+    margin-inline-start: 0;
+}
+
+:where(input:not([type="hidden"])),
+select, textarea, button, dialog {
+    outline: none;
+    appearance: none;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    padding: 0.25rem 1rem;
+    border: 1px solid var(--bd-sys);
+    background-color: var(--bg-sys);
+    border-radius: calc(var(--rad)*1rem);
+}
+
+[type="radio"],
+[type="checkbox"] {
+    padding: 0;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    appearance: none;
+    position: relative;
+    vertical-align: middle;
+    background-clip: content-box;
+    border: 1px solid var(--bd-sys);
+    background-color: var(--bg-sys);
+    transition: all 0.1s ease-in-out;
+}
+
+[type="radio"] {
+    border-radius: 50%;
+}
+
+[type="radio"]:checked,
+[type="checkbox"]:checked {
+    border-color: var(--bd-prm);
+    background-color: var(--bg-prm);
+    box-shadow: inset 0 0 0 2px var(--bg-sys);
+}
+
+select, button,
+input[type="submit"] {
+    cursor: pointer;
+}
+
+button, input[type="submit"] {
+    background-color: var(--bg-sys);
+}
+
+::placeholder {
+    opacity: 0.8;
+    color: inherit;
+}
+
+summary {
+    display: block;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+dialog {
+    top: 50%;
+    display: none;
+    margin-top: 0;
+    z-index: 999999;
+    position: fixed;
+    transform: translateY(-50%);
+}
+
+dialog[open] {
+    outline: 0;
+    display: block;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
 
 /* Page layout */
 
-html, body {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-}
-
 .app {
-    display: flex;
-    width: max(100%, var(--min));
     height: 100%;
+    display: flex;
     overflow: hidden;
     flex-direction: column;
+    width: max(100%, var(--min));
 }
 
-.app > .hdr, .app > .ftr {
+.app > .hdr,
+.app > .ftr {
     flex: 0 0 auto;
 }
 
 .app > .bdy {
     flex: 1 1 auto;
+    overflow: auto;
     min-width: 0;
     min-height: 0;
-    overflow: auto;
 }
 
 /* Panel */
 
 .pnl {
     display: flex;
-    flex-direction: column;
     overflow: hidden;
     color: var(--tx-pnl);
+    flex-direction: column;
     background: var(--bg-pnl);
-    border: var(--bdw) solid var(--bd-pnl);
     border-radius: var(--rad);
     margin-bottom: var(--pad);
+    border: var(--bdw) solid var(--bd-pnl);
 }
 
 .col > .pnl,
@@ -322,27 +596,27 @@ input[type="checkbox"].swi:checked {
 }
 
 input[type="checkbox"].swi:focus-visible {
-    outline: var(--bdw) solid var(--bg-prm);
     outline-offset: 2px;
+    outline: var(--bdw) solid var(--bg-prm);
 }
 
 input[type="checkbox"].swi:disabled {
-    cursor: default;
     opacity: 0.5;
+    cursor: default;
 }
 
 .dlg {
     top: 50%;
     display: none;
+    margin-top: 0;
+    z-index: 999999;
     position: fixed;
+    color: var(--tx-pnl);
     min-width: var(--min);
     max-width: var(--max);
-    margin-top: 0;
-    color: var(--tx-pnl);
-    background-color: var(--bg-pnl);
-    border-color: var(--bd-pnl);
     transform: translateY(-50%);
-    z-index: 999999;
+    border-color: var(--bd-pnl);
+    background-color: var(--bg-pnl);
 }
 
 .dlg[open] {
@@ -350,13 +624,14 @@ input[type="checkbox"].swi:disabled {
 }
 
 .prg {
-    display: block;
+    padding: 0;
     width: 100%;
     height: 2rem;
-    padding: 0;
+    display: block;
     overflow: hidden;
-    background-color: var(--bg-sys);
     border-color: var(--bd-sys);
+    background-color: var(--bg-sys);
+
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -367,38 +642,38 @@ input[type="checkbox"].swi:disabled {
 }
 
 .prg::-webkit-progress-value {
-    background-color: var(--bg-prm);
     border-radius: 0;
     box-shadow: none;
+    background-color: var(--bg-prm);
 }
 
 .prg::-moz-progress-bar {
-    background-color: var(--bg-prm);
     border-radius: 0;
     box-shadow: none;
+    background-color: var(--bg-prm);
 }
 
 .cod {
-    display: inline-block;
-    padding: calc(var(--pad) / 2);
     color: var(--tx-cod);
-    background-color: var(--bg-cod);
-    border-color: var(--bd-cod);
+    display: inline-block;
     vertical-align: baseline;
+    border-color: var(--bd-cod);
+    padding: calc(var(--pad) / 2);
+    background-color: var(--bg-cod);
 }
 
 pre .cod {
-    display: block;
     width: 100%;
-    padding: var(--pad);
+    display: block;
     overflow: auto;
+    padding: var(--pad);
 }
 
 @media (prefers-reduced-motion: no-preference) {
     input[type="checkbox"].swi {
         transition:
-            background-color 0.12s ease,
-            background-position 0.12s ease;
+        background-color 0.12s ease,
+        background-position 0.12s ease;
     }
 }
 
@@ -406,69 +681,60 @@ pre .cod {
 
 .prm {
     color: var(--tx-prm);
-    background-color: var(--bg-prm);
     border-color: var(--bd-prm);
+    background-color: var(--bg-prm);
 }
 
 .sec {
     color: var(--tx-sec);
-    background-color: var(--bg-sec);
     border-color: var(--bd-sec);
+    background-color: var(--bg-sec);
 }
 
 .inf {
     color: var(--tx-inf);
-    background-color: var(--bg-inf);
     border-color: var(--bd-inf);
+    background-color: var(--bg-inf);
 }
 
 .scc {
     color: var(--tx-scc);
-    background-color: var(--bg-scc);
     border-color: var(--bd-scc);
+    background-color: var(--bg-scc);
 }
 
 .wrn {
     color: var(--tx-wrn);
-    background-color: var(--bg-wrn);
     border-color: var(--bd-wrn);
+    background-color: var(--bg-wrn);
 }
 
 .dng {
     color: var(--tx-dng);
-    background-color: var(--bg-dng);
     border-color: var(--bd-dng);
+    background-color: var(--bg-dng);
 }
 
 .wht {
     color: var(--tx-wht);
-    background-color: var(--bg-wht);
     border-color: var(--bd-wht);
+    background-color: var(--bg-wht);
 }
 
 .blk {
     color: var(--tx-blk);
-    background-color: var(--bg-blk);
     border-color: var(--bd-blk);
+    background-color: var(--bg-blk);
 }
 
 .sys {
     color: var(--tx-sys);
-    background-color: var(--bg-sys);
     border-color: var(--bd-sys);
+    background-color: var(--bg-sys);
 }
 
 /* Breakpoints */
-
-@media (max-width: 1024px) {
-
-}
-
-@media (max-width: 768px) {
-
-}
-
-@media (max-width: 568px) {
+@media (max-width: 540px) {
     .row > :last-child {
         max-width: 100%;
     }
