@@ -42,31 +42,26 @@ Basic application structure:
             </nav>
         </div>
     </header>
-
     <main class="bdy">
         <div class="wrp row">
             <article class="pnl">
                 <header class="hdr">
                     <h2>Article</h2>
                 </header>
-
                 <section class="bdy">
                     Main content.
                 </section>
             </article>
-
             <aside class="pnl">
                 <header class="hdr">
                     <h2>Aside</h2>
                 </header>
-
                 <section class="bdy">
                     Aside content.
                 </section>
             </aside>
         </div>
     </main>
-
     <footer class="ftr">
         <div class="wrp">
             Footer
