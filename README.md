@@ -4,6 +4,8 @@ KCUI is a minimal and responsive CSS framework by KaisarCode.
 
 The framework is built around a small set of structural classes, semantic color utilities, and native HTML elements. The current build is distributed as a single `kcui.css` file containing variables, base element styles, layout rules, controls, utilities, and responsive behavior.
 
+![Screenshot](screenshot.png)
+
 ## Features
 
 - Minimal CSS structure
@@ -314,4 +316,4 @@ If you'd like to reach out, you can send an email to kaisar@kaisarcode.com. Plea
 
 This project is distributed under the **GNU General Public License version 3 (GPLv3)**.
 
-*2026 KaisarCode*
+*2025 KaisarCode*
