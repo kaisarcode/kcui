@@ -294,7 +294,7 @@ dialog::backdrop {
 
 /* Layout */
 
-.lay {
+.grl {
     height: 100%;
     display: flex;
     overflow: hidden;
@@ -302,12 +302,12 @@ dialog::backdrop {
     width: max(100%, var(--min));
 }
 
-.lay > .hdr,
-.lay > .ftr {
+.grl > .hdr,
+.grl > .ftr {
     flex: 0 0 auto;
 }
 
-.lay > .bdy {
+.grl > .bdy {
     flex: 1 1 auto;
     overflow: auto;
     min-width: 0;

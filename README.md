@@ -93,10 +93,18 @@ without changing the structural rules.
 
 ## Layout
 
-### `.lay`
+### `.grl`
 
-Main layout container. It fills the available height, keeps the header and
+Holy Grail layout container. It fills the available height, keeps the header and
 footer in place, and lets the body use the remaining space with its own scrolling.
+
+```html
+<div class="grl">
+    <header class="hdr">...</header>
+    <section class="bdy">...</section>
+    <footer class="ftr">...</footer>
+</div>
+```
 
 ### `.wrp`
 
