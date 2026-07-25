@@ -43,7 +43,7 @@ Basic application structure:
         </div>
     </header>
     <main class="bdy">
-        <div class="wrp row">
+        <div class="wrp sbl">
             <article class="pnl">
                 <header class="hdr">
                     <h2>Article</h2>
@@ -100,9 +100,9 @@ footer in place, and lets the body use the remaining space with its own scrollin
 
 ```html
 <div class="grl">
-    <header class="hdr">...</header>
-    <section class="bdy">...</section>
-    <footer class="ftr">...</footer>
+    <div>...</div>
+    <div>...</div>
+    <div>...</div>
 </div>
 ```
 
@@ -136,15 +136,15 @@ Reusable page and panel regions.
 
 All three use `--pad` for consistent spacing.
 
-### `.row`
+### `.sbl`
 
 Horizontal layout intended for a main content area and a secondary column.
 
 ```html
-<div class="row">
+<main class="sbl">
     <article>...</article>
     <aside>...</aside>
-</div>
+</main>
 ```
 
 The first child grows as the main region. The last child uses `--col` as its secondary-column width.
@@ -290,9 +290,9 @@ Available utilities:
 
 ## Responsive behavior
 
-The current stylesheet includes a breakpoint at `540px`.
+The current stylesheet includes a minimum breakpoint.
 
-At that width, the secondary child of `.row` can expand to the full available width.
+At that width, the secondary child of `.sbl` can expand to the full available width.
 
 ## Demo
 

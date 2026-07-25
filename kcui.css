@@ -292,7 +292,7 @@ dialog::backdrop {
     background: rgba(0, 0, 0, 0.5);
 }
 
-/* Grail */
+/* Grail layout */
 
 .grl {
     height: 100%;
@@ -314,7 +314,28 @@ dialog::backdrop {
     min-height: 0;
 }
 
-/* Panel */
+/* Sidebar layout */
+
+.sbl {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    gap: var(--pad);
+}
+
+.sbl > :first-child {
+    min-width: min(100%, var(--min));
+    flex: 1 1 var(--min);
+}
+
+.sbl > :last-child {
+    min-width: min(100%, var(--col));
+    max-width: var(--col);
+    flex: 1 1 var(--col);
+}
+
+/* Panels */
 
 .pnl {
     display: flex;
@@ -328,12 +349,10 @@ dialog::backdrop {
 }
 
 .col > .pnl,
-.row > .pnl,
+.sbl > .pnl,
 .bdy > .pnl:last-child {
     margin-bottom: 0;
 }
-
-/* Regions */
 
 .hdr, .bdy, .ftr {
     padding: var(--pad);
@@ -434,27 +453,6 @@ dialog::backdrop {
     width: 100%;
     break-inside: avoid;
     margin-bottom: var(--pad);
-}
-
-/* Horizontal layout */
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    align-items: flex-start;
-    gap: var(--pad);
-}
-
-.row > :first-child {
-    min-width: min(100%, var(--min));
-    flex: 1 1 var(--min);
-}
-
-.row > :last-child {
-    min-width: min(100%, var(--col));
-    max-width: var(--col);
-    flex: 1 1 var(--col);
 }
 
 /* Controls */
@@ -734,7 +732,7 @@ pre .cod {
 
 /* Breakpoints */
 @media (max-width: 540px) {
-    .row > :last-child {
+    .sbl > :last-child {
         max-width: 100%;
     }
 }
