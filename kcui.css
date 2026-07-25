@@ -40,12 +40,22 @@ html, body {
     overflow: auto;
 }
 
+/* Typography */
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+
 /* Panel */
 
 .pnl {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    color: var(--tx-pnl);
     background: var(--bg-pnl);
     border: var(--bdw) solid var(--bd-pnl);
     border-radius: var(--rad);
@@ -53,8 +63,11 @@ html, body {
 
 /* Regions */
 
-.hdr, .ftr {
+.hdr, .bdy, .ftr {
     padding: var(--pad);
+}
+
+.hdr, .ftr {
     white-space: nowrap;
 }
 
@@ -65,7 +78,6 @@ html, body {
 }
 
 .bdy {
-    padding: var(--pad);
     color: var(--tx-bdy);
     background: var(--bg-bdy);
 }
@@ -76,36 +88,30 @@ html, body {
     border-top: var(--bdw) solid var(--bd-ftr);
 }
 
-.hdr > .wrp,
-.ftr > .wrp,
-.pnl > .hdr,
-.pnl > .ftr {
+.hdr h1, .hdr h2, .hdr h3, .hdr h4, .hdr h5, .hdr h6, .ftr h1, .ftr h2, .ftr h3, .ftr h4, .ftr h5, .ftr h6 {
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.hdr > .wrp, .ftr > .wrp, .pnl > .hdr, .pnl > .ftr {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
     align-items: center;
     gap: var(--pad);
 }
 
-.hdr > .wrp > *,
-.ftr > .wrp > *,
-.pnl > .hdr > *,
-.pnl > .ftr > * {
+.hdr > .wrp > *, .ftr > .wrp > *, .pnl > .hdr > *, .pnl > .ftr > * {
     min-width: 0;
     margin-bottom: 0;
     justify-self: center;
 }
 
-.hdr > .wrp > :last-child,
-.ftr > .wrp > :last-child,
-.pnl > .hdr > :last-child,
-.pnl > .ftr > :last-child {
+.hdr > .wrp > :last-child, .ftr > .wrp > :last-child, .pnl > .hdr > :last-child, .pnl > .ftr > :last-child {
     justify-self: end;
 }
 
-.hdr > .wrp > :first-child,
-.ftr > .wrp > :first-child,
-.pnl > .hdr > :first-child,
-.pnl > .ftr > :first-child {
+.hdr > .wrp > :first-child, .ftr > .wrp > :first-child, .pnl > .hdr > :first-child, .pnl > .ftr > :first-child {
     justify-self: start;
 }
 
@@ -163,6 +169,262 @@ html, body {
     min-width: min(100%, var(--col));
     max-width: var(--col);
     flex: 1 1 var(--col);
+}
+
+/* Controls */
+
+.btn, .ipt, .lbl, .dlg, .prg, .cod {
+    border-width: var(--bdw);
+    border-style: solid;
+    border-radius: var(--rad);
+}
+
+.btn {
+    display: inline-block;
+    padding: var(--pad);
+    color: var(--tx-sys);
+    background-color: var(--bg-sys);
+    border-color: var(--bd-sys);
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.ipt {
+    display: inline-block;
+    width: 100%;
+    padding: var(--pad);
+    color: var(--tx-sys);
+    background-color: var(--bg-sys);
+    border-color: var(--bd-sys);
+    font: inherit;
+    appearance: none;
+    outline: none;
+}
+
+.lbl {
+    display: block;
+    padding: var(--pad);
+    color: var(--tx-hdr);
+    background-color: var(--bg-hdr);
+    border-color: var(--bd-hdr);
+}
+
+.lbl:has(+ .ipt) {
+    margin-bottom: 0;
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.lbl + .ipt {
+    margin-bottom: var(--pad);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.lbl + .ipt:last-child {
+    margin-bottom: 0;
+}
+
+/* Switch checkbox */
+
+label:has(> input[type="checkbox"].swi) {
+    display: flex;
+    align-items: center;
+    gap: var(--pad);
+    padding: var(--pad);
+    margin-bottom: var(--pad);
+    color: var(--tx-hdr);
+    background-color: var(--bg-hdr);
+    border: var(--bdw) solid var(--bd-hdr);
+    border-radius: var(--rad);
+    cursor: pointer;
+}
+
+label:has(> input[type="checkbox"].swi):last-child {
+    margin-bottom: 0;
+}
+
+label > input[type="checkbox"].swi {
+    flex: 0 0 auto;
+    margin-left: auto;
+}
+
+label:has(> input[type="checkbox"].swi:disabled) {
+    cursor: default;
+    opacity: 0.5;
+}
+
+input[type="checkbox"].swi {
+    --swi-thumb: 14px;
+    --swi-inset: 3px;
+
+    width: 36px;
+    height: 20px;
+    min-height: 20px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    background-color: var(--bd-sys);
+    background-clip: border-box;
+    background-image: radial-gradient(circle, var(--tx-sys) 0 0.45rem, transparent 0.48rem);
+    background-repeat: no-repeat;
+    background-size: var(--swi-thumb) var(--swi-thumb);
+    background-position: left var(--swi-inset) center;
+    box-shadow: none;
+    vertical-align: middle;
+    cursor: pointer;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type="checkbox"].swi:checked {
+    background-color: var(--bg-prm);
+    background-position: right var(--swi-inset) center;
+}
+
+input[type="checkbox"].swi:focus-visible {
+    outline: var(--bdw) solid var(--bg-prm);
+    outline-offset: 2px;
+}
+
+input[type="checkbox"].swi:disabled {
+    cursor: default;
+    opacity: 0.5;
+}
+
+.dlg {
+    top: 50%;
+    display: none;
+    position: fixed;
+    min-width: var(--min);
+    max-width: var(--max);
+    padding: var(--pad);
+    margin-top: 0;
+    color: var(--tx-pnl);
+    background-color: var(--bg-pnl);
+    border-color: var(--bd-pnl);
+    transform: translateY(-50%);
+    z-index: 999999;
+}
+
+.dlg[open] {
+    display: block;
+}
+
+.prg {
+    display: block;
+    width: 100%;
+    height: 2rem;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--bg-sys);
+    border-color: var(--bd-sys);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.prg::-webkit-progress-bar {
+    background-color: var(--bg-sys);
+}
+
+.prg::-webkit-progress-value {
+    background-color: var(--bg-prm);
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.prg::-moz-progress-bar {
+    background-color: var(--bg-prm);
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.cod {
+    display: inline-block;
+    padding: calc(var(--pad) / 2);
+    color: var(--tx-cod);
+    background-color: var(--bg-cod);
+    border-color: var(--bd-cod);
+    vertical-align: baseline;
+}
+
+pre .cod {
+    display: block;
+    width: 100%;
+    padding: var(--pad);
+    overflow: auto;
+}
+
+/* Color utilities */
+
+.prm {
+    color: var(--tx-prm);
+    background-color: var(--bg-prm);
+    border-color: var(--bd-prm);
+}
+
+.sec {
+    color: var(--tx-sec);
+    background-color: var(--bg-sec);
+    border-color: var(--bd-sec);
+}
+
+.inf {
+    color: var(--tx-inf);
+    background-color: var(--bg-inf);
+    border-color: var(--bd-inf);
+}
+
+.scc {
+    color: var(--tx-scc);
+    background-color: var(--bg-scc);
+    border-color: var(--bd-scc);
+}
+
+.wrn {
+    color: var(--tx-wrn);
+    background-color: var(--bg-wrn);
+    border-color: var(--bd-wrn);
+}
+
+.dng {
+    color: var(--tx-dng);
+    background-color: var(--bg-dng);
+    border-color: var(--bd-dng);
+}
+
+.wht {
+    color: var(--tx-wht);
+    background-color: var(--bg-wht);
+    border-color: var(--bd-wht);
+}
+
+.blk {
+    color: var(--tx-blk);
+    background-color: var(--bg-blk);
+    border-color: var(--bd-blk);
+}
+
+.sys {
+    color: var(--tx-sys);
+    background-color: var(--bg-sys);
+    border-color: var(--bd-sys);
+}
+
+/* Animations */
+
+@media (prefers-reduced-motion: no-preference) {
+    input[type="checkbox"].swi {
+        transition:
+            background-color 0.12s ease,
+            background-position 0.12s ease;
+    }
 }
 
 /* Breakpoints */

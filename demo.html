@@ -39,6 +39,59 @@
                                 inside the main region while the page header and
                                 footer remain visible.
                             </p>
+
+                            <form method="post">
+                                <fieldset class="pnl">
+                                    <legend>Form</legend>
+
+                                    <section class="bdy">
+                                        <label class="lbl" for="demo-text">Input text</label>
+                                        <input class="ipt" id="demo-text" type="text" value="Initial value" autocomplete="off">
+
+                                        <label class="lbl" for="demo-select">Select</label>
+                                        <select class="ipt" id="demo-select">
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                        </select>
+
+                                        <label class="lbl" for="demo-textarea">Text area</label>
+                                        <textarea class="ipt" id="demo-textarea">Editable text</textarea>
+
+                                        <label>
+                                            <span>I accept the terms</span>
+                                            <input class="swi" type="checkbox" checked>
+                                        </label>
+
+                                        <label class="lbl" for="browser">Choose a browser:</label>
+                                        <input class="ipt" list="browsers" id="browser" name="browser" placeholder="Start typing...">
+                                        <datalist id="browsers">
+                                            <option value="Firefox">
+                                            <option value="Brave">
+                                            <option value="Chrome">
+                                            <option value="Edge">
+                                            <option value="Safari">
+                                        </datalist>
+
+                                        <label class="lbl" for="demo-progress">Progress</label>
+                                        <progress class="prg" id="demo-progress" value="65" max="100">65%</progress>
+
+                                        <p>
+                                            Inline code: <code class="cod">const kcui = true;</code>
+                                        </p>
+
+                                        <pre><code class="cod">.swi {
+    appearance: none;
+}</code></pre>
+
+                                        <button class="btn" id="open-dialog" type="button">Open dialog</button>
+                                    </section>
+
+                                    <footer class="ftr">
+                                        <a class="btn" href="#">Cancel</a>
+                                        <button class="btn prm" type="submit">Submit</button>
+                                    </footer>
+                                </fieldset>
+                            </form>
                         </section>
                     </article>
 
@@ -67,8 +120,18 @@
             </footer>
         </div>
 
-        <dialog class="dlg">
-            Modal content.
+        <dialog class="dlg" id="demo-dialog">
+            <p>Modal content.</p>
+            <button class="btn" id="close-dialog" type="button">Close</button>
         </dialog>
+
+        <script>
+            const dialog = document.querySelector("#demo-dialog");
+            const openDialog = document.querySelector("#open-dialog");
+            const closeDialog = document.querySelector("#close-dialog");
+
+            openDialog.addEventListener("click", () => dialog.showModal());
+            closeDialog.addEventListener("click", () => dialog.close());
+        </script>
     </body>
 </html>
