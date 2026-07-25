@@ -133,15 +133,35 @@ html, body {
 
 .row {
     display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
     align-items: flex-start;
     gap: var(--pad);
 }
 
-.row > * {
-    min-width: 0;
-    flex: 0 0 var(--col);
+.row > :first-child {
+    min-width: min(100%, var(--min));
+    flex: 1 1 var(--min);
 }
 
-.row > :nth-child(2) {
-    flex: 1 1 auto;
+.row > :last-child {
+    min-width: min(100%, var(--col));
+    max-width: var(--col);
+    flex: 1 1 var(--col);
+}
+
+/* Breakpoints */
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 568px) {
+    .row > :last-child {
+        max-width: 100%;
+    }
 }
