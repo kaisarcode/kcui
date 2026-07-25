@@ -9,3 +9,48 @@
  */
 @import url("vars.css");
 @import url("reset.css");
+
+.wrp {
+
+}
+
+.col {
+
+}
+
+.row {
+
+}
+
+.pnl {
+    display: block;
+    overflow: hidden;
+    background: var(--bg-pnl);
+    border-radius: var(--rad);
+    border: var(--bdw) solid var(--bd-pnl);
+}
+
+.hdr,.bdy,.ftr {
+    display: flex;
+    gap: var(--pad);
+    padding: var(--pad);
+    align-items: center;
+    white-space: nowrap;
+}
+
+.hdr {
+    color: var(--tx-hdr);
+    background: var(--bg-hdr);
+    border-bottom: var(--bdw) solid var(--bd-pnl);
+}
+
+.bdy {
+    color: var(--tx-bdy);
+    background: var(--bg-bdy);
+}
+
+.ftr {
+    color: var(--tx-ftr);
+    background: var(--bg-ftr);
+    border-top: var(--bdw) solid var(--bd-pnl);
+}

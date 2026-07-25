@@ -10,7 +10,8 @@
 
 :root {
     --fsz: 13px;
-    --pad: 1.5rem;
+    --pad: 1rem;
+    --bdw: 1px;
     --rad: 0.5rem;
     --min: 360px;
     --max: none;
