@@ -86,15 +86,17 @@ KCUI uses CSS custom properties as its theme layer.
 }
 ```
 
-The default theme also defines text, background, and border colors for system, code, header, body, footer, panel, primary, secondary, info, success, warning, danger, white, and black.
-
-A new theme can be created by overriding these variables without changing the structural rules.
+The default theme also defines text, background, and border colors for system,
+code, header, body, footer, panel, primary, secondary, info, success, warning,
+danger, white, and black. A new theme can be created by overriding these variables
+without changing the structural rules.
 
 ## Layout
 
-### `.app`
+### `.lay`
 
-Main application container. It fills the viewport and keeps the page header and footer visible while the central body scrolls.
+Main layout container. It fills the available height, keeps the header and
+footer in place, and lets the body use the remaining space with its own scrolling.
 
 ### `.wrp`
 
@@ -299,9 +301,15 @@ At that width, the secondary child of `.row` can expand to the full available wi
 
 ## Beta Notice
 
-This is a beta project tested only on Debian x86_64. It was created out of a personal need for these libraries, but no guarantees are provided regarding its stability or future support. You are free to test it, use it, and modify it as you please.
+This is a beta project tested only on Debian x86_64. It was created out
+of a personal need for these libraries, but no guarantees are provided
+regarding its stability or future support. You are free to test it, use
+it, and modify it as you please.
 
-If you'd like to reach out, you can send an email to kaisar@kaisarcode.com. Please note that I do not accept pull requests; the goal is to avoid long-term dependency on platforms like GitHub, and I do not maintain fixed infrastructure to guarantee long-term stability for these projects.
+If you'd like to reach out, you can send an email to kaisar@kaisarcode.com.
+Please note that I do not accept pull requests; the goal is to avoid
+long-term dependency on platforms like GitHub, and I do not maintain fixed
+infrastructure to guarantee long-term stability for these projects.
 
 ---
 
