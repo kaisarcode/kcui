@@ -292,7 +292,7 @@ dialog::backdrop {
     background: rgba(0, 0, 0, 0.5);
 }
 
-/* Layout */
+/* Grail */
 
 .grl {
     height: 100%;
@@ -302,12 +302,12 @@ dialog::backdrop {
     width: max(100%, var(--min));
 }
 
-.grl > .hdr,
-.grl > .ftr {
+.grl > :first-child,
+.grl > :last-child {
     flex: 0 0 auto;
 }
 
-.grl > .bdy {
+.grl > :nth-child(2) {
     flex: 1 1 auto;
     overflow: auto;
     min-width: 0;
