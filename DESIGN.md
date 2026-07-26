@@ -17,13 +17,15 @@ It provides a small set of primitives for:
 
 KCUI is intentionally not a complete visual design system.
 
-Its job is to establish a predictable, accessible base that remains easy to inspect and that can be customized by themes and project-specific styles.
+Its job is to establish a predictable, accessible base that remains easy
+to inspect and that can be customized by themes and project-specific styles.
 
 ## Design Principle
 
 The framework should describe structure without describing the application.
 
-A public website and an admin interface should be able to use the same KCUI primitives while differing only in HTML composition and custom styling.
+A public website and an admin interface should be able to use the same KCUI
+primitives while differing only in HTML composition and custom styling.
 
 The framework must not need to know whether an element is:
 
@@ -37,6 +39,40 @@ The framework must not need to know whether an element is:
 
 Those meanings belong to the document and the consuming project.
 
+
+## Canonical HTML First
+
+When HTML already provides the canonical element for a basic interface role,
+KCUI should style that element directly.
+
+A `button` should look like a KCUI button without requiring `.btn`. Normal
+text inputs, `select`, and `textarea` should look correct without requiring
+`.ipt`. `dialog`, `progress`, and `code` should receive their core treatment directly.
+
+Classes such as `.btn`, `.ipt`, `.dlg`, `.prg`, and `.cod` remain useful
+as reusable visual aliases, but they are not requirements for canonical elements.
+
+KCUI should not add a class merely to restate what the HTML element already means.
+
+## Composition Before Specialization
+
+Before adding a new component class, prefer composing existing structural primitives.
+
+For example, a labeled form field can be expressed as:
+
+```html
+<div class="pnl">
+    <label class="hdr" for="name">Name</label>
+    <input class="bdy" id="name" type="text">
+</div>
+```
+
+This reuses `.pnl`, `.hdr`, and `.bdy` instead of introducing a dedicated
+label/input pairing abstraction.
+
+The same principle applies to optional components. A switch can use `.hdr`
+for left/right distribution while its extra stylesheet only defines the switch appearance.
+
 ## Operating Model
 
 KCUI is used as a base stylesheet.
@@ -45,13 +81,16 @@ The normal layering model is:
 
 1. semantic HTML;
 2. `kcui.css`;
-3. optional theme CSS;
-4. optional project-specific CSS;
-5. optional project JavaScript.
+3. optional component CSS under `extra/`;
+4. optional theme CSS;
+5. optional project-specific CSS;
+6. optional project JavaScript.
 
 The lower layers must remain useful without the higher layers.
 
 Removing a theme should not destroy document structure.
+
+Removing optional components should leave their canonical HTML controls usable.
 
 Removing JavaScript should not make core content inaccessible.
 
@@ -75,7 +114,8 @@ This permits the same structure to support conventional pages and administrative
 
 It is optional.
 
-A header or footer may contain a `.wrp` when constrained content width is desired, or omit it when full-width content is desired.
+A header or footer may contain a `.wrp` when constrained content width is
+desired, or omit it when full-width content is desired.
 
 No other component should require `.wrp` to function correctly.
 
@@ -85,9 +125,11 @@ No other component should require `.wrp` to function correctly.
 
 Its direct children share available width and may be constrained with `.colN`.
 
-The default responsive behavior allows the row to collapse into full-width children under the base breakpoint.
+The default responsive behavior allows the row to collapse into
+full-width children under the base breakpoint.
 
-This makes narrow-screen behavior predictable without requiring application-specific logic.
+This makes narrow-screen behavior predictable without requiring
+application-specific logic.
 
 A consuming theme may override that behavior.
 
@@ -122,7 +164,8 @@ Its defining behavior is:
 
 Column utilities do not change grid spans.
 
-This separation keeps the grid predictable and prevents proportional width utilities from interfering with automatic track sizing.
+This separation keeps the grid predictable and prevents proportional width
+utilities from interfering with automatic track sizing.
 
 ## Masonry Columns
 
@@ -150,9 +193,14 @@ Alignment rules are:
 
 With a single child, that child occupies the only full-width track.
 
-This behavior must work whether the region contains its children directly or contains one `.wrp` whose own children are distributed the same way.
+This behavior must work whether the region contains its children directly
+or contains one `.wrp` whose own children are distributed the same way.
 
 There is no core responsive collapse behavior for `.hdr` or `.ftr`.
+
+Inside a `.pnl`, header and footer borders act as separators between regions.
+If a header or footer is the only child of the panel, no internal separator
+is needed because the panel already provides the outer border.
 
 ## Panels and Body Regions
 
@@ -162,7 +210,46 @@ There is no core responsive collapse behavior for `.hdr` or `.ftr`.
 
 These classes may be used at page level or inside panels.
 
-They should remain visually conservative enough that themes can redefine their appearance without fighting structural assumptions.
+They should remain visually conservative enough that themes can redefine
+their appearance without fighting structural assumptions.
+
+A control used as a direct `.bdy` region inside `.pnl` yields its own border
+to the panel so the composition does not produce a doubled border.
+
+
+## Core Controls
+
+KCUI styles common canonical controls directly.
+
+The core control model includes:
+
+- buttons;
+- normal text-like inputs;
+- `select`;
+- `textarea`;
+- checkbox;
+- radio;
+- `dialog`;
+- `progress`;
+- `code` and related inline code elements.
+
+Visual alias classes remain available where reuse is useful.
+
+Specialized controls such as file, range, color, and date/time inputs are
+outside the core control model. They may remain native or be handled by
+a theme, project stylesheet, or optional component.
+
+## Extra Components
+
+`extra/` contains optional components that build on the core without
+expanding its structural contract.
+
+An extra component may define richer appearance or interaction for an existing
+canonical control. For example, a switch may restyle a native checkbox or
+radio while relying on `.hdr` for layout.
+
+Extra components should not duplicate structural behavior already provided by KCUI.
+The absence of an extra component must not make the underlying HTML inaccessible or meaningless.
 
 ## Accessibility Model
 
@@ -202,7 +289,8 @@ They may redefine:
 - control appearance;
 - navigation presentation.
 
-Themes may also implement higher-level layout behavior when the behavior is specific to a product or visual system.
+Themes may also implement higher-level layout behavior when the behavior
+is specific to a product or visual system.
 
 Examples include:
 
@@ -211,7 +299,8 @@ Examples include:
 - sticky admin regions;
 - overlay drawers;
 - animated navigation;
-- application-specific responsive transitions.
+- application-specific responsive transitions;
+- specialized form controls.
 
 These are not core KCUI concerns.
 
@@ -221,7 +310,8 @@ Project styles own local behavior and exceptions.
 
 If only one application needs a rule, that rule normally belongs in that application.
 
-KCUI should not accumulate special cases merely because multiple HTML structures can be imagined.
+KCUI should not accumulate special cases merely because multiple HTML
+structures can be imagined.
 
 ## JavaScript Boundary
 
@@ -256,7 +346,8 @@ More specialized responsive behavior belongs to themes or project CSS.
 
 ## Inspectability
 
-KCUI should remain small enough that one person can read the stylesheet and understand how a document is laid out.
+KCUI should remain small enough that one person can read the stylesheet
+and understand how a document is laid out.
 
 The path from HTML to layout should remain direct.
 
@@ -286,7 +377,8 @@ KCUI is not intended to provide:
 - a build pipeline;
 - runtime theming infrastructure;
 - application state management;
-- framework-specific adapters.
+- framework-specific adapters;
+- styling for every specialized HTML control.
 
 These omissions are intentional.
 
@@ -299,26 +391,31 @@ A proposed core change should answer:
 1. What structural problem exists in KCUI itself?
 2. Is the problem shared by ordinary documents rather than one application?
 3. Can HTML composition solve it without new CSS?
-4. Does the behavior belong in a theme or project stylesheet?
-5. Does the change preserve semantic HTML?
-6. Does it preserve usable behavior without JavaScript?
-7. Does it keep layout roles agnostic?
-8. Does it simplify or complicate the existing mental model?
-9. Does every KCUI user reasonably benefit from inheriting it?
-10. Can one person still audit the resulting stylesheet easily?
+4. Does an existing canonical HTML element already express the role?
+5. Can existing KCUI primitives compose the required structure?
+6. Does the behavior belong in `extra/`, a theme, or project stylesheet?
+7. Does the change preserve semantic HTML?
+8. Does it preserve usable behavior without JavaScript?
+9. Does it keep layout roles agnostic?
+10. Does it simplify or complicate the existing mental model?
+11. Does every KCUI user reasonably benefit from inheriting it?
+12. Can one person still audit the resulting stylesheet easily?
 
-Changes justified mainly by enterprise completeness, framework parity, application-specific UX, or hypothetical future requirements should be rejected.
+Changes justified mainly by enterprise completeness, framework parity,
+application-specific UX, or hypothetical future requirements should be rejected.
 
 ## Core Invariants
 
 The following properties define KCUI:
 
 - structural rather than thematic;
+- canonical HTML first;
+- composition before specialization;
 - semantic HTML first;
 - accessible fallback behavior;
 - no required JavaScript;
 - agnostic layout utilities;
-- optional themes and project overrides;
+- optional extra components, themes, and project overrides;
 - predictable responsive defaults;
 - automatic grid and masonry behavior;
 - proportional row columns;

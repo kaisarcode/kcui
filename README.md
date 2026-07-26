@@ -10,7 +10,9 @@ Minimal and responsive CSS framework distributed as a single `kcui.css` file.
 - Flexible rows and 12-column width utilities
 - Automatic grid and masonry layouts
 - Panels and reusable header/body/footer regions
-- Form controls, switch, dialog, progress, and code styles
+- Styled native controls with reusable visual aliases
+- Dialog, progress, and code styles
+- Optional components under `extra/`
 - Semantic color utilities
 - CSS custom properties for theming
 
@@ -60,13 +62,15 @@ Minimal and responsive CSS framework distributed as a single `kcui.css` file.
 }
 ```
 
-Theme colors are also exposed as CSS custom properties, so the appearance can be changed without modifying the structural rules.
+Theme colors are also exposed as CSS custom properties, so the appearance
+can be changed without modifying the structural rules.
 
 ## Layout
 
 ### `.grl`
 
-Three-part page layout. The first and last direct children stay in place while the middle child fills the remaining height and scrolls.
+Three-part page layout. The first and last direct children stay in place
+while the middle child fills the remaining height and scrolls.
 
 ```html
 <div class="grl">
@@ -78,7 +82,8 @@ Three-part page layout. The first and last direct children stay in place while t
 
 ### `.row`
 
-Flexible horizontal layout. Direct children share the available space and wrap when needed.
+Flexible horizontal layout. Direct children share the available space
+and wrap when needed.
 
 ```html
 <div class="row">
@@ -100,7 +105,8 @@ Width utilities based on twelve proportional steps.
 </div>
 ```
 
-`.col` is equivalent to `.col1`. The utilities are layout-agnostic and can be used with any element.
+`.col` is equivalent to `.col1`. The utilities are layout-agnostic
+and can be used with any element.
 
 ### `.wrp`
 
@@ -112,7 +118,8 @@ Centers content and limits its width to `--max`.
 
 ### `.grd`
 
-Automatic equal-width grid. The browser creates as many columns as fit, using `--col` as the minimum track width.
+Automatic equal-width grid. The browser creates as many columns as fit,
+using `--col` as the minimum track width.
 
 ```html
 <section class="grd">
@@ -124,7 +131,8 @@ Automatic equal-width grid. The browser creates as many columns as fit, using `-
 
 ### `.mry`
 
-Automatic multi-column layout using `--col` as the base column width. Content flows vertically through the columns.
+Automatic multi-column layout using `--col` as the base column width.
+Content flows vertically through the columns.
 
 ```html
 <section class="mry">
@@ -136,7 +144,8 @@ Automatic multi-column layout using `--col` as the base column width. Content fl
 
 ## Regions and panels
 
-`.hdr`, `.bdy`, and `.ftr` provide reusable regions with consistent spacing and theme colors.
+`.hdr`, `.bdy`, and `.ftr` provide reusable regions with consistent
+spacing and theme colors.
 
 ```html
 <section class="pnl">
@@ -158,28 +167,59 @@ A fieldset can also use panel styling:
 
 ## Controls
 
+Canonical HTML controls are styled directly. Classes such as `.btn`, `.ipt`,
+`.dlg`, `.prg`, and `.cod` remain available when the same visual treatment
+needs to be reused on another element.
+
 ```html
-<button class="btn">Button</button>
+<button>Button</button>
+<a class="btn" href="#">Button link</a>
 
-<label class="lbl" for="name">Name</label>
-<input class="ipt" id="name" type="text">
+<input type="text" placeholder="Text input">
 
-<select class="ipt">
+<select>
     <option>Option</option>
 </select>
 
-<textarea class="ipt"></textarea>
+<textarea>Text area</textarea>
 
-<label>
-    <span>Enabled</span>
-    <input class="swi" type="checkbox">
-</label>
+<dialog>Modal content.</dialog>
 
-<dialog class="dlg">Modal content.</dialog>
+<progress value="65" max="100">65%</progress>
 
-<progress class="prg" value="65" max="100">65%</progress>
+<code>const kcui = true;</code>
+```
 
-<code class="cod">const kcui = true;</code>
+Checkboxes and radio buttons have their own base treatment. Specialized
+controls such as file, range, color, and date/time inputs are outside the
+core control model and may remain native or be handled by a theme or optional component.
+
+### Form composition
+
+Existing regions can compose a labeled field without a dedicated label component:
+
+```html
+<div class="pnl">
+    <label class="hdr" for="name">Name</label>
+    <input class="bdy" id="name" type="text">
+</div>
+```
+
+### Extra components
+
+Optional components live under `extra/` and are not part of the structural
+core. For example, the switch component extends a native checkbox
+or radio while reusing KCUI layout primitives:
+
+```html
+<link rel="stylesheet" href="extra/kcui-switch.css">
+
+<div class="pnl">
+    <label class="hdr">
+        <span>Enabled</span>
+        <input class="swi" type="checkbox">
+    </label>
+</div>
 ```
 
 ## Color utilities
@@ -200,13 +240,20 @@ Semantic color classes apply text, border, and background colors:
 
 ## Demo
 
-`demo.html` contains examples of the current layout, panels, controls, grid, masonry, switch, and dialog.
+`demo.html` contains examples of the current layout, panels, native
+controls, grid, masonry, optional switch, and dialog.
 
 ## Beta Notice
 
-This is a beta project tested only on Debian x86_64. It was created out of a personal need for these libraries, but no guarantees are provided regarding its stability or future support. You are free to test it, use it, and modify it as you please.
+This is a beta project tested only on Debian x86_64. It was created out
+of a personal need for these libraries, but no guarantees are provided
+egarding its stability or future support. You are free to test it, use it,
+and modify it as you please.
 
-If you'd like to reach out, you can send an email to kaisar@kaisarcode.com. Please note that I do not accept pull requests; the goal is to avoid long-term dependency on platforms like GitHub, and I do not maintain fixed infrastructure to guarantee long-term stability for these projects.
+If you'd like to reach out, you can send an email to kaisar@kaisarcode.com.
+Please note that I do not accept pull requests; the goal is to avoid
+long-term dependency on platforms like GitHub, and I do not maintain fixed
+infrastructure to guarantee long-term stability for these projects.
 
 ## License
 
