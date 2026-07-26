@@ -1,0 +1,72 @@
+/**
+ * KCUI - Noir Theme
+ * Summary: Dark neutral color theme.
+ *
+ * Author: KaisarCode
+ * Website: https://kaisarcode.com
+ * License: GNU General Public License v3.0
+ * License URL: https://www.gnu.org/licenses/gpl-3.0.txt
+ */
+
+:root {
+    --bg: #111111;
+    --bd: #3a3a3a;
+    --tx: #c8c8c8;
+    --tx-lnk: #ffffff;
+
+    --bg-sys: #181818;
+    --bd-sys: #4a4a4a;
+    --tx-sys: #d0d0d0;
+
+    --bg-cod: #0c0c0c;
+    --bd-cod: #333333;
+    --tx-cod: #d8d8d8;
+
+    --bg-hdr: #0d0d0d;
+    --bd-hdr: #333333;
+    --tx-hdr: #d8d8d8;
+
+    --bg-bdy: #111111;
+    --bd-bdy: #3a3a3a;
+    --tx-bdy: #c8c8c8;
+
+    --bg-ftr: #0d0d0d;
+    --bd-ftr: #333333;
+    --tx-ftr: #bdbdbd;
+
+    --bg-pnl: #151515;
+    --bd-pnl: #3a3a3a;
+    --tx-pnl: #c8c8c8;
+
+    --bg-prm: #666666;
+    --bd-prm: #666666;
+    --tx-prm: #ffffff;
+
+    --bg-sec: #777777;
+    --bd-sec: #777777;
+    --tx-sec: #ffffff;
+
+    --bg-inf: #5f7f8f;
+    --bd-inf: #5f7f8f;
+    --tx-inf: #ffffff;
+
+    --bg-scc: #5f7f68;
+    --bd-scc: #5f7f68;
+    --tx-scc: #ffffff;
+
+    --bg-wrn: #8f7b4f;
+    --bd-wrn: #8f7b4f;
+    --tx-wrn: #ffffff;
+
+    --bg-dng: #8f5454;
+    --bd-dng: #8f5454;
+    --tx-dng: #ffffff;
+
+    --bg-wht: #ffffff;
+    --bd-wht: #ffffff;
+    --tx-wht: #444444;
+
+    --bg-blk: #000000;
+    --bd-blk: #000000;
+    --tx-blk: #ffffff;
+}

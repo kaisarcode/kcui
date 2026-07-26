@@ -1,0 +1,72 @@
+/**
+ * KCUI - Monokai Theme
+ * Summary: Dark color theme inspired by the Monokai palette.
+ *
+ * Author: KaisarCode
+ * Website: https://kaisarcode.com
+ * License: GNU General Public License v3.0
+ * License URL: https://www.gnu.org/licenses/gpl-3.0.txt
+ */
+
+:root {
+    --bg: #272822;
+    --bd: #49483e;
+    --tx: #f8f8f2;
+    --tx-lnk: #66d9ef;
+
+    --bg-sys: #3e3d32;
+    --bd-sys: #5a594d;
+    --tx-sys: #f8f8f2;
+
+    --bg-cod: #1e1f1c;
+    --bd-cod: #49483e;
+    --tx-cod: #a6e22e;
+
+    --bg-hdr: #20211d;
+    --bd-hdr: #49483e;
+    --tx-hdr: #f8f8f2;
+
+    --bg-bdy: #272822;
+    --bd-bdy: #49483e;
+    --tx-bdy: #f8f8f2;
+
+    --bg-ftr: #20211d;
+    --bd-ftr: #49483e;
+    --tx-ftr: #d6d6cf;
+
+    --bg-pnl: #2d2e28;
+    --bd-pnl: #49483e;
+    --tx-pnl: #f8f8f2;
+
+    --bg-prm: #75715e;
+    --bd-prm: #75715e;
+    --tx-prm: #ffffff;
+
+    --bg-sec: #ae81ff;
+    --bd-sec: #ae81ff;
+    --tx-sec: #272822;
+
+    --bg-inf: #66d9ef;
+    --bd-inf: #66d9ef;
+    --tx-inf: #272822;
+
+    --bg-scc: #a6e22e;
+    --bd-scc: #a6e22e;
+    --tx-scc: #272822;
+
+    --bg-wrn: #e6db74;
+    --bd-wrn: #e6db74;
+    --tx-wrn: #272822;
+
+    --bg-dng: #f92672;
+    --bd-dng: #f92672;
+    --tx-dng: #272822;
+
+    --bg-wht: #f8f8f2;
+    --bd-wht: #f8f8f2;
+    --tx-wht: #272822;
+
+    --bg-blk: #1b1c18;
+    --bd-blk: #1b1c18;
+    --tx-blk: #f8f8f2;
+}

@@ -1,0 +1,72 @@
+/**
+ * KCUI - Gruvbox Theme
+ * Summary: Dark color theme inspired by the Gruvbox palette.
+ *
+ * Author: KaisarCode
+ * Website: https://kaisarcode.com
+ * License: GNU General Public License v3.0
+ * License URL: https://www.gnu.org/licenses/gpl-3.0.txt
+ */
+
+:root {
+    --bg: #282828;
+    --bd: #504945;
+    --tx: #ebdbb2;
+    --tx-lnk: #83a598;
+
+    --bg-sys: #3c3836;
+    --bd-sys: #665c54;
+    --tx-sys: #fbf1c7;
+
+    --bg-cod: #1d2021;
+    --bd-cod: #504945;
+    --tx-cod: #b8bb26;
+
+    --bg-hdr: #1d2021;
+    --bd-hdr: #504945;
+    --tx-hdr: #fbf1c7;
+
+    --bg-bdy: #282828;
+    --bd-bdy: #504945;
+    --tx-bdy: #ebdbb2;
+
+    --bg-ftr: #1d2021;
+    --bd-ftr: #504945;
+    --tx-ftr: #d5c4a1;
+
+    --bg-pnl: #32302f;
+    --bd-pnl: #504945;
+    --tx-pnl: #ebdbb2;
+
+    --bg-prm: #458588;
+    --bd-prm: #458588;
+    --tx-prm: #fbf1c7;
+
+    --bg-sec: #b16286;
+    --bd-sec: #b16286;
+    --tx-sec: #fbf1c7;
+
+    --bg-inf: #458588;
+    --bd-inf: #458588;
+    --tx-inf: #fbf1c7;
+
+    --bg-scc: #689d6a;
+    --bd-scc: #689d6a;
+    --tx-scc: #fbf1c7;
+
+    --bg-wrn: #d79921;
+    --bd-wrn: #d79921;
+    --tx-wrn: #282828;
+
+    --bg-dng: #cc241d;
+    --bd-dng: #cc241d;
+    --tx-dng: #fbf1c7;
+
+    --bg-wht: #fbf1c7;
+    --bd-wht: #fbf1c7;
+    --tx-wht: #282828;
+
+    --bg-blk: #1d2021;
+    --bd-blk: #1d2021;
+    --tx-blk: #fbf1c7;
+}

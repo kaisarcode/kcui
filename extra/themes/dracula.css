@@ -1,0 +1,72 @@
+/**
+ * KCUI - Dracula Theme
+ * Summary: Dark color theme inspired by the Dracula palette.
+ *
+ * Author: KaisarCode
+ * Website: https://kaisarcode.com
+ * License: GNU General Public License v3.0
+ * License URL: https://www.gnu.org/licenses/gpl-3.0.txt
+ */
+
+:root {
+    --bg: #282a36;
+    --bd: #44475a;
+    --tx: #f8f8f2;
+    --tx-lnk: #8be9fd;
+
+    --bg-sys: #30323f;
+    --bd-sys: #6272a4;
+    --tx-sys: #f8f8f2;
+
+    --bg-cod: #21222c;
+    --bd-cod: #44475a;
+    --tx-cod: #f1fa8c;
+
+    --bg-hdr: #21222c;
+    --bd-hdr: #44475a;
+    --tx-hdr: #f8f8f2;
+
+    --bg-bdy: #282a36;
+    --bd-bdy: #44475a;
+    --tx-bdy: #f8f8f2;
+
+    --bg-ftr: #21222c;
+    --bd-ftr: #44475a;
+    --tx-ftr: #f8f8f2;
+
+    --bg-pnl: #282a36;
+    --bd-pnl: #44475a;
+    --tx-pnl: #f8f8f2;
+
+    --bg-prm: #bd93f9;
+    --bd-prm: #bd93f9;
+    --tx-prm: #282a36;
+
+    --bg-sec: #ff79c6;
+    --bd-sec: #ff79c6;
+    --tx-sec: #282a36;
+
+    --bg-inf: #8be9fd;
+    --bd-inf: #8be9fd;
+    --tx-inf: #282a36;
+
+    --bg-scc: #50fa7b;
+    --bd-scc: #50fa7b;
+    --tx-scc: #282a36;
+
+    --bg-wrn: #f1fa8c;
+    --bd-wrn: #f1fa8c;
+    --tx-wrn: #282a36;
+
+    --bg-dng: #ff5555;
+    --bd-dng: #ff5555;
+    --tx-dng: #282a36;
+
+    --bg-wht: #f8f8f2;
+    --bd-wht: #f8f8f2;
+    --tx-wht: #282a36;
+
+    --bg-blk: #191a21;
+    --bd-blk: #191a21;
+    --tx-blk: #f8f8f2;
+}

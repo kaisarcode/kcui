@@ -1,0 +1,72 @@
+/**
+ * KCUI - Nord Theme
+ * Summary: Dark color theme inspired by the Nord palette.
+ *
+ * Author: KaisarCode
+ * Website: https://kaisarcode.com
+ * License: GNU General Public License v3.0
+ * License URL: https://www.gnu.org/licenses/gpl-3.0.txt
+ */
+
+:root {
+    --bg: #2e3440;
+    --bd: #4c566a;
+    --tx: #d8dee9;
+    --tx-lnk: #88c0d0;
+
+    --bg-sys: #3b4252;
+    --bd-sys: #4c566a;
+    --tx-sys: #eceff4;
+
+    --bg-cod: #272c36;
+    --bd-cod: #434c5e;
+    --tx-cod: #a3be8c;
+
+    --bg-hdr: #292e39;
+    --bd-hdr: #434c5e;
+    --tx-hdr: #eceff4;
+
+    --bg-bdy: #2e3440;
+    --bd-bdy: #4c566a;
+    --tx-bdy: #d8dee9;
+
+    --bg-ftr: #292e39;
+    --bd-ftr: #434c5e;
+    --tx-ftr: #d8dee9;
+
+    --bg-pnl: #333946;
+    --bd-pnl: #4c566a;
+    --tx-pnl: #d8dee9;
+
+    --bg-prm: #5e81ac;
+    --bd-prm: #5e81ac;
+    --tx-prm: #eceff4;
+
+    --bg-sec: #b48ead;
+    --bd-sec: #b48ead;
+    --tx-sec: #2e3440;
+
+    --bg-inf: #5e81ac;
+    --bd-inf: #5e81ac;
+    --tx-inf: #eceff4;
+
+    --bg-scc: #a3be8c;
+    --bd-scc: #a3be8c;
+    --tx-scc: #2e3440;
+
+    --bg-wrn: #ebcb8b;
+    --bd-wrn: #ebcb8b;
+    --tx-wrn: #2e3440;
+
+    --bg-dng: #bf616a;
+    --bd-dng: #bf616a;
+    --tx-dng: #eceff4;
+
+    --bg-wht: #eceff4;
+    --bd-wht: #eceff4;
+    --tx-wht: #2e3440;
+
+    --bg-blk: #242933;
+    --bd-blk: #242933;
+    --tx-blk: #eceff4;
+}
