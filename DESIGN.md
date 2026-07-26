@@ -81,16 +81,13 @@ The normal layering model is:
 
 1. semantic HTML;
 2. `kcui.css`;
-3. optional component CSS under `extra/`;
-4. optional theme CSS;
-5. optional project-specific CSS;
-6. optional project JavaScript.
+3. optional extras;
+4. optional project-specific CSS;
+5. optional project JavaScript.
 
 The lower layers must remain useful without the higher layers.
 
-Removing a theme should not destroy document structure.
-
-Removing optional components should leave their canonical HTML controls usable.
+Removing optional extras should not destroy document structure.
 
 Removing JavaScript should not make core content inaccessible.
 
@@ -239,17 +236,19 @@ Specialized controls such as file, range, color, and date/time inputs are
 outside the core control model. They may remain native or be handled by
 a theme, project stylesheet, or optional component.
 
-## Extra Components
+## Extras
 
-`extra/` contains optional components that build on the core without
-expanding its structural contract.
+`extra/` contains optional extensions that build on KCUI without expanding
+the structural contract of the core.
 
-An extra component may define richer appearance or interaction for an existing
-canonical control. For example, a switch may restyle a native checkbox or
-radio while relying on `.hdr` for layout.
+Extras may provide additional presentation, behavior, themes, components,
+or other functionality outside the core.
 
-Extra components should not duplicate structural behavior already provided by KCUI.
-The absence of an extra component must not make the underlying HTML inaccessible or meaningless.
+Extras should build on existing KCUI structure where appropriate instead
+of duplicating structural behavior already provided by the core.
+
+The absence of extras must not make the underlying document structure
+inaccessible or meaningless.
 
 ## Accessibility Model
 
@@ -393,7 +392,7 @@ A proposed core change should answer:
 3. Can HTML composition solve it without new CSS?
 4. Does an existing canonical HTML element already express the role?
 5. Can existing KCUI primitives compose the required structure?
-6. Does the behavior belong in `extra/`, a theme, or project stylesheet?
+6. Does the behavior belong in an extra or project stylesheet?
 7. Does the change preserve semantic HTML?
 8. Does it preserve usable behavior without JavaScript?
 9. Does it keep layout roles agnostic?
@@ -415,7 +414,7 @@ The following properties define KCUI:
 - accessible fallback behavior;
 - no required JavaScript;
 - agnostic layout utilities;
-- optional extra components, themes, and project overrides;
+- optional extras and project overrides;
 - predictable responsive defaults;
 - automatic grid and masonry behavior;
 - proportional row columns;

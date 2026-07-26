@@ -12,7 +12,7 @@ Minimal and responsive CSS framework distributed as a single `kcui.css` file.
 - Panels and reusable header/body/footer regions
 - Styled native controls with reusable visual aliases
 - Dialog, progress, and code styles
-- Optional components under `extra/`
+- Optional extras
 - Semantic color utilities
 - CSS custom properties for theming
 
@@ -205,22 +205,13 @@ Existing regions can compose a labeled field without a dedicated label component
 </div>
 ```
 
-### Extra components
+### Extras
 
-Optional components live under `extra/` and are not part of the structural
-core. For example, the switch component extends a native checkbox
-or radio while reusing KCUI layout primitives:
+Optional extensions may be provided under `extra/`.
 
-```html
-<link rel="stylesheet" href="extra/kcui-switch.css">
-
-<div class="pnl">
-    <label class="hdr">
-        <span>Enabled</span>
-        <input class="swi" type="checkbox">
-    </label>
-</div>
-```
+Extras are not part of the structural core and may extend KCUI with
+additional presentation, behavior, themes, components, or other optional
+functionality.
 
 ## Color utilities
 
@@ -240,8 +231,7 @@ Semantic color classes apply text, border, and background colors:
 
 ## Demo
 
-`demo.html` contains examples of the current layout, panels, native
-controls, grid, masonry, optional switch, and dialog.
+`demo.html` contains examples of the current KCUI features and usage.
 
 ## Beta Notice
 

@@ -243,7 +243,7 @@ Before changing KCUI, determine:
 1. What concrete structural problem exists?
 2. Does the problem appear in the current core behavior?
 3. Could it be solved in HTML composition instead?
-4. Does it belong in a theme or project stylesheet?
+4. Does it belong in an extra, theme, or project stylesheet?
 5. Does the change introduce a semantic assumption about the application?
 6. Does it add a special case for one layout?
 7. Can existing CSS be simplified instead?
