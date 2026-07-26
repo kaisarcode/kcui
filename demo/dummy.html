@@ -1,13 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>KCUI Demo</title>
+        <title>KCUI Extras</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="KCUI">
+        <meta name="description" content="KCUI extra components demo">
+
         <link rel="stylesheet" href="../kcui.css">
+        <link rel="stylesheet" href="../extra/kcui-switch.css">
         <link rel="stylesheet" href="../extra/kcui-tabs.css">
+        <link rel="stylesheet" href="../extra/kcui-drawer.css">
+
+        <style>
+            /*
+             * Demo-only drawer variants.
+             * These rules could live in a theme or project stylesheet.
+             */
+
+            #dropdown-demo {
+                overflow: visible;
+            }
+
+            #dropdown-demo > .bdy {
+                overflow: visible;
+            }
+
+            #demo-dropdown-wrap {
+                position: relative;
+            }
+
+            #demo-dropdown {
+                --drw-position: absolute;
+
+                --drw-top: calc(100% + var(--pad));
+                --drw-right: auto;
+                --drw-bottom: auto;
+                --drw-left: 0;
+
+                --drw-width: 16rem;
+                --drw-height: auto;
+
+                --drw-open: translate(0);
+                --drw-closed: translate(0);
+
+                --drw-open-clip: inset(0);
+                --drw-closed-clip: inset(0 0 100% 0);
+            }
+        </style>
     </head>
+
     <body>
         <div class="grl">
             <header class="hdr">
@@ -15,98 +56,305 @@
                     <h1>
                         <a href="/">
                             <i class="ico">❁</i>
-                            <span>KCUI Dummy</span>
+                            <span>KCUI Extras</span>
                         </a>
                     </h1>
+
+                    <nav>
+                        <a href="../demo/index.html">Core demo</a>
+                    </nav>
                 </div>
             </header>
 
             <main class="bdy">
                 <div class="wrp">
-                    <div class="tabs">
-                        <div role="tablist" aria-label="Demo tabs">
-                            <button
-                                id="tab-1"
-                                role="tab"
-                                type="button"
-                                aria-selected="true"
-                                aria-controls="panel-1">
-                                Tab 1
-                            </button>
-                            <button
-                                id="tab-2"
-                                role="tab"
-                                type="button"
-                                aria-selected="false"
-                                aria-controls="panel-2"
-                                tabindex="-1">
-                                Tab 2
-                            </button>
-                            <button
-                                id="tab-3"
-                                role="tab"
-                                type="button"
-                                aria-selected="false"
-                                aria-controls="panel-3"
-                                tabindex="-1">
-                                Tab 3
-                            </button>
-                        </div>
+                    <header class="mar">
+                        <h2>Extra components</h2>
+                        <p>
+                            Optional components built on top of KCUI's
+                            structural primitives.
+                        </p>
+                    </header>
 
-                        <section
-                            id="panel-1"
-                            class="pnl"
-                            role="tabpanel"
-                            aria-labelledby="tab-1">
-                            <section class="bdy">Panel 1</section>
-                        </section>
+                    <section class="grd">
+                        <article class="pnl">
+                            <header class="hdr">
+                                <h3>Switch</h3>
+                                <code>.swi</code>
+                            </header>
 
-                        <section
-                            id="panel-2"
-                            class="pnl"
-                            role="tabpanel"
-                            aria-labelledby="tab-2"
-                            hidden>
-                            <section class="bdy">Panel 2</section>
-                        </section>
+                            <section class="bdy">
+                                <div class="pnl">
+                                    <label class="hdr">
+                                        <span>Notifications</span>
+                                        <input
+                                            class="swi"
+                                            type="checkbox"
+                                            checked>
+                                    </label>
+                                </div>
 
-                        <section
-                            id="panel-3"
-                            class="pnl"
-                            role="tabpanel"
-                            aria-labelledby="tab-3"
-                            hidden>
-                            <section class="bdy">Panel 3</section>
-                        </section>
-                    </div>
+                                <div class="pnl">
+                                    <label class="hdr">
+                                        <span>Automatic updates</span>
+                                        <input
+                                            class="swi"
+                                            type="checkbox">
+                                    </label>
+                                </div>
+
+                                <div class="pnl">
+                                    <label class="hdr">
+                                        <span>Unavailable</span>
+                                        <input
+                                            class="swi"
+                                            type="checkbox"
+                                            disabled>
+                                    </label>
+                                </div>
+                            </section>
+                        </article>
+
+                        <article class="pnl">
+                            <header class="hdr">
+                                <h3>Tabs</h3>
+                                <code>.tabs</code>
+                            </header>
+
+                            <section class="bdy">
+                                <div class="tabs">
+                                    <div
+                                        role="tablist"
+                                        aria-label="Component example">
+
+                                        <button
+                                            id="tab-overview"
+                                            role="tab"
+                                            type="button"
+                                            aria-selected="true"
+                                            aria-controls="panel-overview">
+                                            Overview
+                                        </button>
+
+                                        <button
+                                            id="tab-details"
+                                            role="tab"
+                                            type="button"
+                                            aria-selected="false"
+                                            aria-controls="panel-details"
+                                            tabindex="-1">
+                                            Details
+                                        </button>
+
+                                        <button
+                                            id="tab-status"
+                                            role="tab"
+                                            type="button"
+                                            aria-selected="false"
+                                            aria-controls="panel-status"
+                                            tabindex="-1">
+                                            Status
+                                        </button>
+                                    </div>
+
+                                    <section
+                                        id="panel-overview"
+                                        class="pnl"
+                                        role="tabpanel"
+                                        aria-labelledby="tab-overview">
+
+                                        <section class="bdy">
+                                            Tabs reuse native buttons and
+                                            ordinary KCUI panels.
+                                        </section>
+                                    </section>
+
+                                    <section
+                                        id="panel-details"
+                                        class="pnl"
+                                        role="tabpanel"
+                                        aria-labelledby="tab-details"
+                                        hidden>
+
+                                        <section class="bdy">
+                                            Keyboard navigation supports
+                                            arrows, Home, and End.
+                                        </section>
+                                    </section>
+
+                                    <section
+                                        id="panel-status"
+                                        class="pnl"
+                                        role="tabpanel"
+                                        aria-labelledby="tab-status"
+                                        hidden>
+
+                                        <section class="bdy">
+                                            <span class="scc">Ready</span>
+                                        </section>
+                                    </section>
+                                </div>
+                            </section>
+                        </article>
+
+                        <article class="pnl">
+                            <header class="hdr">
+                                <h3>Drawer</h3>
+                                <code>.drw</code>
+                            </header>
+
+                            <section class="bdy">
+                                <p>
+                                    A fixed panel that enters from outside
+                                    the viewport without owning the page layout.
+                                </p>
+
+                                <button
+                                    type="button"
+                                    class="prm"
+                                    aria-controls="demo-drawer"
+                                    aria-expanded="false">
+                                    Open drawer
+                                </button>
+                            </section>
+                        </article>
+
+                        <article
+                            id="dropdown-demo"
+                            class="pnl">
+
+                            <header class="hdr">
+                                <h3>Dropdown</h3>
+                                <code>.drw</code>
+                            </header>
+
+                            <section class="bdy">
+                                <p>
+                                    The same component can reveal itself from
+                                    its own box instead of entering from
+                                    outside the viewport.
+                                </p>
+
+                                <div id="demo-dropdown-wrap">
+                                    <button
+                                        type="button"
+                                        aria-controls="demo-dropdown"
+                                        aria-expanded="false">
+                                        Toggle menu
+                                    </button>
+
+                                    <nav
+                                        id="demo-dropdown"
+                                        class="pnl drw"
+                                        aria-label="Dropdown example">
+
+                                        <header class="hdr">
+                                            <strong>Menu</strong>
+                                        </header>
+
+                                        <section class="bdy">
+                                            <p>
+                                                <a href="#">Profile</a>
+                                            </p>
+
+                                            <p>
+                                                <a href="#">Settings</a>
+                                            </p>
+
+                                            <p>
+                                                <a href="#">Sign out</a>
+                                            </p>
+                                        </section>
+                                    </nav>
+                                </div>
+                            </section>
+                        </article>
+                    </section>
                 </div>
             </main>
 
             <footer class="ftr">
                 <div class="wrp">
-                    <p>&copy; 2025 KaisarCode</p>
+                    <p>&copy; 2026 KaisarCode</p>
+                    <small>KCUI extra components</small>
                 </div>
             </footer>
         </div>
 
+        <aside
+            id="demo-drawer"
+            class="pnl drw"
+            aria-label="Drawer example">
+
+            <header class="hdr">
+                <h2>Drawer</h2>
+
+                <button
+                    type="button"
+                    data-drawer-close
+                    aria-label="Close drawer">
+                    ×
+                </button>
+            </header>
+
+            <section class="bdy">
+                <p>
+                    This panel is independent from the page structure.
+                </p>
+
+                <div class="pnl">
+                    <label class="hdr">
+                        <span>Example switch</span>
+
+                        <input
+                            class="swi"
+                            type="checkbox"
+                            checked>
+                    </label>
+                </div>
+            </section>
+
+            <footer class="ftr">
+                <button
+                    type="button"
+                    data-drawer-close>
+                    Close
+                </button>
+            </footer>
+        </aside>
+
         <script>
             document.querySelectorAll(".tabs").forEach(tabs => {
-                const tablist = tabs.querySelector('[role="tablist"]');
-                const items = [...tablist.querySelectorAll('[role="tab"]')];
+                const tablist = tabs.querySelector(
+                    '[role="tablist"]'
+                );
+
+                const items = [
+                    ...tablist.querySelectorAll('[role="tab"]')
+                ];
 
                 function activate(tab) {
                     items.forEach(item => {
                         const selected = item === tab;
-                        const panel = document.getElementById(item.getAttribute("aria-controls"));
 
-                        item.setAttribute("aria-selected", selected);
+                        const panel = document.getElementById(
+                            item.getAttribute("aria-controls")
+                        );
+
+                        item.setAttribute(
+                            "aria-selected",
+                            selected
+                        );
+
                         item.tabIndex = selected ? 0 : -1;
                         panel.hidden = !selected;
                     });
                 }
 
                 tablist.addEventListener("click", event => {
-                    const tab = event.target.closest('[role="tab"]');
+                    const tab = event.target.closest(
+                        '[role="tab"]'
+                    );
 
                     if (tab && tablist.contains(tab)) {
                         activate(tab);
@@ -114,7 +362,9 @@
                 });
 
                 tablist.addEventListener("keydown", event => {
-                    const current = event.target.closest('[role="tab"]');
+                    const current = event.target.closest(
+                        '[role="tab"]'
+                    );
 
                     if (!current) {
                         return;
@@ -125,11 +375,17 @@
 
                     switch (event.key) {
                         case "ArrowLeft":
-                            next = items[(index - 1 + items.length) % items.length];
+                            next = items[
+                                (index - 1 + items.length)
+                                % items.length
+                            ];
                             break;
 
                         case "ArrowRight":
-                            next = items[(index + 1) % items.length];
+                            next = items[
+                                (index + 1)
+                                % items.length
+                            ];
                             break;
 
                         case "Home":
@@ -145,10 +401,79 @@
                     }
 
                     event.preventDefault();
+
                     next.focus();
                     activate(next);
                 });
             });
+
+            document
+                .querySelectorAll(
+                    '[aria-controls="demo-drawer"]'
+                )
+                .forEach(button => {
+                    button.addEventListener("click", () => {
+                        const drawer =
+                            document.getElementById(
+                                "demo-drawer"
+                            );
+
+                        drawer.setAttribute("open", "");
+
+                        button.setAttribute(
+                            "aria-expanded",
+                            "true"
+                        );
+                    });
+                });
+
+            document
+                .querySelectorAll("[data-drawer-close]")
+                .forEach(button => {
+                    button.addEventListener("click", () => {
+                        const drawer =
+                            button.closest(".drw");
+
+                        drawer.removeAttribute("open");
+
+                        document
+                            .querySelectorAll(
+                                `[aria-controls="${drawer.id}"]`
+                            )
+                            .forEach(control => {
+                                control.setAttribute(
+                                    "aria-expanded",
+                                    "false"
+                                );
+                            });
+                    });
+                });
+
+            document
+                .querySelectorAll(
+                    '[aria-controls="demo-dropdown"]'
+                )
+                .forEach(button => {
+                    button.addEventListener("click", () => {
+                        const dropdown =
+                            document.getElementById(
+                                "demo-dropdown"
+                            );
+
+                        const open =
+                            dropdown.hasAttribute("open");
+
+                        dropdown.toggleAttribute(
+                            "open",
+                            !open
+                        );
+
+                        button.setAttribute(
+                            "aria-expanded",
+                            String(!open)
+                        );
+                    });
+                });
         </script>
     </body>
 </html>

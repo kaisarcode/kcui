@@ -8,25 +8,23 @@
  * License URL: https://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-/* Tabs */
-
 .tabs > [role="tablist"] {
-    gap: calc(var(--pad) / 4);
-    display: flex;
     z-index: 1;
+    display: flex;
     position: relative;
     align-items: flex-end;
-    min-height: calc(1.15em + var(--pad) * 1.5 + var(--bdw) * 2);
+    gap: calc(var(--pad) / 4);
     margin-bottom: calc(var(--bdw) * -1);
+    min-height: calc(1.15em + var(--pad) * 1.5 + var(--bdw) * 2);
 }
 
 .tabs > [role="tablist"] > [role="tab"] {
     margin: 0;
     flex: 0 0 auto;
     color: var(--tx-hdr);
-    padding: calc(var(--pad) / 2) var(--pad);
     border-color: var(--bd-pnl);
     background-color: var(--bg-hdr);
+    padding: calc(var(--pad) / 2) var(--pad);
 }
 
 .tabs > [role="tablist"] > [role="tab"]:not([aria-selected="true"]):hover {
@@ -41,8 +39,6 @@
     border-bottom-color: var(--bg-pnl);
 }
 
-/* Panels */
-
 .tabs > [role="tabpanel"] {
     margin-bottom: 0;
 }
@@ -51,8 +47,6 @@
     display: none;
 }
 
-/* Optionally you could add animation to them */
-/*
 @media (prefers-reduced-motion: no-preference) {
     .tabs > [role="tablist"] > [role="tab"] {
         transition:
@@ -62,4 +56,3 @@
         background-color 0.12s ease;
     }
 }
-*/
