@@ -663,6 +663,11 @@ pre .cod {
     background-color: var(--bg-sys);
 }
 
+/* Helpers */
+.mar {
+    margin-bottom: var(--pad);
+}
+
 /* Breakpoints */
 @media (max-width: 540px) {
     .row > * {
