@@ -631,6 +631,17 @@ input[type="checkbox"].swi:disabled {
     cursor: default;
 }
 
+.lbl:has(> .swi) {
+    display: flex;
+    align-items: center;
+    gap: var(--pad);
+}
+
+.lbl:has(> .swi) > .swi {
+    order: 1;
+    margin-left: auto;
+}
+
 @media (prefers-reduced-motion: no-preference) {
     input[type="radio"].swi,
     input[type="checkbox"].swi {
