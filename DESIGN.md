@@ -39,7 +39,6 @@ The framework must not need to know whether an element is:
 
 Those meanings belong to the document and the consuming project.
 
-
 ## Canonical HTML First
 
 When HTML already provides the canonical element for a basic interface role,
@@ -212,7 +211,6 @@ their appearance without fighting structural assumptions.
 
 A control used as a direct `.bdy` region inside `.pnl` yields its own border
 to the panel so the composition does not produce a doubled border.
-
 
 ## Core Controls
 

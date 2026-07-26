@@ -268,7 +268,7 @@ Before proposing or applying a change:
 1. Read the complete relevant block and its surrounding rules.
 2. Identify which existing rule or element owns the behavior.
 3. Determine whether the issue belongs to HTML structure, layout, presentation,
-   responsive behavior, interaction, or accessibility.
+    responsive behavior, interaction, or accessibility.
 4. Solve the problem at that layer.
 5. Make the smallest change that fully resolves the concrete issue.
 6. Verify that no unrelated established behavior was changed.
