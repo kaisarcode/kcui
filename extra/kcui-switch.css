@@ -1,6 +1,6 @@
 /**
  * KCUI - KCUI Switch Component
- * Summary: Add switch styles for checkbox and radio controls.
+ * Summary: ...
  *
  * Author: KaisarCode
  * Website: https://kaisarcode.com
@@ -60,13 +60,13 @@ input[type="checkbox"].swi:disabled {
     cursor: default;
 }
 
-.lbl:has(> .swi) {
+label:has(> .swi) {
     display: flex;
     gap: var(--pad);
     align-items: center;
 }
 
-.lbl:has(> .swi) > .swi {
+label:has(> .swi) > .swi {
     order: 1;
     margin-left: auto;
 }

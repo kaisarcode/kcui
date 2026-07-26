@@ -192,8 +192,8 @@ fieldset {
     margin-inline-start: 0;
 }
 
-[type="checkbox"],
-[type="radio"] {
+[type="radio"],
+[type="checkbox"] {
     width: 1rem;
     height: 1rem;
     padding: 0;
@@ -317,6 +317,14 @@ summary::-webkit-details-marker {
     justify-self: start;
 }
 
+.pnl > .hdr:only-child {
+    border-bottom: 0;
+}
+
+.pnl > .ftr:only-child {
+    border-top: 0;
+}
+
 /* Grail layout */
 
 .grl {
@@ -429,18 +437,12 @@ input[type="submit"],
     input[type="password"],
     input[type="url"],
     input[type="tel"],
-    input[type="number"],
-    input[type="date"],
-    input[type="datetime-local"],
-    input[type="month"],
-    input[type="week"],
-    input[type="time"]
+    input[type="number"]
 ),
 select, textarea, .ipt,
 dialog, .dlg,
 progress, .prg,
-code, kbd, samp, var, output, .cod,
-.lbl {
+code, kbd, samp, var, output, .cod {
     border-style: solid;
     border-width: var(--bdw);
     border-radius: var(--rad);
@@ -459,16 +461,10 @@ input[type="submit"],
     input[type="password"],
     input[type="url"],
     input[type="tel"],
-    input[type="number"],
-    input[type="date"],
-    input[type="datetime-local"],
-    input[type="month"],
-    input[type="week"],
-    input[type="time"]
+    input[type="number"]
 ),
 select, textarea, .ipt,
-dialog, .dlg,
-.lbl {
+dialog, .dlg {
     padding: var(--pad);
 }
 
@@ -497,12 +493,7 @@ input[type="submit"],
     input[type="password"],
     input[type="url"],
     input[type="tel"],
-    input[type="number"],
-    input[type="date"],
-    input[type="datetime-local"],
-    input[type="month"],
-    input[type="week"],
-    input[type="time"]
+    input[type="number"]
 ),
 select, textarea, .ipt {
     width: 100%;
@@ -519,80 +510,10 @@ select {
     cursor: pointer;
 }
 
-.lbl {
-    display: block;
-    color: var(--tx-hdr);
-    margin-bottom: var(--pad);
-    border-color: var(--bd-hdr);
-    background-color: var(--bg-hdr);
-}
-
-.lbl:has(+ :is(
-    .ipt,
-    select,
-    textarea,
-    input:not([type]),
-    input[type="text"],
-    input[type="search"],
-    input[type="email"],
-    input[type="password"],
-    input[type="url"],
-    input[type="tel"],
-    input[type="number"],
-    input[type="date"],
-    input[type="datetime-local"],
-    input[type="month"],
-    input[type="week"],
-    input[type="time"]
-)) {
-    margin-bottom: 0;
-    border-bottom: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.lbl + :is(
-    .ipt,
-    select,
-    textarea,
-    input:not([type]),
-    input[type="text"],
-    input[type="search"],
-    input[type="email"],
-    input[type="password"],
-    input[type="url"],
-    input[type="tel"],
-    input[type="number"],
-    input[type="date"],
-    input[type="datetime-local"],
-    input[type="month"],
-    input[type="week"],
-    input[type="time"]
-) {
-    margin-bottom: var(--pad);
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-
-.lbl + :is(
-    .ipt,
-    select,
-    textarea,
-    input:not([type]),
-    input[type="text"],
-    input[type="search"],
-    input[type="email"],
-    input[type="password"],
-    input[type="url"],
-    input[type="tel"],
-    input[type="number"],
-    input[type="date"],
-    input[type="datetime-local"],
-    input[type="month"],
-    input[type="week"],
-    input[type="time"]
-):last-child {
-    margin-bottom: 0;
+.pnl > input.bdy,
+.pnl > select.bdy,
+.pnl > textarea.bdy {
+    border: 0;
 }
 
 fieldset.pnl {
@@ -740,11 +661,6 @@ pre .cod {
     color: var(--tx-sys);
     border-color: var(--bd-sys);
     background-color: var(--bg-sys);
-}
-
-/* Helpers */
-.mar {
-    margin-bottom: var(--pad);
 }
 
 /* Breakpoints */
