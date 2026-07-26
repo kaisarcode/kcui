@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>KCUI Demo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="KCUI">
+        <link rel="stylesheet" href="../kcui.css">
+        <link rel="stylesheet" href="../extra/kcui-tabs.css">
+    </head>
+    <body>
+        <div class="grl">
+            <header class="hdr">
+                <div class="wrp">
+                    <h1>
+                        <a href="/">
+                            <i class="ico">❁</i>
+                            <span>KCUI Dummy</span>
+                        </a>
+                    </h1>
+                </div>
+            </header>
+
+            <main class="bdy">
+                <div class="wrp">
+                    <div class="tabs">
+                        <div role="tablist" aria-label="Demo tabs">
+                            <button
+                                id="tab-1"
+                                role="tab"
+                                type="button"
+                                aria-selected="true"
+                                aria-controls="panel-1">
+                                Tab 1
+                            </button>
+                            <button
+                                id="tab-2"
+                                role="tab"
+                                type="button"
+                                aria-selected="false"
+                                aria-controls="panel-2"
+                                tabindex="-1">
+                                Tab 2
+                            </button>
+                            <button
+                                id="tab-3"
+                                role="tab"
+                                type="button"
+                                aria-selected="false"
+                                aria-controls="panel-3"
+                                tabindex="-1">
+                                Tab 3
+                            </button>
+                        </div>
+
+                        <section
+                            id="panel-1"
+                            class="pnl"
+                            role="tabpanel"
+                            aria-labelledby="tab-1">
+                            <section class="bdy">Panel 1</section>
+                        </section>
+
+                        <section
+                            id="panel-2"
+                            class="pnl"
+                            role="tabpanel"
+                            aria-labelledby="tab-2"
+                            hidden>
+                            <section class="bdy">Panel 2</section>
+                        </section>
+
+                        <section
+                            id="panel-3"
+                            class="pnl"
+                            role="tabpanel"
+                            aria-labelledby="tab-3"
+                            hidden>
+                            <section class="bdy">Panel 3</section>
+                        </section>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="ftr">
+                <div class="wrp">
+                    <p>&copy; 2025 KaisarCode</p>
+                </div>
+            </footer>
+        </div>
+
+        <script>
+            document.querySelectorAll(".tabs").forEach(tabs => {
+                const tablist = tabs.querySelector('[role="tablist"]');
+                const items = [...tablist.querySelectorAll('[role="tab"]')];
+
+                function activate(tab) {
+                    items.forEach(item => {
+                        const selected = item === tab;
+                        const panel = document.getElementById(item.getAttribute("aria-controls"));
+
+                        item.setAttribute("aria-selected", selected);
+                        item.tabIndex = selected ? 0 : -1;
+                        panel.hidden = !selected;
+                    });
+                }
+
+                tablist.addEventListener("click", event => {
+                    const tab = event.target.closest('[role="tab"]');
+
+                    if (tab && tablist.contains(tab)) {
+                        activate(tab);
+                    }
+                });
+
+                tablist.addEventListener("keydown", event => {
+                    const current = event.target.closest('[role="tab"]');
+
+                    if (!current) {
+                        return;
+                    }
+
+                    const index = items.indexOf(current);
+                    let next;
+
+                    switch (event.key) {
+                        case "ArrowLeft":
+                            next = items[(index - 1 + items.length) % items.length];
+                            break;
+
+                        case "ArrowRight":
+                            next = items[(index + 1) % items.length];
+                            break;
+
+                        case "Home":
+                            next = items[0];
+                            break;
+
+                        case "End":
+                            next = items.at(-1);
+                            break;
+
+                        default:
+                            return;
+                    }
+
+                    event.preventDefault();
+                    next.focus();
+                    activate(next);
+                });
+            });
+        </script>
+    </body>
+</html>
