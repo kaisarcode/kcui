@@ -118,6 +118,7 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
+    -moz-appearance: button;
     -webkit-appearance: button;
 }
 
@@ -559,24 +560,77 @@ dialog::backdrop {
 }
 
 fieldset.pnl {
-    display: block;
     padding: 0;
+    display: block;
 }
 
 fieldset.pnl > legend {
+    border: 0;
+    margin: 0;
     float: left;
     width: 100%;
     padding: var(--pad);
-    margin: 0;
     color: var(--tx-hdr);
     background-color: var(--bg-hdr);
-    border: 0;
     border-bottom: var(--bdw) solid var(--bd-hdr);
 }
 
-fieldset.pnl > legend + .bdy,
-fieldset.pnl > .ftr {
+fieldset.pnl > .ftr,
+fieldset.pnl > legend + .bdy {
     clear: both;
+}
+
+.dlg {
+    inset: 0;
+    margin: auto;
+    display: none;
+    z-index: 999999;
+    position: fixed;
+    color: var(--tx-pnl);
+    min-width: var(--min);
+    max-width: var(--max);
+    border-color: var(--bd-pnl);
+    background-color: var(--bg-pnl);
+}
+
+.dlg[open] {
+    display: block;
+}
+
+.prg {
+    padding: 0;
+    width: 100%;
+    height: 2rem;
+    display: block;
+    overflow: hidden;
+    border-color: var(--bd-sys);
+    background-color: var(--bg-sys);
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+.prg::-moz-progress-bar,
+.prg::-webkit-progress-value {
+    box-shadow: none;
+    border-radius: 0;
+    background-color: var(--bg-prm);
+}
+
+.cod {
+    color: var(--tx-cod);
+    display: inline-block;
+    vertical-align: baseline;
+    border-color: var(--bd-cod);
+    padding: calc(var(--pad) / 2);
+    background-color: var(--bg-cod);
+}
+
+pre .cod {
+    width: 100%;
+    display: block;
+    overflow: auto;
+    padding: var(--pad);
 }
 
 input[type="radio"].swi,
@@ -584,10 +638,10 @@ input[type="checkbox"].swi {
     --swi-thumb: 14px;
     --swi-inset: 3px;
 
-    width: 36px;
-    height: 20px;
     margin: 0;
     padding: 0;
+    width: 36px;
+    height: 20px;
 
     display: inline-block;
     vertical-align: middle;
@@ -605,10 +659,10 @@ input[type="checkbox"].swi {
     background-size: var(--swi-thumb) var(--swi-thumb);
     background-position: left var(--swi-inset) center;
 
-    box-shadow: none;
     cursor: pointer;
-
+    box-shadow: none;
     appearance: none;
+    -moz-appearance: none;
     -webkit-appearance: none;
 }
 
@@ -633,8 +687,8 @@ input[type="checkbox"].swi:disabled {
 
 .lbl:has(> .swi) {
     display: flex;
-    align-items: center;
     gap: var(--pad);
+    align-items: center;
 }
 
 .lbl:has(> .swi) > .swi {
@@ -644,77 +698,6 @@ input[type="checkbox"].swi:disabled {
 
 @media (prefers-reduced-motion: no-preference) {
     input[type="radio"].swi,
-    input[type="checkbox"].swi {
-        transition:
-            background-color 0.12s ease,
-            background-position 0.12s ease;
-    }
-}
-
-.dlg {
-    inset: 0;
-    display: none;
-    margin: auto;
-    z-index: 999999;
-    position: fixed;
-    color: var(--tx-pnl);
-    min-width: var(--min);
-    max-width: var(--max);
-    border-color: var(--bd-pnl);
-    background-color: var(--bg-pnl);
-}
-
-.dlg[open] {
-    display: block;
-}
-
-.prg {
-    padding: 0;
-    width: 100%;
-    height: 2rem;
-    display: block;
-    overflow: hidden;
-    border-color: var(--bd-sys);
-    background-color: var(--bg-sys);
-
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-.prg::-webkit-progress-bar {
-    background-color: var(--bg-sys);
-}
-
-.prg::-webkit-progress-value {
-    border-radius: 0;
-    box-shadow: none;
-    background-color: var(--bg-prm);
-}
-
-.prg::-moz-progress-bar {
-    border-radius: 0;
-    box-shadow: none;
-    background-color: var(--bg-prm);
-}
-
-.cod {
-    color: var(--tx-cod);
-    display: inline-block;
-    vertical-align: baseline;
-    border-color: var(--bd-cod);
-    padding: calc(var(--pad) / 2);
-    background-color: var(--bg-cod);
-}
-
-pre .cod {
-    width: 100%;
-    display: block;
-    overflow: auto;
-    padding: var(--pad);
-}
-
-@media (prefers-reduced-motion: no-preference) {
     input[type="checkbox"].swi {
         transition:
         background-color 0.12s ease,
@@ -787,7 +770,7 @@ pre .cod {
 @media (max-width: 540px) {
     .row > * {
         width: 100%;
-        max-width: 100%;
         flex: 0 0 100%;
+        max-width: 100%;
     }
 }
