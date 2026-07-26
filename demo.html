@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="KCUI">
         <link rel="stylesheet" href="kcui.css">
-        <link rel="stylesheet" href="extra/themes/one-dark.css">
+        <link id="theme-stylesheet" rel="stylesheet" disabled>
         <link rel="stylesheet" href="extra/components/kcui-switch.css">
     </head>
     <body>
@@ -144,13 +144,19 @@
                     </article>
 
                     <aside class="pnl col2">
-                        <header class="hdr">
-                            <h2>Aside</h2>
-                        </header>
-
-                        <section class="bdy">
-                            Aside content.
-                        </section>
+                        <label class="hdr" for="theme-select">Color theme</label>
+                        <select class="bdy" id="theme-select">
+                            <option value="">KaisarCode</option>
+                            <option value="noir">Noir</option>
+                            <option value="dracula">Dracula</option>
+                            <option value="nord">Nord</option>
+                            <option value="monokai">Monokai</option>
+                            <option value="gruvbox">Gruvbox</option>
+                            <option value="solarized-dark">Solarized Dark</option>
+                            <option value="tokyo-night">Tokyo Night</option>
+                            <option value="one-dark">One Dark</option>
+                            <option value="vibrant-ink">Vibrant Ink</option>
+                        </select>
                     </aside>
 
                 </div>
@@ -177,8 +183,24 @@
             const dialog = document.querySelector("#demo-dialog");
             const openDialog = document.querySelector("#open-dialog");
             const closeDialog = document.querySelector("#close-dialog");
+            const themeSelect = document.querySelector("#theme-select");
+            const themeStylesheet = document.querySelector("#theme-stylesheet");
+
             openDialog.addEventListener("click", () => dialog.showModal());
             closeDialog.addEventListener("click", () => dialog.close());
+
+            themeSelect.addEventListener("change", () => {
+                const theme = themeSelect.value;
+
+                if (!theme) {
+                    themeStylesheet.disabled = true;
+                    themeStylesheet.removeAttribute("href");
+                    return;
+                }
+
+                themeStylesheet.href = `extra/themes/${theme}.css`;
+                themeStylesheet.disabled = false;
+            });
         </script>
     </body>
 </html>

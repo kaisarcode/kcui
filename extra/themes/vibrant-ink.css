@@ -1,0 +1,72 @@
+/**
+ * KCUI - Vibrant Ink Theme
+ * Summary: Dark color theme inspired by the Vibrant Ink palette.
+ *
+ * Author: KaisarCode
+ * Website: https://kaisarcode.com
+ * License: GNU General Public License v3.0
+ * License URL: https://www.gnu.org/licenses/gpl-3.0.txt
+ */
+
+:root {
+    --bg: #000000;
+    --bd: #3a3a3a;
+    --tx: #ffffff;
+    --tx-lnk: #66d9ef;
+
+    --bg-sys: #111111;
+    --bd-sys: #555555;
+    --tx-sys: #ffffff;
+
+    --bg-cod: #080808;
+    --bd-cod: #333333;
+    --tx-cod: #a6e22e;
+
+    --bg-hdr: #080808;
+    --bd-hdr: #333333;
+    --tx-hdr: #ffffff;
+
+    --bg-bdy: #000000;
+    --bd-bdy: #3a3a3a;
+    --tx-bdy: #ffffff;
+
+    --bg-ftr: #080808;
+    --bd-ftr: #333333;
+    --tx-ftr: #d8d8d8;
+
+    --bg-pnl: #101010;
+    --bd-pnl: #3a3a3a;
+    --tx-pnl: #ffffff;
+
+    --bg-prm: #ff6600;
+    --bd-prm: #ff6600;
+    --tx-prm: #000000;
+
+    --bg-sec: #ff00ff;
+    --bd-sec: #ff00ff;
+    --tx-sec: #000000;
+
+    --bg-inf: #66d9ef;
+    --bd-inf: #66d9ef;
+    --tx-inf: #000000;
+
+    --bg-scc: #a6e22e;
+    --bd-scc: #a6e22e;
+    --tx-scc: #000000;
+
+    --bg-wrn: #ffff00;
+    --bd-wrn: #ffff00;
+    --tx-wrn: #000000;
+
+    --bg-dng: #ff3366;
+    --bd-dng: #ff3366;
+    --tx-dng: #000000;
+
+    --bg-wht: #ffffff;
+    --bd-wht: #ffffff;
+    --tx-wht: #333333;
+
+    --bg-blk: #000000;
+    --bd-blk: #000000;
+    --tx-blk: #ffffff;
+}
