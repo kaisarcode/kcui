@@ -114,14 +114,6 @@ button, select {
     text-transform: none;
 }
 
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-    -moz-appearance: button;
-    -webkit-appearance: button;
-}
-
 a {
     color: var(--tx-lnk);
     text-decoration: none;
@@ -138,20 +130,6 @@ sub, sup, textarea, time, var,
 :where(input:not([type="hidden"])) {
     display: inline;
     vertical-align: baseline;
-}
-
-code, kbd, samp, var, output {
-    border-color: var(--bd-cod);
-    background-color: var(--bg-cod);
-}
-
-pre code,
-pre kbd,
-pre samp,
-pre var,
-pre output {
-    width: 100%;
-    display: block;
 }
 
 datalist {
@@ -214,19 +192,6 @@ fieldset {
     margin-inline-start: 0;
 }
 
-:where(input:not([type="hidden"])),
-select, textarea, button, dialog {
-    outline: none;
-    appearance: none;
-    font-size: inherit;
-    font-family: inherit;
-    line-height: inherit;
-    padding: 0.25rem 1rem;
-    border: 1px solid var(--bd-sys);
-    background-color: var(--bg-sys);
-    border-radius: calc(var(--rad)*1rem);
-}
-
 [type="checkbox"],
 [type="radio"] {
     width: 1rem;
@@ -254,15 +219,6 @@ select, textarea, button, dialog {
     box-shadow: inset 0 0 0 2px var(--bg-sys);
 }
 
-select, button,
-input[type="submit"] {
-    cursor: pointer;
-}
-
-button, input[type="submit"] {
-    background-color: var(--bg-sys);
-}
-
 ::placeholder {
     opacity: 0.8;
     color: inherit;
@@ -274,24 +230,6 @@ summary {
 
 summary::-webkit-details-marker {
     display: none;
-}
-
-dialog {
-    top: 50%;
-    display: none;
-    margin-top: 0;
-    z-index: 999999;
-    position: fixed;
-    transform: translateY(-50%);
-}
-
-dialog[open] {
-    outline: 0;
-    display: block;
-}
-
-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.5);
 }
 
 /* Panels */
@@ -376,29 +314,6 @@ dialog::backdrop {
 .ftr > :first-child,
 .hdr > .wrp > :first-child,
 .ftr > .wrp > :first-child {
-    justify-self: start;
-}
-
-.hdr > .wrp > *,
-.ftr > .wrp > *,
-.pnl > .hdr > *,
-.pnl > .ftr > * {
-    min-width: 0;
-    margin-bottom: 0;
-    justify-self: center;
-}
-
-.hdr > .wrp > :last-child,
-.ftr > .wrp > :last-child,
-.pnl > .hdr > :last-child,
-.pnl > .ftr > :last-child {
-    justify-self: end;
-}
-
-.hdr > .wrp > :first-child,
-.ftr > .wrp > :first-child,
-.pnl > .hdr > :first-child,
-.pnl > .ftr > :first-child {
     justify-self: start;
 }
 
@@ -501,18 +416,66 @@ dialog::backdrop {
 
 /* Controls */
 
-.btn, .ipt, .lbl,
-.dlg, .prg, .cod {
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.btn,
+:where(
+    input:not([type]),
+    input[type="text"],
+    input[type="search"],
+    input[type="email"],
+    input[type="password"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"],
+    input[type="time"]
+),
+select, textarea, .ipt,
+dialog, .dlg,
+progress, .prg,
+code, kbd, samp, var, output, .cod,
+.lbl {
     border-style: solid;
     border-width: var(--bdw);
     border-radius: var(--rad);
 }
 
-.btn, .ipt,
-.lbl, .dlg {
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.btn,
+:where(
+    input:not([type]),
+    input[type="text"],
+    input[type="search"],
+    input[type="email"],
+    input[type="password"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"],
+    input[type="time"]
+),
+select, textarea, .ipt,
+dialog, .dlg,
+.lbl {
     padding: var(--pad);
 }
 
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
 .btn {
     cursor: pointer;
     text-align: center;
@@ -521,9 +484,27 @@ dialog::backdrop {
     display: inline-block;
     border-color: var(--bd-sys);
     background-color: var(--bg-sys);
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
 }
 
-.ipt {
+:where(
+    input:not([type]),
+    input[type="text"],
+    input[type="search"],
+    input[type="email"],
+    input[type="password"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"],
+    input[type="time"]
+),
+select, textarea, .ipt {
     width: 100%;
     font: inherit;
     outline: none;
@@ -534,6 +515,10 @@ dialog::backdrop {
     background-color: var(--bg-sys);
 }
 
+select {
+    cursor: pointer;
+}
+
 .lbl {
     display: block;
     color: var(--tx-hdr);
@@ -542,20 +527,71 @@ dialog::backdrop {
     background-color: var(--bg-hdr);
 }
 
-.lbl:has(+ .ipt) {
+.lbl:has(+ :is(
+    .ipt,
+    select,
+    textarea,
+    input:not([type]),
+    input[type="text"],
+    input[type="search"],
+    input[type="email"],
+    input[type="password"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"],
+    input[type="time"]
+)) {
     margin-bottom: 0;
     border-bottom: 0;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.lbl + .ipt {
+.lbl + :is(
+    .ipt,
+    select,
+    textarea,
+    input:not([type]),
+    input[type="text"],
+    input[type="search"],
+    input[type="email"],
+    input[type="password"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"],
+    input[type="time"]
+) {
     margin-bottom: var(--pad);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
 
-.lbl + .ipt:last-child {
+.lbl + :is(
+    .ipt,
+    select,
+    textarea,
+    input:not([type]),
+    input[type="text"],
+    input[type="search"],
+    input[type="email"],
+    input[type="password"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"],
+    input[type="time"]
+):last-child {
     margin-bottom: 0;
 }
 
@@ -580,7 +616,7 @@ fieldset.pnl > legend + .bdy {
     clear: both;
 }
 
-.dlg {
+dialog, .dlg {
     inset: 0;
     margin: auto;
     display: none;
@@ -593,11 +629,16 @@ fieldset.pnl > legend + .bdy {
     background-color: var(--bg-pnl);
 }
 
+dialog[open],
 .dlg[open] {
     display: block;
 }
 
-.prg {
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+progress, .prg {
     padding: 0;
     width: 100%;
     height: 2rem;
@@ -610,14 +651,21 @@ fieldset.pnl > legend + .bdy {
     -webkit-appearance: none;
 }
 
+progress::-webkit-progress-bar,
+.prg::-webkit-progress-bar {
+    background-color: var(--bg-sys);
+}
+
+progress::-moz-progress-bar,
 .prg::-moz-progress-bar,
+progress::-webkit-progress-value,
 .prg::-webkit-progress-value {
     box-shadow: none;
     border-radius: 0;
     background-color: var(--bg-prm);
 }
 
-.cod {
+code, kbd, samp, var, output, .cod {
     color: var(--tx-cod);
     display: inline-block;
     vertical-align: baseline;
@@ -626,6 +674,11 @@ fieldset.pnl > legend + .bdy {
     background-color: var(--bg-cod);
 }
 
+pre code,
+pre kbd,
+pre samp,
+pre var,
+pre output,
 pre .cod {
     width: 100%;
     display: block;
@@ -689,7 +742,7 @@ pre .cod {
     background-color: var(--bg-sys);
 }
 
-/* Helpes */
+/* Helpers */
 .mar {
     margin-bottom: var(--pad);
 }

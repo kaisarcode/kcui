@@ -46,25 +46,26 @@
                                     <legend>Form</legend>
 
                                     <section class="bdy">
+
                                         <label class="lbl" for="demo-text">Input text</label>
-                                        <input class="ipt" id="demo-text" type="text" value="Initial value" autocomplete="off">
+                                        <input id="demo-text" type="text" value="Initial value" autocomplete="off">
 
                                         <label class="lbl" for="demo-select">Select</label>
-                                        <select class="ipt" id="demo-select">
+                                        <select id="demo-select">
                                             <option>Option 1</option>
                                             <option>Option 2</option>
                                         </select>
 
                                         <label class="lbl" for="demo-textarea">Text area</label>
-                                        <textarea class="ipt" id="demo-textarea">Editable text</textarea>
+                                        <textarea id="demo-textarea">Editable text</textarea>
 
                                         <label class="lbl">
-                                            <input class="swi" type="checkbox" checked>
+                                            <input type="checkbox" checked>
                                             <span>I accept the terms</span>
                                         </label>
 
                                         <label class="lbl" for="browser">Choose a browser:</label>
-                                        <input class="ipt" list="browsers" id="browser" name="browser" placeholder="Start typing...">
+                                        <input list="browsers" id="browser" name="browser" placeholder="Start typing...">
                                         <datalist id="browsers">
                                             <option value="Firefox"></option>
                                             <option value="Brave"></option>
@@ -78,8 +79,8 @@
                                     </section>
 
                                     <footer class="ftr">
-                                        <a class="btn" href="#">Cancel</a>
-                                        <button class="btn prm" type="submit">Submit</button>
+                                        <a class="btn dng" href="#">Cancel</a>
+                                        <button type="submit">Submit</button>
                                     </footer>
 
                                 </fieldset>
@@ -156,9 +157,9 @@
             </footer>
         </div>
 
-        <dialog class="dlg" id="demo-dialog">
+        <dialog id="demo-dialog">
             <p>Modal content.</p>
-            <button class="btn dng" id="close-dialog" type="button">Close</button>
+            <button class="dng" id="close-dialog" type="button">Close</button>
         </dialog>
 
         <script>
