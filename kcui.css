@@ -389,10 +389,10 @@ summary::-webkit-details-marker {
 /* Grid */
 .grd {
     display: grid;
+    gap: var(--pad);
     align-items: start;
     align-content: start;
     grid-template-columns: repeat(auto-fill, minmax(var(--col), 1fr));
-    gap: var(--pad);
 }
 
 .grd > * {
@@ -430,8 +430,7 @@ input[type="submit"],
     input[type="number"]
 ),
 select, textarea, .ipt,
-dialog, .dlg,
-progress, .prg,
+dialog, .dlg, progress, .prg,
 code, kbd, samp, var, output, .cod {
     border-style: solid;
     border-width: var(--bdw);
@@ -527,7 +526,15 @@ fieldset.pnl > legend + .bdy {
     clear: both;
 }
 
+/* Dialog */
 dialog, .dlg {
+    --dlg-open-opacity: 1;
+    --dlg-closed-opacity: 1;
+    --dlg-open-transform: none;
+    --dlg-closed-transform: none;
+    --dlg-backdrop-open-opacity: 1;
+    --dlg-backdrop-closed-opacity: 1;
+
     inset: 0;
     margin: auto;
     display: none;
@@ -538,17 +545,48 @@ dialog, .dlg {
     max-width: var(--max);
     border-color: var(--bd-pnl);
     background-color: var(--bg-pnl);
+    opacity: var(--dlg-closed-opacity);
+    transform: var(--dlg-closed-transform);
 }
 
-dialog[open],
-.dlg[open] {
+dialog[open], .dlg[open] {
     display: block;
+    opacity: var(--dlg-open-opacity);
+    transform: var(--dlg-open-transform);
+}
+
+dialog[open][closing], .dlg[open][closing] {
+    opacity: var(--dlg-closed-opacity);
+    transform: var(--dlg-closed-transform);
+}
+
+@starting-style {
+    dialog[open], .dlg[open] {
+        opacity: var(--dlg-closed-opacity);
+        transform: var(--dlg-closed-transform);
+    }
 }
 
 dialog::backdrop {
+    opacity: var(--dlg-backdrop-closed-opacity);
     background: rgba(0, 0, 0, 0.5);
 }
 
+dialog[open]::backdrop {
+    opacity: var(--dlg-backdrop-open-opacity);
+}
+
+dialog[open][closing]::backdrop {
+    opacity: var(--dlg-backdrop-closed-opacity);
+}
+
+@starting-style {
+    dialog[open]::backdrop {
+        opacity: var(--dlg-backdrop-closed-opacity);
+    }
+}
+
+/* Progress */
 progress, .prg {
     padding: 0;
     width: 100%;
@@ -576,6 +614,7 @@ progress::-webkit-progress-value,
     background-color: var(--bg-prm);
 }
 
+/* Code */
 code, kbd, samp, var, output, .cod {
     color: var(--tx-cod);
     display: inline-block;
@@ -585,12 +624,9 @@ code, kbd, samp, var, output, .cod {
     background-color: var(--bg-cod);
 }
 
-pre code,
-pre kbd,
-pre samp,
-pre var,
-pre output,
-pre .cod {
+pre code, pre kbd,
+pre samp, pre var,
+pre output, pre .cod {
     width: 100%;
     display: block;
     overflow: auto;
