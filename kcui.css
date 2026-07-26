@@ -226,14 +226,15 @@ select, textarea, button, dialog {
     border-radius: calc(var(--rad)*1rem);
 }
 
-[type="radio"],
-[type="checkbox"] {
-    padding: 0;
+[type="checkbox"],
+[type="radio"] {
     width: 1rem;
     height: 1rem;
+    padding: 0;
     cursor: pointer;
     appearance: none;
     position: relative;
+    display: inline-block;
     vertical-align: middle;
     background-clip: content-box;
     border: 1px solid var(--bd-sys);
@@ -416,10 +417,10 @@ dialog::backdrop {
 }
 
 .grl > :nth-child(2) {
-    flex: 1 1 auto;
-    overflow: auto;
     min-width: 0;
     min-height: 0;
+    flex: 1 1 auto;
+    overflow: auto;
 }
 
 /* Horizontal layout */
@@ -427,22 +428,22 @@ dialog::backdrop {
 .row {
     display: flex;
     flex-wrap: wrap;
-    align-content: flex-start;
     align-items: flex-start;
+    align-content: flex-start;
     gap: var(--pad);
 }
 
 .row > * {
-    min-width: min(100%, var(--col));
     flex: 1 1 var(--col);
+    min-width: min(100%, var(--col));
 }
 
 /* Width wrapper */
 
 .wrp {
     width: 100%;
-    max-width: var(--max);
     margin-inline: auto;
+    max-width: var(--max);
 }
 
 /* Columns */
@@ -472,15 +473,15 @@ dialog::backdrop {
 
 .grd {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(var(--col), 1fr));
-    align-content: start;
     align-items: start;
+    align-content: start;
+    grid-template-columns: repeat(auto-fill, minmax(var(--col), 1fr));
     gap: var(--pad);
 }
 
 .grd > * {
-    min-width: 0;
     width: auto;
+    min-width: 0;
     max-width: none;
 }
 
@@ -501,8 +502,8 @@ dialog::backdrop {
 
 .btn, .ipt, .lbl,
 .dlg, .prg, .cod {
-    border-width: var(--bdw);
     border-style: solid;
+    border-width: var(--bdw);
     border-radius: var(--rad);
 }
 
@@ -512,31 +513,32 @@ dialog::backdrop {
 }
 
 .btn {
-    display: inline-block;
-    color: var(--tx-sys);
-    background-color: var(--bg-sys);
-    border-color: var(--bd-sys);
     cursor: pointer;
     text-align: center;
     white-space: nowrap;
+    color: var(--tx-sys);
+    display: inline-block;
+    border-color: var(--bd-sys);
+    background-color: var(--bg-sys);
 }
 
 .ipt {
-    display: inline-block;
     width: 100%;
-    color: var(--tx-sys);
-    background-color: var(--bg-sys);
-    border-color: var(--bd-sys);
     font: inherit;
-    appearance: none;
     outline: none;
+    appearance: none;
+    color: var(--tx-sys);
+    display: inline-block;
+    border-color: var(--bd-sys);
+    background-color: var(--bg-sys);
 }
 
 .lbl {
     display: block;
     color: var(--tx-hdr);
-    background-color: var(--bg-hdr);
+    margin-bottom: var(--pad);
     border-color: var(--bd-hdr);
+    background-color: var(--bg-hdr);
 }
 
 .lbl:has(+ .ipt) {
@@ -577,72 +579,65 @@ fieldset.pnl > .ftr {
     clear: both;
 }
 
-label:has(> input[type="checkbox"].swi) {
-    display: flex;
-    align-items: center;
-    gap: var(--pad);
-    padding: var(--pad);
-    margin-bottom: var(--pad);
-    color: var(--tx-hdr);
-    background-color: var(--bg-hdr);
-    border: var(--bdw) solid var(--bd-hdr);
-    border-radius: var(--rad);
-    cursor: pointer;
-}
-
-label:has(> input[type="checkbox"].swi):last-child {
-    margin-bottom: 0;
-}
-
-label > input[type="checkbox"].swi {
-    flex: 0 0 auto;
-    margin-left: auto;
-}
-
-label:has(> input[type="checkbox"].swi:disabled) {
-    cursor: default;
-    opacity: 0.5;
-}
-
+input[type="radio"].swi,
 input[type="checkbox"].swi {
     --swi-thumb: 14px;
     --swi-inset: 3px;
 
     width: 36px;
     height: 20px;
-    min-height: 20px;
-    display: inline-block;
     margin: 0;
     padding: 0;
+
+    display: inline-block;
+    vertical-align: middle;
+
     border: 0;
     border-radius: 10px;
+
     background-color: var(--bd-sys);
-    background-clip: border-box;
-    background-image: radial-gradient(circle, var(--tx-sys) 0 0.45rem, transparent 0.48rem);
+    background-image: radial-gradient(
+        circle,
+        var(--tx-sys) 0 0.45rem,
+        transparent 0.48rem
+    );
     background-repeat: no-repeat;
     background-size: var(--swi-thumb) var(--swi-thumb);
     background-position: left var(--swi-inset) center;
+
     box-shadow: none;
-    vertical-align: middle;
     cursor: pointer;
-    box-sizing: border-box;
-    -webkit-appearance: none;
+
     appearance: none;
+    -webkit-appearance: none;
 }
 
+input[type="radio"].swi:checked,
 input[type="checkbox"].swi:checked {
     background-color: var(--bg-prm);
     background-position: right var(--swi-inset) center;
+    box-shadow: none;
 }
 
+input[type="radio"].swi:focus-visible,
 input[type="checkbox"].swi:focus-visible {
-    outline-offset: 2px;
     outline: var(--bdw) solid var(--bg-prm);
+    outline-offset: 2px;
 }
 
+input[type="radio"].swi:disabled,
 input[type="checkbox"].swi:disabled {
     opacity: 0.5;
     cursor: default;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    input[type="radio"].swi,
+    input[type="checkbox"].swi {
+        transition:
+            background-color 0.12s ease,
+            background-position 0.12s ease;
+    }
 }
 
 .dlg {
