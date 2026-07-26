@@ -47,6 +47,7 @@
     display: none;
 }
 
+/*
 @media (prefers-reduced-motion: no-preference) {
     .tabs > [role="tablist"] > [role="tab"] {
         transition:
@@ -56,3 +57,4 @@
         background-color 0.12s ease;
     }
 }
+*/

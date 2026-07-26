@@ -71,6 +71,7 @@ label:has(> .swi) > .swi {
     margin-left: auto;
 }
 
+/*
 @media (prefers-reduced-motion: no-preference) {
     input[type="radio"].swi,
     input[type="checkbox"].swi {
@@ -79,3 +80,4 @@ label:has(> .swi) > .swi {
         background-position 0.12s ease;
     }
 }
+*/

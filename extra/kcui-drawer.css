@@ -49,6 +49,7 @@
     clip-path: var(--drw-open-clip);
 }
 
+/*
 @media (prefers-reduced-motion: no-preference) {
     .drw {
         transition:
@@ -56,3 +57,4 @@
             clip-path 0.18s ease;
     }
 }
+*/

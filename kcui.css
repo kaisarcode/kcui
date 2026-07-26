@@ -81,7 +81,6 @@
 }
 
 /* Elements */
-
 html {
     color: var(--tx);
     line-height: 1.15;
@@ -205,7 +204,6 @@ fieldset {
     background-clip: content-box;
     border: 1px solid var(--bd-sys);
     background-color: var(--bg-sys);
-    transition: all 0.1s ease-in-out;
 }
 
 [type="radio"] {
@@ -233,7 +231,6 @@ summary::-webkit-details-marker {
 }
 
 /* Panels */
-
 .pnl {
     display: flex;
     overflow: hidden;
@@ -326,7 +323,6 @@ summary::-webkit-details-marker {
 }
 
 /* Grail layout */
-
 .grl {
     height: 100%;
     display: flex;
@@ -348,7 +344,6 @@ summary::-webkit-details-marker {
 }
 
 /* Horizontal layout */
-
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -363,7 +358,6 @@ summary::-webkit-details-marker {
 }
 
 /* Width wrapper */
-
 .wrp {
     width: 100%;
     margin-inline: auto;
@@ -371,7 +365,6 @@ summary::-webkit-details-marker {
 }
 
 /* Columns */
-
 .col, .col1 { --col-size: 8.333333%; }
 .col2 { --col-size: 16.666667%; }
 .col3 { --col-size: 25%; }
@@ -394,7 +387,6 @@ summary::-webkit-details-marker {
 }
 
 /* Grid */
-
 .grd {
     display: grid;
     align-items: start;
@@ -410,7 +402,6 @@ summary::-webkit-details-marker {
 }
 
 /* Masonry columns */
-
 .mry {
     columns: var(--col);
     column-gap: var(--pad);
@@ -423,7 +414,6 @@ summary::-webkit-details-marker {
 }
 
 /* Controls */
-
 button,
 input[type="button"],
 input[type="reset"],
@@ -608,7 +598,6 @@ pre .cod {
 }
 
 /* Color utilities */
-
 .prm {
     color: var(--tx-prm);
     border-color: var(--bd-prm);
