@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>KCUI Extras</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="KCUI Extras - Drawer, Switch, Tabs">
+        <link rel="stylesheet" href="../kcui.css">
+        <link id="theme-stylesheet" rel="stylesheet" disabled>
+        <link rel="stylesheet" href="components/kcui-drawer.css">
+        <link rel="stylesheet" href="components/kcui-switch.css">
+        <link rel="stylesheet" href="components/kcui-tabs.css">
+    </head>
+    <body>
+        <div class="grl">
+            <header class="hdr">
+                <div class="wrp">
+                    <h1>
+                        <a href="../">
+                            <i class="ico">❁</i>
+                            <span>KCUI Extras</span>
+                        </a>
+                    </h1>
+                    <nav>
+                        <a href="#drawer">Drawer</a>
+                        <a href="#switch">Switch</a>
+                        <a href="#tabs">Tabs</a>
+                        <a href="#themes">Themes</a>
+                    </nav>
+                </div>
+            </header>
+
+            <main class="bdy">
+                <div class="wrp">
+
+                    <section id="drawer" class="pnl">
+                        <header class="hdr">
+                            <h2>Drawer</h2>
+                        </header>
+                        <section class="bdy">
+                            <p>Collapsible panel using <code>.drw</code> with <code>[open]</code> attribute.</p>
+                            <button class="btn" id="open-drawer" type="button">Open Drawer</button>
+
+                            <aside class="pnl drw">
+                                <header class="hdr">
+                                    <h3>Drawer</h3>
+                                </header>
+                                <section class="bdy">
+                                    <p>This is drawer content. It slides in from the left.</p>
+                                    <p>Use <code>--drw-width</code> to control width.</p>
+                                    <p>Use <code>--drw-right</code> and <code>--drw-left</code> to change position.</p>
+                                </section>
+                                <footer class="ftr">
+                                    <button class="btn" id="close-drawer" type="button">Close</button>
+                                </footer>
+                            </aside>
+                        </section>
+                    </section>
+
+                    <section id="switch" class="pnl">
+                        <header class="hdr">
+                            <h2>Switch</h2>
+                        </header>
+                        <section class="bdy">
+                            <p>Transform checkboxes and radios into toggle switches using <code>.swi</code>.</p>
+
+                            <div class="pnl">
+                                <label class="hdr">
+                                    <span>Check</span>
+                                    <input type="checkbox" class="swi" checked>
+                                </label>
+                            </div>
+
+                            <div class="pnl">
+                                <label class="hdr">
+                                    <span>Radio 1</span>
+                                    <input type="radio" name="theme-radio" class="swi" checked>
+                                </label>
+                            </div>
+
+                            <div class="pnl">
+                                <label class="hdr">
+                                    <span>Radio 2</span>
+                                    <input type="radio" name="theme-radio" class="swi">
+                                </label>
+                            </div>
+
+                            <div class="pnl">
+                                <label class="hdr">
+                                    <span>Disabled</span>
+                                    <input type="checkbox" class="swi" disabled>
+                                </label>
+                            </div>
+                        </section>
+                    </section>
+
+                    <section id="tabs" class="pnl">
+                        <header class="hdr">
+                            <h2>Tabs</h2>
+                        </header>
+                        <section class="bdy">
+                            <p>Accessible tabs using ARIA roles inside <code>.tabs</code> container.</p>
+
+                            <div class="tabs" id="demo-tabs">
+                                <div role="tablist">
+                                    <button role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1">Overview</button>
+                                    <button role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2">Usage</button>
+                                    <button role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3">Properties</button>
+                                </div>
+                                <div role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+                                    <div class="pnl">
+                                        <header class="hdr">
+                                            <h3>Overview</h3>
+                                        </header>
+                                        <section class="bdy">
+                                            <p>The tabs component provides a standard accessible tab interface.</p>
+                                            <p>It uses ARIA roles for screen reader support and CSS for visual presentation.</p>
+                                        </section>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+                                    <div class="pnl">
+                                        <header class="hdr">
+                                            <h3>Usage</h3>
+                                        </header>
+                                        <section class="bdy">
+                                            <p>Wrap tabs in a container with <code>.tabs</code> class.</p>
+                                            <p>Use <code>role="tablist"</code>, <code>role="tab"</code>, and <code>role="tabpanel"</code>.</p>
+                                            <p>Toggle <code>aria-selected</code> and <code>hidden</code> with JavaScript.</p>
+                                        </section>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+                                    <div class="pnl">
+                                        <header class="hdr">
+                                            <h3>Properties</h3>
+                                        </header>
+                                        <section class="bdy">
+                                            <p>No custom properties. Tabs inherit KCUI core variables.</p>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+
+                    <section id="themes" class="pnl">
+                        <header class="hdr">
+                            <h2>Themes</h2>
+                        </header>
+                        <section class="bdy">
+                            <p>Visual themes that redefine appearance without changing structure.</p>
+                            <div class="pnl">
+                                <label class="hdr" for="theme-select">Select theme</label>
+                                <select class="bdy" id="theme-select">
+                                    <option value="">KaisarCode (default)</option>
+                                    <option value="noir">Noir</option>
+                                    <option value="dracula">Dracula</option>
+                                    <option value="nord">Nord</option>
+                                    <option value="monokai">Monokai</option>
+                                    <option value="gruvbox">Gruvbox</option>
+                                    <option value="solarized-dark">Solarized Dark</option>
+                                    <option value="tokyo-night">Tokyo Night</option>
+                                    <option value="one-dark">One Dark</option>
+                                    <option value="vibrant-ink">Vibrant Ink</option>
+                                </select>
+                            </div>
+                        </section>
+                    </section>
+
+                </div>
+            </main>
+
+            <footer class="ftr">
+                <div class="wrp">
+                    <p>&copy; 2025 KaisarCode</p>
+                </div>
+            </footer>
+        </div>
+
+        <style>
+        #drawer .pnl.drw {
+            border-top: 0;
+            border-left: 0;
+        }
+        </style>
+
+        <script>
+            const drawer = document.querySelector(".drw");
+            const openDrawer = document.querySelector("#open-drawer");
+            const closeDrawer = document.querySelector("#close-drawer");
+            const themeSelect = document.querySelector("#theme-select");
+            const themeStylesheet = document.querySelector("#theme-stylesheet");
+            const tabs = document.querySelector("#demo-tabs");
+
+            openDrawer.addEventListener("click", () => drawer.setAttribute("open", ""));
+            closeDrawer.addEventListener("click", () => drawer.removeAttribute("open"));
+
+            themeSelect.addEventListener("change", () => {
+                const theme = themeSelect.value;
+
+                if (!theme) {
+                    themeStylesheet.disabled = true;
+                    themeStylesheet.removeAttribute("href");
+                    return;
+                }
+
+                themeStylesheet.href = `themes/${theme}.css`;
+                themeStylesheet.disabled = false;
+            });
+
+            tabs.addEventListener("click", (e) => {
+                const tab = e.target.closest("[role='tab']");
+                if (!tab) return;
+
+                const tablist = tabs.querySelector("[role='tablist']");
+                const tabsArray = Array.from(tablist.querySelectorAll("[role='tab']"));
+                const panels = Array.from(tabs.querySelectorAll("[role='tabpanel']"));
+
+                tabsArray.forEach((t, i) => {
+                    const isSelected = t === tab;
+                    t.setAttribute("aria-selected", isSelected);
+                    panels[i].hidden = !isSelected;
+                });
+            });
+        </script>
+    </body>
+</html>
