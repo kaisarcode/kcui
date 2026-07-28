@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="KCUI">
         <link rel="stylesheet" href="kcui.css">
-        <link id="theme-stylesheet" rel="stylesheet" disabled>
+        <link id="color-stylesheet" rel="stylesheet" disabled>
         <link rel="stylesheet" href="extra/components/kcui-switch.css">
     </head>
     <body>
@@ -144,8 +144,8 @@
                     </article>
 
                     <aside class="pnl col2">
-                        <label class="hdr" for="theme-select">Example themes</label>
-                        <select class="bdy" id="theme-select">
+                        <label class="hdr" for="color-select">Example colors</label>
+                        <select class="bdy" id="color-select">
                             <option value="">KaisarCode</option>
                             <option value="noir">Noir</option>
                             <option value="dracula">Dracula</option>
@@ -183,23 +183,23 @@
             const dialog = document.querySelector("#demo-dialog");
             const openDialog = document.querySelector("#open-dialog");
             const closeDialog = document.querySelector("#close-dialog");
-            const themeSelect = document.querySelector("#theme-select");
-            const themeStylesheet = document.querySelector("#theme-stylesheet");
+            const colorSelect = document.querySelector("#color-select");
+            const colorStylesheet = document.querySelector("#color-stylesheet");
 
             openDialog.addEventListener("click", () => dialog.showModal());
             closeDialog.addEventListener("click", () => dialog.close());
 
-            themeSelect.addEventListener("change", () => {
-                const theme = themeSelect.value;
+            colorSelect.addEventListener("change", () => {
+                const color = colorSelect.value;
 
-                if (!theme) {
-                    themeStylesheet.disabled = true;
-                    themeStylesheet.removeAttribute("href");
+                if (!color) {
+                    colorStylesheet.disabled = true;
+                    colorStylesheet.removeAttribute("href");
                     return;
                 }
 
-                themeStylesheet.href = `extra/themes/${theme}.css`;
-                themeStylesheet.disabled = false;
+                colorStylesheet.href = `extra/colors/${color}.css`;
+                colorStylesheet.disabled = false;
             });
         </script>
     </body>

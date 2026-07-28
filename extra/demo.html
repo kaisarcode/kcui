@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="KCUI Extras - Drawer, Switch, Tabs">
         <link rel="stylesheet" href="../kcui.css">
-        <link id="theme-stylesheet" rel="stylesheet" disabled>
+        <link id="color-stylesheet" rel="stylesheet" disabled>
         <link rel="stylesheet" href="components/kcui-drawer.css">
         <link rel="stylesheet" href="components/kcui-switch.css">
         <link rel="stylesheet" href="components/kcui-tabs.css">
@@ -25,7 +25,7 @@
                         <a href="#drawer">Drawer</a>
                         <a href="#switch">Switch</a>
                         <a href="#tabs">Tabs</a>
-                        <a href="#themes">Themes</a>
+                        <a href="#colors">Colors</a>
                     </nav>
                 </div>
             </header>
@@ -144,15 +144,15 @@
                         </section>
                     </section>
 
-                    <section id="themes" class="pnl">
+                    <section id="colors" class="pnl">
                         <header class="hdr">
-                            <h2>Themes</h2>
+                            <h2>Colors</h2>
                         </header>
                         <section class="bdy">
-                            <p>Visual themes that redefine appearance without changing structure.</p>
+                            <p>Color palettes that override KCUI's color variables without providing a finished visual design.</p>
                             <div class="pnl">
-                                <label class="hdr" for="theme-select">Select theme</label>
-                                <select class="bdy" id="theme-select">
+                                <label class="hdr" for="color-select">Select color palette</label>
+                                <select class="bdy" id="color-select">
                                     <option value="">KaisarCode (default)</option>
                                     <option value="noir">Noir</option>
                                     <option value="dracula">Dracula</option>
@@ -189,24 +189,24 @@
             const drawer = document.querySelector(".drw");
             const openDrawer = document.querySelector("#open-drawer");
             const closeDrawer = document.querySelector("#close-drawer");
-            const themeSelect = document.querySelector("#theme-select");
-            const themeStylesheet = document.querySelector("#theme-stylesheet");
+            const colorSelect = document.querySelector("#color-select");
+            const colorStylesheet = document.querySelector("#color-stylesheet");
             const tabs = document.querySelector("#demo-tabs");
 
             openDrawer.addEventListener("click", () => drawer.setAttribute("open", ""));
             closeDrawer.addEventListener("click", () => drawer.removeAttribute("open"));
 
-            themeSelect.addEventListener("change", () => {
-                const theme = themeSelect.value;
+            colorSelect.addEventListener("change", () => {
+                const color = colorSelect.value;
 
-                if (!theme) {
-                    themeStylesheet.disabled = true;
-                    themeStylesheet.removeAttribute("href");
+                if (!color) {
+                    colorStylesheet.disabled = true;
+                    colorStylesheet.removeAttribute("href");
                     return;
                 }
 
-                themeStylesheet.href = `themes/${theme}.css`;
-                themeStylesheet.disabled = false;
+                colorStylesheet.href = `colors/${color}.css`;
+                colorStylesheet.disabled = false;
             });
 
             tabs.addEventListener("click", (e) => {

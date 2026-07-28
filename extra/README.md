@@ -78,25 +78,25 @@ Accessible tab interface using ARIA roles inside `.tabs` container.
 
 Tab switching requires minimal JavaScript to toggle `aria-selected` and `hidden`.
 
-## Themes
+## Colors
 
-Visual themes that redefine appearance without changing structure.
+Color palettes that override KCUI's color variables without changing structure or providing a finished visual design.
 
-| Theme | File |
-|-------|------|
-| Dracula | `themes/dracula.css` |
-| Gruvbox | `themes/gruvbox.css` |
-| Monokai | `themes/monokai.css` |
-| Noir | `themes/noir.css` |
-| Nord | `themes/nord.css` |
-| One Dark | `themes/one-dark.css` |
-| Solarized Dark | `themes/solarized-dark.css` |
-| Tokyo Night | `themes/tokyo-night.css` |
-| Vibrant Ink | `themes/vibrant-ink.css` |
+| Color palette | File |
+|---------------|------|
+| Dracula | `colors/dracula.css` |
+| Gruvbox | `colors/gruvbox.css` |
+| Monokai | `colors/monokai.css` |
+| Noir | `colors/noir.css` |
+| Nord | `colors/nord.css` |
+| One Dark | `colors/one-dark.css` |
+| Solarized Dark | `colors/solarized-dark.css` |
+| Tokyo Night | `colors/tokyo-night.css` |
+| Vibrant Ink | `colors/vibrant-ink.css` |
 
 Usage:
 
 ```html
 <link rel="stylesheet" href="kcui.css">
-<link rel="stylesheet" href="extra/themes/nord.css">
+<link rel="stylesheet" href="extra/colors/nord.css">
 ```
