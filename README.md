@@ -1,6 +1,6 @@
 # KCUI
 
-Minimal and responsive CSS framework distributed as a single `kcui.css` file.
+Minimal and responsive CSS framework distributed as a single `kcui.css` file. KCUI provides a compact structural foundation rather than a finished visual system: it keeps layout and basic controls predictable, accessible, and easy to inspect, while themes and project-specific CSS define the polished appearance, branding, and higher-level experience.
 
 ![Screenshot](screenshot.png)
 
