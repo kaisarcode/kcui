@@ -49,6 +49,12 @@
     clip-path: var(--drw-open-clip);
 }
 
+.drw > .hdr,
+.drw > .bdy,
+.drw > .ftr {
+    min-width: var(--drw-width);
+}
+
 /*
 @media (prefers-reduced-motion: no-preference) {
     .drw {
