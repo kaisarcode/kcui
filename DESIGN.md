@@ -46,9 +46,9 @@ KCUI should style that element directly.
 
 A `button` should look like a KCUI button without requiring `.btn`. Normal
 text inputs, `select`, and `textarea` should look correct without requiring
-`.ipt`. `dialog`, `progress`, and `code` should receive their core treatment directly.
+`.ipt`. `dialog` and `code` should receive their core treatment directly.
 
-Classes such as `.btn`, `.ipt`, `.dlg`, `.prg`, and `.cod` remain useful
+Classes such as `.btn`, `.ipt`, `.dlg`, and `.cod` remain useful
 as reusable visual aliases, but they are not requirements for canonical elements.
 
 KCUI should not add a class merely to restate what the HTML element already means.
@@ -225,7 +225,6 @@ The core control model includes:
 - checkbox;
 - radio;
 - `dialog`;
-- `progress`;
 - `code` and related inline code elements.
 
 Visual alias classes remain available where reuse is useful.

@@ -11,7 +11,7 @@ Minimal and responsive CSS framework distributed as a single `kcui.css` file. KC
 - Automatic grid and masonry layouts
 - Panels and reusable header/body/footer regions
 - Styled native controls with reusable visual aliases
-- Dialog, progress, and code styles
+- Dialog and code styles
 - Optional extras
 - Semantic color utilities
 - CSS custom properties for theming
@@ -168,7 +168,7 @@ A fieldset can also use panel styling:
 ## Controls
 
 Canonical HTML controls are styled directly. Classes such as `.btn`, `.ipt`,
-`.dlg`, `.prg`, and `.cod` remain available when the same visual treatment
+`.dlg`, and `.cod` remain available when the same visual treatment
 needs to be reused on another element.
 
 ```html
@@ -184,8 +184,6 @@ needs to be reused on another element.
 <textarea>Text area</textarea>
 
 <dialog>Modal content.</dialog>
-
-<progress value="65" max="100">65%</progress>
 
 <code>const kcui = true;</code>
 ```

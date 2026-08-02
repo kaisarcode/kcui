@@ -430,7 +430,7 @@ input[type="submit"],
     input[type="number"]
 ),
 select, textarea, .ipt,
-dialog, .dlg, progress, .prg,
+dialog, .dlg,
 code, kbd, samp, var, output, .cod {
     border-style: solid;
     border-width: var(--bdw);
@@ -584,34 +584,6 @@ dialog[open][closing]::backdrop {
     dialog[open]::backdrop {
         opacity: var(--dlg-backdrop-closed-opacity);
     }
-}
-
-/* Progress */
-progress, .prg {
-    padding: 0;
-    width: 100%;
-    height: 2rem;
-    display: block;
-    overflow: hidden;
-    border-color: var(--bd-sys);
-    background-color: var(--bg-sys);
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-}
-
-progress::-webkit-progress-bar,
-.prg::-webkit-progress-bar {
-    background-color: var(--bg-sys);
-}
-
-progress::-moz-progress-bar,
-.prg::-moz-progress-bar,
-progress::-webkit-progress-value,
-.prg::-webkit-progress-value {
-    box-shadow: none;
-    border-radius: 0;
-    background-color: var(--bg-prm);
 }
 
 /* Code */
