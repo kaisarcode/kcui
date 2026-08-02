@@ -126,7 +126,7 @@ a, abbr, b, cite, code, dfn, em,
 i, img, kbd, label, output, q,
 samp, select, small, span, strong,
 sub, sup, textarea, time, var,
-:where(input:not([type="hidden"])) {
+input {
     display: inline;
     vertical-align: baseline;
 }
@@ -414,21 +414,7 @@ summary::-webkit-details-marker {
 }
 
 /* Controls */
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-.btn,
-:where(
-    input:not([type]),
-    input[type="text"],
-    input[type="search"],
-    input[type="email"],
-    input[type="password"],
-    input[type="url"],
-    input[type="tel"],
-    input[type="number"]
-),
+button, input, .btn,
 select, textarea, .ipt,
 dialog, .dlg,
 code, kbd, samp, var, output, .cod {
@@ -437,21 +423,7 @@ code, kbd, samp, var, output, .cod {
     border-radius: var(--rad);
 }
 
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-.btn,
-:where(
-    input:not([type]),
-    input[type="text"],
-    input[type="search"],
-    input[type="email"],
-    input[type="password"],
-    input[type="url"],
-    input[type="tel"],
-    input[type="number"]
-),
+button, input, .btn,
 select, textarea, .ipt,
 dialog, .dlg {
     padding: var(--pad);
@@ -465,6 +437,7 @@ input[type="submit"],
     cursor: pointer;
     text-align: center;
     white-space: nowrap;
+    width: auto;
     color: var(--tx-sys);
     display: inline-block;
     border-color: var(--bd-sys);
@@ -474,16 +447,7 @@ input[type="submit"],
     -webkit-appearance: none;
 }
 
-:where(
-    input:not([type]),
-    input[type="text"],
-    input[type="search"],
-    input[type="email"],
-    input[type="password"],
-    input[type="url"],
-    input[type="tel"],
-    input[type="number"]
-),
+input,
 select, textarea, .ipt {
     width: 100%;
     font: inherit;
@@ -493,6 +457,10 @@ select, textarea, .ipt {
     display: inline-block;
     border-color: var(--bd-sys);
     background-color: var(--bg-sys);
+}
+
+[type="hidden"] {
+    display: none;
 }
 
 select {
