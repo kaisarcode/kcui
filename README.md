@@ -80,6 +80,14 @@ while the middle child fills the remaining height and scrolls.
 </div>
 ```
 
+### `.wrp`
+
+Centers content and limits its width to `--max`.
+
+```html
+<div class="wrp">...</div>
+```
+
 ### `.row`
 
 Flexible horizontal layout. Direct children share the available space
@@ -94,27 +102,8 @@ and wrap when needed.
 
 Below the responsive breakpoint, direct children become full width.
 
-### `.col`, `.col1` ... `.col12`
-
-Width utilities based on twelve proportional steps.
-
-```html
-<div class="row">
-    <article class="col10">...</article>
-    <aside class="col2">...</aside>
-</div>
-```
-
 `.col` is equivalent to `.col1`. The utilities are layout-agnostic
 and can be used with any element.
-
-### `.wrp`
-
-Centers content and limits its width to `--max`.
-
-```html
-<div class="wrp">...</div>
-```
 
 ### `.grd`
 
@@ -140,6 +129,17 @@ Content flows vertically through the columns.
     <article class="pnl">...</article>
     <article class="pnl">...</article>
 </section>
+```
+
+### `.col`, `.col1` ... `.col12`
+
+Width utilities based on twelve proportional steps.
+
+```html
+<div class="row">
+    <article class="col10">...</article>
+    <aside class="col2">...</aside>
+</div>
 ```
 
 ## Regions and panels
