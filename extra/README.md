@@ -94,14 +94,6 @@ Color palettes that override KCUI's color variables without changing structure o
 
 | Color palette | File |
 |---------------|------|
-| Dracula | `colors/dracula.css` |
-| Gruvbox | `colors/gruvbox.css` |
-| Monokai | `colors/monokai.css` |
-| Noir | `colors/noir.css` |
-| Nord | `colors/nord.css` |
-| One Dark | `colors/one-dark.css` |
-| Solarized Dark | `colors/solarized-dark.css` |
-| Tokyo Night | `colors/tokyo-night.css` |
 | Vibrant Ink | `colors/vibrant-ink.css` |
 
 Usage:

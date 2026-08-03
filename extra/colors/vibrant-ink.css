@@ -40,11 +40,11 @@
 
     --bg-prm: #ff6600;
     --bd-prm: #ff6600;
-    --tx-prm: #000000;
+    --tx-prm: #ffffff;
 
     --bg-sec: #ff00ff;
     --bd-sec: #ff00ff;
-    --tx-sec: #000000;
+    --tx-sec: #ffffff;
 
     --bg-inf: #66d9ef;
     --bd-inf: #66d9ef;
@@ -60,7 +60,7 @@
 
     --bg-dng: #ff3366;
     --bd-dng: #ff3366;
-    --tx-dng: #000000;
+    --tx-dng: #ffffff;
 
     --bg-wht: #ffffff;
     --bd-wht: #ffffff;
