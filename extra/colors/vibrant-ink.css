@@ -10,63 +10,63 @@
 
 :root {
     --bg: #000000;
-    --bd: #3a3a3a;
-    --tx: #ffffff;
-    --tx-lnk: #66d9ef;
+    --bd: #3A3A3A;
+    --tx: #FFFFFF;
+    --tx-lnk: #66D9EF;
 
     --bg-sys: #111111;
     --bd-sys: #555555;
-    --tx-sys: #ffffff;
+    --tx-sys: #FFFFFF;
 
     --bg-cod: #080808;
     --bd-cod: #333333;
-    --tx-cod: #a6e22e;
+    --tx-cod: #A6E22E;
 
     --bg-hdr: #080808;
     --bd-hdr: #333333;
-    --tx-hdr: #ffffff;
+    --tx-hdr: #FFFFFF;
 
     --bg-bdy: #000000;
-    --bd-bdy: #3a3a3a;
-    --tx-bdy: #ffffff;
+    --bd-bdy: #3A3A3A;
+    --tx-bdy: #FFFFFF;
 
     --bg-ftr: #080808;
     --bd-ftr: #333333;
-    --tx-ftr: #d8d8d8;
+    --tx-ftr: #D8D8D8;
 
     --bg-pnl: #101010;
-    --bd-pnl: #3a3a3a;
-    --tx-pnl: #ffffff;
+    --bd-pnl: #3A3A3A;
+    --tx-pnl: #FFFFFF;
 
-    --bg-prm: #ff6600;
-    --bd-prm: #ff6600;
-    --tx-prm: #ffffff;
+    --bg-prm: #FF6600;
+    --bd-prm: #FF6600;
+    --tx-prm: #FFFFFF;
 
-    --bg-sec: #ff00ff;
-    --bd-sec: #ff00ff;
-    --tx-sec: #ffffff;
+    --bg-sec: #FF00FF;
+    --bd-sec: #FF00FF;
+    --tx-sec: #FFFFFF;
 
-    --bg-inf: #66d9ef;
-    --bd-inf: #66d9ef;
+    --bg-inf: #66D9EF;
+    --bd-inf: #66D9EF;
     --tx-inf: #000000;
 
-    --bg-scc: #a6e22e;
-    --bd-scc: #a6e22e;
+    --bg-scc: #A6E22E;
+    --bd-scc: #A6E22E;
     --tx-scc: #000000;
 
-    --bg-wrn: #ffff00;
-    --bd-wrn: #ffff00;
+    --bg-wrn: #FFFF00;
+    --bd-wrn: #FFFF00;
     --tx-wrn: #000000;
 
-    --bg-dng: #ff3366;
-    --bd-dng: #ff3366;
-    --tx-dng: #ffffff;
+    --bg-dng: #FF3366;
+    --bd-dng: #FF3366;
+    --tx-dng: #FFFFFF;
 
-    --bg-wht: #ffffff;
-    --bd-wht: #ffffff;
+    --bg-wht: #FFFFFF;
+    --bd-wht: #FFFFFF;
     --tx-wht: #333333;
 
     --bg-blk: #000000;
     --bd-blk: #000000;
-    --tx-blk: #ffffff;
+    --tx-blk: #FFFFFF;
 }
