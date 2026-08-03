@@ -43,7 +43,7 @@ a { transition: color 0.1s ease; }
 .hdr a:hover,.ftr a:hover {
     color: var(--bg-prm);
 }
-.hdr a, .ftr a,
+.hdr a, .ftr a, a.btn:hover,
 .hdr h1 a:hover,.ftr h1 a:hover,
 .hdr h2 a:hover,.ftr h2 a:hover,
 .hdr h3 a:hover,.ftr h3 a:hover,
