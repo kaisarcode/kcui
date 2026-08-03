@@ -20,20 +20,20 @@
 
     --bg: #222222;
     --bd: #444444;
-    --tx: #CCCCCC;
-    --tx-lnk: #CCCCCC;
+    --tx: #FFFFFF;
+    --tx-lnk: #FFFFFF;
 
     --bg-sys: #1F1F1F;
     --bd-sys: #303030;
-    --tx-sys: #CCCCCC;
+    --tx-sys: #FFFFFF;
 
     --bg-cod: #121212;
     --bd-cod: #444444;
-    --tx-cod: #CCCCCC;
+    --tx-cod: #FFFFFF;
 
     --bg-hdr: #121212;
     --bd-hdr: #303030;
-    --tx-hdr: #CCCCCC;
+    --tx-hdr: #FFFFFF;
 
     --bg-bdy: #1A1A1A;
     --bd-bdy: #444444;
@@ -41,11 +41,11 @@
 
     --bg-ftr: #121212;
     --bd-ftr: #303030;
-    --tx-ftr: #CCCCCC;
+    --tx-ftr: #FFFFFF;
 
     --bg-pnl: #1A1A1A;
     --bd-pnl: #303030;
-    --tx-pnl: #CCCCCC;
+    --tx-pnl: #FFFFFF;
 
     --bg-prm: #F24600;
     --bd-prm: #F24600;

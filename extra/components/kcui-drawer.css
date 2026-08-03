@@ -63,6 +63,7 @@
     min-width: var(--drw-width);
 }
 
+/* Transitions */
 @media (prefers-reduced-motion: no-preference) {
     .drw {
         transition:

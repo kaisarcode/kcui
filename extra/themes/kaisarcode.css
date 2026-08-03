@@ -62,3 +62,8 @@ a { transition: color 0.1s ease; }
 .hdr h6 .ico,.ftr h1 .ico {
     color: var(--bg-prm);
 }
+
+/* Transitions */
+@media (prefers-reduced-motion: no-preference) {
+    a { transition: color 0.1s ease; }
+}
