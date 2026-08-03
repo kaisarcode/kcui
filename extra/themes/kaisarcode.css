@@ -1,6 +1,6 @@
 /**
  * KCUI - KaisarCode Theme
- * Summary: Theme for KaisarCode projects.
+ * Summary: Theme for KaisarCode.com
  *
  * Author: KaisarCode
  * Website: https://kaisarcode.com
@@ -8,12 +8,13 @@
  * License URL: https://www.gnu.org/licenses/gpl-3.0.txt
  */
 :root {
-    --fsz: 14px;
+    --fsz: 13px;
     --bg-pat: #2C2C2C;
     --bg-hdr-pat: #1C1C1C;
     --bg-pnl-pat: #242424;
 }
 
+/*Panels*/
 .hdr, .ftr {
   background-size: 4px 4px;
   background-attachment: fixed;
@@ -37,9 +38,10 @@ main.bdy {
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2);
 }
 
+/*Links*/
 a { transition: color 0.1s ease; }
 .hdr a:hover,.ftr a:hover {
-    color: var(--tx-lnk);
+    color: var(--bg-prm);
 }
 .hdr a, .ftr a,
 .hdr h1 a:hover,.ftr h1 a:hover,
@@ -49,4 +51,14 @@ a { transition: color 0.1s ease; }
 .hdr h5 a:hover,.ftr h5 a:hover,
 .hdr h6 a:hover,.ftr h6 a:hover {
     color: var(--tx);
+}
+
+/*Icons*/
+.hdr h1 .ico,.ftr h1 .ico,
+.hdr h2 .ico,.ftr h2 .ico,
+.hdr h3 .ico,.ftr h3 .ico,
+.hdr h4 .ico,.ftr h4 .ico,
+.hdr h5 .ico,.ftr h5 .ico,
+.hdr h6 .ico,.ftr h1 .ico {
+    color: var(--bg-prm);
 }

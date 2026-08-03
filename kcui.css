@@ -20,64 +20,64 @@
 
     --bg: #222222;
     --bd: #444444;
-    --tx: #cccccc;
-    --tx-lnk: #F24600;
+    --tx: #CCCCCC;
+    --tx-lnk: #CCCCCC;
 
     --bg-sys: #1F1F1F;
     --bd-sys: #303030;
-    --tx-sys: #cccccc;
+    --tx-sys: #CCCCCC;
 
     --bg-cod: #121212;
     --bd-cod: #444444;
-    --tx-cod: #cccccc;
+    --tx-cod: #CCCCCC;
 
     --bg-hdr: #121212;
     --bd-hdr: #303030;
-    --tx-hdr: #cccccc;
+    --tx-hdr: #CCCCCC;
 
-    --bg-bdy: #1a1a1a;
+    --bg-bdy: #1A1A1A;
     --bd-bdy: #444444;
-    --tx-bdy: #cccccc;
+    --tx-bdy: #CCCCCC;
 
     --bg-ftr: #121212;
     --bd-ftr: #303030;
-    --tx-ftr: #cccccc;
+    --tx-ftr: #CCCCCC;
 
-    --bg-pnl: #1a1a1a;
+    --bg-pnl: #1A1A1A;
     --bd-pnl: #303030;
-    --tx-pnl: #cccccc;
+    --tx-pnl: #CCCCCC;
 
     --bg-prm: #F24600;
     --bd-prm: #F24600;
-    --tx-prm: #ffffff;
+    --tx-prm: #FFFFFF;
 
     --bg-sec: #A05F2C;
     --bd-sec: #A05F2C;
-    --tx-sec: #ffffff;
+    --tx-sec: #FFFFFF;
 
     --bg-inf: #198B9B;
     --bd-inf: #198B9B;
-    --tx-inf: #ffffff;
+    --tx-inf: #FFFFFF;
 
     --bg-scc: #23963C;
     --bd-scc: #23963C;
-    --tx-scc: #ffffff;
+    --tx-scc: #FFFFFF;
 
     --bg-wrn: #D4A500;
     --bd-wrn: #D4A500;
-    --tx-wrn: #ffffff;
+    --tx-wrn: #FFFFFF;
 
     --bg-dng: #C5303F;
     --bd-dng: #C5303F;
-    --tx-dng: #ffffff;
+    --tx-dng: #FFFFFF;
 
-    --bg-wht: #ffffff;
-    --bd-wht: #ffffff;
+    --bg-wht: #FFFFFF;
+    --bd-wht: #FFFFFF;
     --tx-wht: #555555;
 
     --bg-blk: #000000;
     --bd-blk: #000000;
-    --tx-blk: #ffffff;
+    --tx-blk: #FFFFFF;
 }
 
 /* Elements */
