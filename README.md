@@ -249,4 +249,4 @@ infrastructure to guarantee long-term stability for these projects.
 
 This project is distributed under the **GNU General Public License version 3 (GPLv3)**.
 
-*2025 KaisarCode*
+*2026 KaisarCode*

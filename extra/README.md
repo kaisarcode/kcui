@@ -14,6 +14,16 @@ Removing extras must not break document structure.
 
 ## Components
 
+### Dialog (`kcui-dialog.css`)
+
+Transitions and positional behavior for standard HTML `<dialog>` elements.
+
+```html
+<dialog class="dlg" open>
+    <p>Dialog content</p>
+</dialog>
+```
+
 ### Drawer (`kcui-drawer.css`)
 
 Collapsible panel using `.drw` with `[open]` attribute control.

@@ -230,8 +230,16 @@ summary::-webkit-details-marker {
     display: none;
 }
 
+dialog {
+    color: var(--tx-pnl);
+    min-width: var(--min);
+    max-width: var(--max);
+    border-color: var(--bd-pnl);
+    background-color: var(--bg-pnl);
+}
+
 /* Panels */
-.pnl {
+.pnl, .dlg {
     display: flex;
     overflow: hidden;
     color: var(--tx-pnl);
@@ -495,64 +503,7 @@ fieldset.pnl > legend + .bdy {
 }
 
 /* Dialog */
-dialog, .dlg {
-    --dlg-open-opacity: 1;
-    --dlg-closed-opacity: 1;
-    --dlg-open-transform: none;
-    --dlg-closed-transform: none;
-    --dlg-backdrop-open-opacity: 1;
-    --dlg-backdrop-closed-opacity: 1;
 
-    inset: 0;
-    margin: auto;
-    display: none;
-    z-index: 999999;
-    position: fixed;
-    color: var(--tx-pnl);
-    min-width: var(--min);
-    max-width: var(--max);
-    border-color: var(--bd-pnl);
-    background-color: var(--bg-pnl);
-    opacity: var(--dlg-closed-opacity);
-    transform: var(--dlg-closed-transform);
-}
-
-dialog[open], .dlg[open] {
-    display: block;
-    opacity: var(--dlg-open-opacity);
-    transform: var(--dlg-open-transform);
-}
-
-dialog[open][closing], .dlg[open][closing] {
-    opacity: var(--dlg-closed-opacity);
-    transform: var(--dlg-closed-transform);
-}
-
-@starting-style {
-    dialog[open], .dlg[open] {
-        opacity: var(--dlg-closed-opacity);
-        transform: var(--dlg-closed-transform);
-    }
-}
-
-dialog::backdrop {
-    opacity: var(--dlg-backdrop-closed-opacity);
-    background: rgba(0, 0, 0, 0.5);
-}
-
-dialog[open]::backdrop {
-    opacity: var(--dlg-backdrop-open-opacity);
-}
-
-dialog[open][closing]::backdrop {
-    opacity: var(--dlg-backdrop-closed-opacity);
-}
-
-@starting-style {
-    dialog[open]::backdrop {
-        opacity: var(--dlg-backdrop-closed-opacity);
-    }
-}
 
 /* Code */
 code, kbd, samp, var, output, .cod {
