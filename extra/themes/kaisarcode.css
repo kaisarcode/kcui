@@ -1,0 +1,52 @@
+/**
+ * KCUI - KaisarCode Theme
+ * Summary: Theme for KaisarCode projects.
+ *
+ * Author: KaisarCode
+ * Website: https://kaisarcode.com
+ * License: GNU General Public License v3.0
+ * License URL: https://www.gnu.org/licenses/gpl-3.0.txt
+ */
+:root {
+    --fsz: 14px;
+    --bg-pat: #2C2C2C;
+    --bg-hdr-pat: #1C1C1C;
+    --bg-pnl-pat: #242424;
+}
+
+.hdr, .ftr {
+  background-size: 4px 4px;
+  background-attachment: fixed;
+  background-color: var(--bg-hdr);
+  background-image: repeating-linear-gradient(45deg,var(--bg-hdr-pat) 0,var(--bg-hdr-pat) 0.4px,var(--bg-hdr) 0,var(--bg-hdr) 50%);
+  white-space: nowrap;
+}
+.pnl, .bdy, .dlg {
+  background-size: 4px 4px;
+  background-attachment: fixed;
+  background-color: var(--bg-pnl);
+  background-image: repeating-linear-gradient(45deg,var(--bg-pnl-pat) 0,var(--bg-pnl-pat) 0.4px,var(--bg-pnl) 0,var(--bg-pnl) 50%);
+}
+main.bdy {
+  background-size: 4px 4px;
+  background-attachment: fixed;
+  background-color: var(--bg);
+  background-image: repeating-linear-gradient(45deg,var(--bg-pat) 0,var(--bg-pat) 0.4px,var(--bg) 0,var(--bg) 50%);
+}
+.pnl {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2);
+}
+
+a { transition: color 0.1s ease; }
+.hdr a:hover,.ftr a:hover {
+    color: var(--tx-lnk);
+}
+.hdr a, .ftr a,
+.hdr h1 a:hover,.ftr h1 a:hover,
+.hdr h2 a:hover,.ftr h2 a:hover,
+.hdr h3 a:hover,.ftr h3 a:hover,
+.hdr h4 a:hover,.ftr h4 a:hover,
+.hdr h5 a:hover,.ftr h5 a:hover,
+.hdr h6 a:hover,.ftr h6 a:hover {
+    color: var(--tx);
+}
