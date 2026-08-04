@@ -234,13 +234,19 @@ dialog {
     inset: 0;
     margin: auto;
     border: none;
+    display: none;
     z-index: 999999;
     position: fixed;
     background: none;
     overflow: hidden;
-    padding: 0 var(--pad);
+    max-height: 100%;
+    padding: var(--pad);
     min-width: var(--min);
     max-width: var(--max);
+    flex-direction: column;
+}
+dialog[open] {
+    display: flex;
 }
 dialog >:last-child {
     margin-bottom: 0;
@@ -280,6 +286,7 @@ dialog >:last-child {
 }
 
 .bdy {
+    overflow: auto;
     color: var(--tx-bdy);
     background: var(--bg-bdy);
 }
@@ -348,16 +355,16 @@ dialog >:last-child {
     width: max(100%, var(--min));
 }
 
-.grl > :first-child,
-.grl > :last-child {
-    flex: 0 0 auto;
-}
-
-.grl > :nth-child(2) {
+.grl > * {
     min-width: 0;
     min-height: 0;
     flex: 1 1 auto;
-    overflow: auto;
+}
+.grl > :first-child,
+.grl > :last-child {
+    min-width: auto;
+    min-height: auto;
+    flex: 0 0 auto;
 }
 
 /* Horizontal layout */
