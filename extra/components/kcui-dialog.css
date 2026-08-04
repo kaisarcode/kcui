@@ -15,7 +15,6 @@ dialog, .dlg {
     --dlg-closed-transform: none;
     --dlg-backdrop-open-opacity: 1;
     --dlg-backdrop-closed-opacity: 0;
-    top: -100%;
     display: flex;
     opacity: var(--dlg-closed-opacity);
     transform: var(--dlg-closed-transform);
