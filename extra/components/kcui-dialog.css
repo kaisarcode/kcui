@@ -15,12 +15,7 @@ dialog, .dlg {
     --dlg-closed-transform: none;
     --dlg-backdrop-open-opacity: 1;
     --dlg-backdrop-closed-opacity: 0;
-
-    inset: 0;
     top: -100%;
-    margin: auto;
-    z-index: 999999;
-    position: fixed;
     display: block;
     opacity: var(--dlg-closed-opacity);
     transform: var(--dlg-closed-transform);
@@ -32,21 +27,12 @@ dialog[open], .dlg[open] {
     transform: var(--dlg-open-transform);
 }
 
-@starting-style {
-    dialog[open], .dlg[open] {
-        top: -100%;
-        opacity: var(--dlg-closed-opacity);
-        transform: var(--dlg-closed-transform);
-    }
-}
-
 dialog::backdrop {
     left: 0;
+    top: -100%;
     width: 100%;
     height: 100%;
     position: fixed;
-
-    top: -100%;
     opacity: var(--dlg-backdrop-closed-opacity);
     background: rgba(0, 0, 0, 0.5);
 }
@@ -54,13 +40,6 @@ dialog::backdrop {
 dialog[open]::backdrop {
     top: 0;
     opacity: var(--dlg-backdrop-open-opacity);
-}
-
-@starting-style {
-    dialog[open]::backdrop {
-        top: -100%;
-        opacity: var(--dlg-backdrop-closed-opacity);
-    }
 }
 
 /* Transitions */

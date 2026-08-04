@@ -231,16 +231,25 @@ summary::-webkit-details-marker {
 }
 
 dialog {
-    color: var(--tx-pnl);
+    inset: 0;
+    margin: auto;
+    border: none;
+    z-index: 999999;
+    position: fixed;
+    background: none;
+    overflow: hidden;
+    padding: 0 var(--pad);
     min-width: var(--min);
     max-width: var(--max);
-    border-color: var(--bd-pnl);
-    background-color: var(--bg-pnl);
+}
+dialog >:last-child {
+    margin-bottom: 0;
 }
 
 /* Panels */
-.pnl, .dlg {
+.pnl {
     display: flex;
+    max-height: 100%;
     overflow: hidden;
     color: var(--tx-pnl);
     flex-direction: column;
@@ -424,7 +433,6 @@ dialog {
 /* Controls */
 button, input, .btn,
 select, textarea, .ipt,
-dialog, .dlg,
 code, kbd, samp, var, output, .cod {
     border-style: solid;
     border-width: var(--bdw);
@@ -432,8 +440,7 @@ code, kbd, samp, var, output, .cod {
 }
 
 button, input, .btn,
-select, textarea, .ipt,
-dialog, .dlg {
+select, textarea, .ipt {
     padding: var(--pad);
 }
 
@@ -501,9 +508,6 @@ fieldset.pnl > .ftr,
 fieldset.pnl > legend + .bdy {
     clear: both;
 }
-
-/* Dialog */
-
 
 /* Code */
 code, kbd, samp, var, output, .cod {

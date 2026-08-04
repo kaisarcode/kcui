@@ -22,7 +22,7 @@
   background-image: repeating-linear-gradient(45deg,var(--bg-hdr-pat) 0,var(--bg-hdr-pat) 0.4px,var(--bg-hdr) 0,var(--bg-hdr) 50%);
   white-space: nowrap;
 }
-.pnl, .bdy, .dlg {
+.pnl, .bdy {
   background-size: 4px 4px;
   background-attachment: fixed;
   background-color: var(--bg-pnl);
