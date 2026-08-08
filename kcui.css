@@ -51,8 +51,8 @@
     --bd-prm: #F24600;
     --tx-prm: #FFFFFF;
 
-    --bg-sec: #A05F2C;
-    --bd-sec: #A05F2C;
+    --bg-sec: #FF6600;
+    --bd-sec: #FF6600;
     --tx-sec: #FFFFFF;
 
     --bg-inf: #198B9B;
@@ -272,6 +272,7 @@ dialog >:last-child {
 
 .grd > .pnl,
 .row > .pnl,
+.pnl+.pnl:last-child,
 .bdy > .pnl:last-child {
     margin-bottom: 0;
 }
