@@ -6,12 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="KCUI">
         <link rel="stylesheet" href="kcui.css">
-        <link id="color-stylesheet" rel="stylesheet" disabled>
-        <link rel="stylesheet" href="extra/components/kcui-switch.css">
-        <link rel="stylesheet" href="extra/components/kcui-dialog.css">
-        <link rel="stylesheet" href="extra/components/kcui-drawer.css">
-        <link rel="stylesheet" href="extra/components/kcui-tabs.css">
-        <link rel="stylesheet" href="extra/themes/kaisarcode.css">
+        <link rel="stylesheet" href="modules/kcui-switch.css">
+        <link rel="stylesheet" href="modules/kcui-dialog.css">
+        <link rel="stylesheet" href="modules/kcui-drawer.css">
+        <link rel="stylesheet" href="modules/kcui-tabs.css">
     </head>
     <body>
         <div class="grl">
@@ -147,14 +145,6 @@
                         </section>
                     </article>
 
-                    <aside class="pnl col2">
-                        <label class="hdr" for="color-select">Example colors</label>
-                        <select class="bdy" id="color-select" autocomplete="off">
-                            <option value="" selected>Default</option>
-                            <option value="vibrant-ink">Vibrant Ink</option>
-                        </select>
-                    </aside>
-
                 </div>
             </main>
 
@@ -183,24 +173,9 @@
             const dialog = document.querySelector("#demo-dialog");
             const openDialog = document.querySelector("#open-dialog");
             const closeDialog = document.querySelector("#close-dialog");
-            const colorSelect = document.querySelector("#color-select");
-            const colorStylesheet = document.querySelector("#color-stylesheet");
 
             openDialog.addEventListener("click", () => dialog.showModal());
             closeDialog.addEventListener("click", () => dialog.close());
-
-            colorSelect.addEventListener("change", () => {
-                const color = colorSelect.value;
-
-                if (!color) {
-                    colorStylesheet.disabled = true;
-                    colorStylesheet.removeAttribute("href");
-                    return;
-                }
-
-                colorStylesheet.href = `extra/colors/${color}.css`;
-                colorStylesheet.disabled = false;
-            });
         </script>
     </body>
 </html>

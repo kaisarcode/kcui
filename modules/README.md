@@ -1,20 +1,18 @@
-# KCUI Extras
+# KCUI Modules
 
 Optional extensions that build on KCUI's structural core.
 
-Extras belong to layer 3 in the KCUI model:
+Modules belong to layer 3 in the KCUI model:
 
 1. semantic HTML
 2. `kcui.css`
-3. **extras** ← this layer
+3. **modules** ← this layer
 4. project CSS
 5. project JS
 
-Removing extras must not break document structure.
+Removing modules must not break document structure.
 
-## Components
-
-### Dialog (`kcui-dialog.css`)
+## Dialog (`kcui-dialog.css`)
 
 Transitions and positional behavior for standard HTML `<dialog>` elements.
 
@@ -24,7 +22,7 @@ Transitions and positional behavior for standard HTML `<dialog>` elements.
 </dialog>
 ```
 
-### Drawer (`kcui-drawer.css`)
+## Drawer (`kcui-drawer.css`)
 
 Collapsible panel using `.drw` with `[open]` attribute control.
 
@@ -44,7 +42,7 @@ CSS custom properties:
 - `--drw-position` (default: `fixed`)
 - `--drw-closed` / `--drw-open` (transform values)
 
-### Switch (`kcui-switch.css`)
+## Switch (`kcui-switch.css`)
 
 Transform checkboxes and radios into toggle switches using `.swi`.
 
@@ -67,7 +65,7 @@ Transform checkboxes and radios into toggle switches using `.swi`.
 
 Requires CSS custom properties from core: `--bd-sys`, `--tx-sys`, `--bg-prm`, `--bdw`, `--pad`.
 
-### Tabs (`kcui-tabs.css`)
+## Tabs (`kcui-tabs.css`)
 
 Accessible tab interface using ARIA roles inside `.tabs` container.
 
@@ -87,18 +85,3 @@ Accessible tab interface using ARIA roles inside `.tabs` container.
 ```
 
 Tab switching requires minimal JavaScript to toggle `aria-selected` and `hidden`.
-
-## Colors
-
-Color palettes that override KCUI's color variables without changing structure or providing a finished visual design.
-
-| Color palette | File |
-|---------------|------|
-| Vibrant Ink | `colors/vibrant-ink.css` |
-
-Usage:
-
-```html
-<link rel="stylesheet" href="kcui.css">
-<link rel="stylesheet" href="extra/colors/nord.css">
-```

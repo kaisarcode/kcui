@@ -12,9 +12,30 @@ Minimal and responsive CSS framework distributed as a single `kcui.css` file. KC
 - Panels and reusable header/body/footer regions
 - Styled native controls with reusable visual aliases
 - Dialog and code styles
-- Optional extras
+- Optional modules
 - Semantic color utilities
 - CSS custom properties for theming
+
+## Design
+
+KCUI describes structure without describing the application. The framework
+does not need to know whether an element is a sidebar, primary content,
+navigation, or a widget; those meanings belong to the document and the
+consuming project. Appearance and higher-level behavior belong to themes
+and project CSS.
+
+KCUI is used as a base stylesheet. The normal layering model is:
+
+1. semantic HTML;
+2. `kcui.css`;
+3. optional modules;
+4. project CSS;
+5. project JavaScript.
+
+Each lower layer remains useful without the layers above it.
+
+KCUI is not a complete visual design system, an application shell, or a
+component framework, and it does not style every specialized HTML control.
 
 ## Quick start
 
@@ -145,7 +166,9 @@ Width utilities based on twelve proportional steps.
 ## Regions and panels
 
 `.hdr`, `.bdy`, and `.ftr` provide reusable regions with consistent
-spacing and theme colors.
+spacing and theme colors. Inside a `.pnl`, header and footer borders act
+as separators between regions; if a header or footer is the only child,
+no separator is needed because the panel already provides the outer border.
 
 ```html
 <section class="pnl">
@@ -203,11 +226,11 @@ Existing regions can compose a labeled field without a dedicated label component
 </div>
 ```
 
-### Extras
+### Modules
 
-Optional extensions may be provided under `extra/`.
+Optional extensions may be provided under `modules/`.
 
-Extras are not part of the structural core and may extend KCUI with
+Modules are not part of the structural core and may extend KCUI with
 additional presentation, behavior, themes, components, or other optional
 functionality.
 

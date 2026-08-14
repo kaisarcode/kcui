@@ -6,7 +6,7 @@ KCUI is a small, structural CSS framework.
 
 Its purpose is to provide a compact, accessible, auditable base for ordinary web layouts without imposing a product theme or application architecture.
 
-Read `README.md` for the effective interface and `DESIGN.md` for architectural boundaries before modifying the project.
+Read `README.md` for the effective interface and architectural boundaries before modifying the project.
 
 ## Required Mindset
 
@@ -46,6 +46,7 @@ Preserve these properties unless the project owner explicitly instructs otherwis
 - the default structure degrades predictably on narrow screens;
 - semantic HTML is preferred over framework-specific wrappers;
 - layout utilities remain agnostic to element type and application role;
+- canonical HTML elements are styled directly, with alias classes only as reusable visuals;
 - themes may override appearance and advanced responsive behavior;
 - project-specific features stay outside the core;
 - source order remains logical and accessible;
@@ -243,7 +244,7 @@ Before changing KCUI, determine:
 1. What concrete structural problem exists?
 2. Does the problem appear in the current core behavior?
 3. Could it be solved in HTML composition instead?
-4. Does it belong in an extra, theme, or project stylesheet?
+4. Does it belong in a module, theme, or project stylesheet?
 5. Does the change introduce a semantic assumption about the application?
 6. Does it add a special case for one layout?
 7. Can existing CSS be simplified instead?
@@ -523,8 +524,7 @@ Keep documentation operational and concise.
 
 Use:
 
-- `README.md` for public usage and examples;
-- `DESIGN.md` for architecture, boundaries, invariants, and non-goals;
+- `README.md` for public usage, architectural boundaries, and examples;
 - `AGENTS.md` for implementation constraints and agent behavior.
 
 Do not turn documentation into a product roadmap.
