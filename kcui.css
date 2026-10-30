@@ -170,6 +170,11 @@ h4 { font-size: 1.4rem; }
 h5 { font-size: 1.2rem; }
 h6 { font-size: 1rem; }
 
+h1 a, h2 a, h3 a,
+h4 a, h5 a, h6 a {
+    color: inherit;
+}
+
 small, sup, sub {
     font-size: 0.8rem;
 }
