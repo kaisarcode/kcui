@@ -11,7 +11,11 @@
         <link rel="stylesheet" href="modules/kcui-drawer.css">
         <link rel="stylesheet" href="modules/kcui-tabs.css">
         <link rel="stylesheet" href="themes/kcui-mobile.css">
+        <link rel="stylesheet" href="palettes/color-default.css">
         <link rel="stylesheet" href="palettes/color-amber.css">
+        <link rel="stylesheet" href="palettes/color-monokai.css">
+        <link rel="stylesheet" href="palettes/color-tokyo-night.css">
+        <link rel="stylesheet" href="palettes/color-matrix.css">
     </head>
     <body>
         <div class="grl">
@@ -52,6 +56,17 @@
                                     <select class="bdy" id="palette-selector" autocomplete="off">
                                         <option value="default">Default</option>
                                         <option value="amber">Amber</option>
+                                        <option value="monokai">Monokai</option>
+                                        <option value="tokyo-night">Tokyo Night</option>
+                                        <option value="matrix">Matrix</option>
+                                    </select>
+                                </div>
+                                <div class="pnl">
+                                    <label class="hdr" for="mode-selector">Color mode</label>
+                                    <select class="bdy" id="mode-selector" autocomplete="off">
+                                        <option value="auto">Auto</option>
+                                        <option value="light">Light</option>
+                                        <option value="dark">Dark</option>
                                     </select>
                                 </div>
                             </section>
@@ -228,9 +243,31 @@
             });
 
             const paletteSelector = document.querySelector("#palette-selector");
-            paletteSelector.addEventListener("change", () => {
-                document.documentElement.classList.toggle("color-amber", paletteSelector.value === "amber");
-            });
+            const modeSelector = document.querySelector("#mode-selector");
+            const paletteClasses = ["color-amber", "color-monokai", "color-tokyo-night", "color-matrix"];
+            const darkOnlyPalettes = ["amber", "matrix"];
+
+            function updateAppearance() {
+                const palette = paletteSelector.value;
+                const darkOnly = darkOnlyPalettes.includes(palette);
+                modeSelector.querySelector('option[value="light"]').disabled = darkOnly;
+
+                if (darkOnly && modeSelector.value === "light") {
+                    modeSelector.value = "auto";
+                }
+
+                document.documentElement.classList.remove(...paletteClasses, "mode-light", "mode-dark");
+                if (palette !== "default") {
+                    document.documentElement.classList.add("color-" + palette);
+                }
+                if (modeSelector.value !== "auto") {
+                    document.documentElement.classList.add("mode-" + modeSelector.value);
+                }
+            }
+
+            paletteSelector.addEventListener("change", updateAppearance);
+            modeSelector.addEventListener("change", updateAppearance);
+            updateAppearance();
 
             const dialog = document.querySelector("#demo-dialog");
             const openDialog = document.querySelector("#open-dialog");
