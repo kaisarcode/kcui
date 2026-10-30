@@ -21,7 +21,7 @@
     --bg: #222222;
     --bd: #444444;
     --tx: #FFFFFF;
-    --tx-lnk: #FFFFFF;
+    --tx-lnk: #F24600;
 
     --bg-sys: #1F1F1F;
     --bd-sys: #303030;
@@ -116,6 +116,15 @@ button, select {
 a {
     color: var(--tx-lnk);
     text-decoration: none;
+}
+
+nav a {
+    color: inherit;
+}
+
+nav a:hover {
+    color: var(--tx-lnk);
+    text-decoration: underline;
 }
 
 *, ::before, ::after {
