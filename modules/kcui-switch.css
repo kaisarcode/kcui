@@ -27,9 +27,9 @@ input[type="checkbox"].swi {
 
     background-color: var(--bd-sys);
     background-image: radial-gradient(
-        circle,
-        var(--swi-thumb-color) 0 0.45rem,
-        transparent 0.48rem
+        circle closest-side,
+        var(--swi-thumb-color) 95%,
+        transparent 100%
     );
     background-repeat: no-repeat;
     background-size: var(--swi-thumb) var(--swi-thumb);
