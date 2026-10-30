@@ -60,7 +60,7 @@
 .drw > .hdr,
 .drw > .bdy,
 .drw > .ftr {
-    min-width: var(--drw-width);
+    min-width: calc(var(--drw-width) - 2 * var(--bdw));
 }
 
 /* Transitions */
