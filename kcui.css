@@ -114,7 +114,7 @@ button, select {
     text-transform: none;
 }
 
-label,
+label, legend,
 button, .btn,
 input[type="button"],
 input[type="reset"],
