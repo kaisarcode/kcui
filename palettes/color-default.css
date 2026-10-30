@@ -18,7 +18,7 @@
     --bd: #D1D1D1;
     --tx: #202020;
     --tx-lnk: var(--tx);
-    --tx-lnk-hover: #AD3200;
+    --tx-lnk-hover: var(--bg-prm);
     --bg-sys: #FFFFFF;
     --bd-sys: #D1D1D1;
     --tx-sys: #202020;
@@ -70,7 +70,7 @@
         --bd: #D1D1D1;
         --tx: #202020;
         --tx-lnk: var(--tx);
-    --tx-lnk-hover: #AD3200;
+        --tx-lnk-hover: var(--bg-prm);
         --bg-sys: #FFFFFF;
         --bd-sys: #D1D1D1;
         --tx-sys: #202020;
