@@ -31,11 +31,13 @@
 
 .tabs > [role="tablist"] > [role="tab"]:not([aria-selected="true"]) {
     opacity: 0.7;
-    padding-block: calc(var(--pad) * 0.75);
+    padding-top: calc(var(--pad) * 0.75);
+    padding-bottom: calc(var(--pad) * 0.375);
 }
 
-.tabs > [role="tablist"] > [role="tab"]:not([aria-selected="true"]):hover {
+.tabs > [role="tablist"] > [role="tab"]:not([aria-selected="true"]):is(:hover, :focus-visible) {
     opacity: 1;
+    padding-block: var(--pad);
 }
 
 .tabs > [role="tablist"] > [role="tab"][aria-selected="true"] {
@@ -59,6 +61,7 @@
 @media (prefers-reduced-motion: no-preference) {
     .tabs > [role="tablist"] > [role="tab"] {
         transition:
+        padding 0.12s ease,
         color 0.12s ease,
         opacity 0.12s ease,
         border-color 0.12s ease,
