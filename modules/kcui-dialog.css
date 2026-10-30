@@ -33,7 +33,7 @@ dialog::backdrop {
     height: 100%;
     position: fixed;
     opacity: var(--dlg-backdrop-closed-opacity);
-    background: rgba(0, 0, 0, 0.5);
+    background: color-mix(in srgb, var(--bg-blk) 50%, transparent);
 }
 
 dialog[open]::backdrop {
