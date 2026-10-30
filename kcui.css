@@ -21,8 +21,8 @@
     --bg: #222222;
     --bd: #444444;
     --tx: #FFFFFF;
-    --tx-lnk: #F24600;
-    --tx-lnk-hover: #FF9A61;
+    --tx-lnk: #D4A18B;
+    --tx-lnk-hover: var(--bg-prm);
 
     --bg-sys: #1F1F1F;
     --bd-sys: #303030;
