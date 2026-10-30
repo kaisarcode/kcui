@@ -22,6 +22,7 @@
     --bd: #444444;
     --tx: #FFFFFF;
     --tx-lnk: #F24600;
+    --tx-lnk-hover: #FF9A61;
 
     --bg-sys: #1F1F1F;
     --bd-sys: #303030;
@@ -118,12 +119,16 @@ a {
     text-decoration: none;
 }
 
+a:where(:hover, :focus-visible) {
+    color: var(--tx-lnk-hover);
+}
+
 nav a {
     color: inherit;
 }
 
-nav a:hover {
-    color: var(--tx-lnk);
+nav a:is(:hover, :focus-visible) {
+    color: var(--tx-lnk-hover);
 }
 
 *, ::before, ::after {
