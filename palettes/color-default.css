@@ -1,5 +1,5 @@
 /**
- * KCUI - Default Light Color Palette
+ * KCUI - Default Color Palette
  * Summary: Semantic color values for KCUI.
  *
  * Author: KaisarCode
@@ -8,7 +8,11 @@
  * License URL: https://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-:root.mode-light:not(.color-amber):not(.color-monokai):not(.color-tokyo-night) {
+:root {
+    color-scheme: dark;
+}
+
+:root.mode-light:not(.color-amber):not(.color-monokai):not(.color-tokyo-night):not(.color-matrix) {
     color-scheme: light;
     --bg: #F3F3F3;
     --bd: #D1D1D1;
@@ -59,7 +63,7 @@
 }
 
 @media (prefers-color-scheme: light) {
-    :root:not(.mode-light):not(.mode-dark):not(.color-amber):not(.color-monokai):not(.color-tokyo-night) {
+    :root:not(.mode-light):not(.mode-dark):not(.color-amber):not(.color-monokai):not(.color-tokyo-night):not(.color-matrix) {
         color-scheme: light;
         --bg: #F3F3F3;
         --bd: #D1D1D1;
@@ -107,6 +111,5 @@
         --bg-blk: #000000;
         --bd-blk: #000000;
         --tx-blk: #FFFFFF;
-    
     }
 }
