@@ -105,7 +105,7 @@ textarea,
 optgroup {
     margin: 0;
     font-size: 100%;
-    line-height: 1.15;
+    line-height: inherit;
     font-family: inherit;
 }
 
@@ -500,7 +500,9 @@ input[type="submit"],
     white-space: nowrap;
     width: auto;
     color: var(--tx-sys);
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border-color: var(--bd-sys);
     background-color: var(--bg-sys);
     appearance: none;
