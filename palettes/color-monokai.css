@@ -1,0 +1,109 @@
+/**
+ * KCUI - Monokai Color Palette
+ * Summary: Semantic color values for KCUI.
+ *
+ * Author: KaisarCode
+ * Website: https://kaisarcode.com
+ * License: GNU General Public License v3.0
+ * License URL: https://www.gnu.org/licenses/gpl-3.0.txt
+ */
+
+:root.color-monokai {
+    color-scheme: dark;
+    --bg: #272822;
+    --bd: #494A40;
+    --tx: #F8F8F2;
+    --tx-lnk: #A6E22E;
+    --bg-sys: #272822;
+    --bd-sys: #494A40;
+    --tx-sys: #F8F8F2;
+    --bg-cod: #1E1F1A;
+    --bd-cod: #494A40;
+    --tx-cod: #F8F8F2;
+    --bg-hdr: #20211D;
+    --bd-hdr: #494A40;
+    --tx-hdr: #F8F8F2;
+    --bg-bdy: #272822;
+    --bd-bdy: #494A40;
+    --tx-bdy: #D6D6CD;
+    --bg-ftr: #20211D;
+    --bd-ftr: #494A40;
+    --tx-ftr: #F8F8F2;
+    --bg-pnl: #30312A;
+    --bd-pnl: #494A40;
+    --tx-pnl: #F8F8F2;
+    --bg-prm: #A6E22E;
+    --bd-prm: #A6E22E;
+    --tx-prm: #272822;
+    --bg-sec: #FD971F;
+    --bd-sec: #FD971F;
+    --tx-sec: #272822;
+    --bg-inf: #66D9EF;
+    --bd-inf: #66D9EF;
+    --tx-inf: #272822;
+    --bg-scc: #A6E22E;
+    --bd-scc: #A6E22E;
+    --tx-scc: #272822;
+    --bg-wrn: #E6DB74;
+    --bd-wrn: #E6DB74;
+    --tx-wrn: #272822;
+    --bg-dng: #F92672;
+    --bd-dng: #F92672;
+    --tx-dng: #272822;
+    --bg-wht: #FFFFFF;
+    --bd-wht: #FFFFFF;
+    --tx-wht: #333333;
+    --bg-blk: #000000;
+    --bd-blk: #000000;
+    --tx-blk: #FFFFFF;
+}
+
+:root.color-monokai.mode-light {
+    color-scheme: light;
+    --bg: #F6F5EF;
+    --bd: #D2D0C2;
+    --tx: #34352D;
+    --tx-lnk: #547B00;
+    --bg-sys: #FFFFFF;
+    --bd-sys: #D2D0C2;
+    --tx-sys: #34352D;
+    --bg-cod: #F0EFE7;
+    --bd-cod: #D2D0C2;
+    --tx-cod: #34352D;
+    --bg-hdr: #EDECE3;
+    --bd-hdr: #D2D0C2;
+    --tx-hdr: #34352D;
+    --bg-bdy: #F6F5EF;
+    --bd-bdy: #D2D0C2;
+    --tx-bdy: #4D4E43;
+    --bg-ftr: #EDECE3;
+    --bd-ftr: #D2D0C2;
+    --tx-ftr: #34352D;
+    --bg-pnl: #FBFAF5;
+    --bd-pnl: #D2D0C2;
+    --tx-pnl: #34352D;
+    --bg-prm: #547B00;
+    --bd-prm: #547B00;
+    --tx-prm: #FFFFFF;
+    --bg-sec: #9B5600;
+    --bd-sec: #9B5600;
+    --tx-sec: #FFFFFF;
+    --bg-inf: #067585;
+    --bd-inf: #067585;
+    --tx-inf: #FFFFFF;
+    --bg-scc: #527B00;
+    --bd-scc: #527B00;
+    --tx-scc: #FFFFFF;
+    --bg-wrn: #936B00;
+    --bd-wrn: #936B00;
+    --tx-wrn: #FFFFFF;
+    --bg-dng: #BA1553;
+    --bd-dng: #BA1553;
+    --tx-dng: #FFFFFF;
+    --bg-wht: #FFFFFF;
+    --bd-wht: #FFFFFF;
+    --tx-wht: #333333;
+    --bg-blk: #000000;
+    --bd-blk: #000000;
+    --tx-blk: #FFFFFF;
+}
