@@ -14,6 +14,7 @@
     --bd: #52607F;
     --tx: #E2E9FA;
     --tx-lnk: #C6A5FF;
+    --tx-lnk-hover: #F0D8FF;
     --bg-sys: #242A3D;
     --bd-sys: #596685;
     --tx-sys: #E2E9FA;
@@ -64,6 +65,7 @@
     --bd: #9BAAC6;
     --tx: #1F2945;
     --tx-lnk: #6533A2;
+    --tx-lnk-hover: #51228E;
     --bg-sys: #FFFFFF;
     --bd-sys: #9BAAC6;
     --tx-sys: #1F2945;
@@ -115,6 +117,7 @@
         --bd: #9BAAC6;
         --tx: #1F2945;
         --tx-lnk: #6533A2;
+    --tx-lnk-hover: #51228E;
         --bg-sys: #FFFFFF;
         --bd-sys: #9BAAC6;
         --tx-sys: #1F2945;
