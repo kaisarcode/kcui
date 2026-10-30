@@ -56,8 +56,8 @@ html.theme-mobile {
     min-height: 6rem;
 }
 
-/* Only inactive tabs sit below the normal 48px button height. */
-.theme-mobile .tabs > [role="tablist"] > [role="tab"]:not([aria-selected="true"]) {
+/* Inactive tabs sit lower; interaction restores normal button height. */
+.theme-mobile .tabs > [role="tablist"] > [role="tab"]:not([aria-selected="true"]):not(:hover):not(:focus-visible) {
     min-height: calc(48px - var(--pad) / 2);
 }
 
