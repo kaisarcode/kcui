@@ -44,10 +44,7 @@
 .tabs > [role="tabpanel"] {
     margin-bottom: 0;
     border-top-left-radius: 0;
-}
-
-.tabs > [role="tabpanel"] > .hdr {
-    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 .tabs > [role="tabpanel"][hidden] {
