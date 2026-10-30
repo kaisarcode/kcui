@@ -114,6 +114,14 @@ button, select {
     text-transform: none;
 }
 
+label,
+button, .btn,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    font-weight: bold;
+}
+
 a {
     color: var(--tx-lnk);
     text-decoration: none;
