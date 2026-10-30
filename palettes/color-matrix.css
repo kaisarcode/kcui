@@ -1,0 +1,60 @@
+/**
+ * KCUI - Matrix Color Palette
+ * Summary: Dark-only green-on-black palette for KCUI.
+ *
+ * Author: KaisarCode
+ * Website: https://kaisarcode.com
+ * License: GNU General Public License v3.0
+ * License URL: https://www.gnu.org/licenses/gpl-3.0.txt
+ */
+
+:root.color-matrix {
+    color-scheme: dark;
+
+    --bg: #050805;
+    --bd: #204B20;
+    --tx: #8AFF8A;
+    --tx-lnk: #A4FFA4;
+    --bg-sys: #081408;
+    --bd-sys: #245024;
+    --tx-sys: #8AFF8A;
+    --bg-cod: #020602;
+    --bd-cod: #204B20;
+    --tx-cod: #B0FFB0;
+    --bg-hdr: #030A03;
+    --bd-hdr: #204B20;
+    --tx-hdr: #A4FFA4;
+    --bg-bdy: #050805;
+    --bd-bdy: #204B20;
+    --tx-bdy: #78E878;
+    --bg-ftr: #030A03;
+    --bd-ftr: #204B20;
+    --tx-ftr: #78E878;
+    --bg-pnl: #081108;
+    --bd-pnl: #204B20;
+    --tx-pnl: #A4FFA4;
+    --bg-prm: #58E858;
+    --bd-prm: #58E858;
+    --tx-prm: #031003;
+    --bg-sec: #3DBF3D;
+    --bd-sec: #3DBF3D;
+    --tx-sec: #031003;
+    --bg-inf: #70E8A5;
+    --bd-inf: #70E8A5;
+    --tx-inf: #031003;
+    --bg-scc: #58E858;
+    --bd-scc: #58E858;
+    --tx-scc: #031003;
+    --bg-wrn: #D2BA57;
+    --bd-wrn: #D2BA57;
+    --tx-wrn: #071007;
+    --bg-dng: #B54D4D;
+    --bd-dng: #B54D4D;
+    --tx-dng: #FFFFFF;
+    --bg-wht: #FFFFFF;
+    --bd-wht: #FFFFFF;
+    --tx-wht: #194019;
+    --bg-blk: #000000;
+    --bd-blk: #000000;
+    --tx-blk: #8AFF8A;
+}
