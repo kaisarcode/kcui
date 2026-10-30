@@ -127,6 +127,10 @@ a:not(.btn):is(:hover, :focus-visible) {
     color: var(--tx-lnk-hover);
 }
 
+nav a:not(.btn):is(:hover, :focus-visible) {
+    color: var(--bg-prm);
+}
+
 *, ::before, ::after {
     box-sizing: border-box;
 }
