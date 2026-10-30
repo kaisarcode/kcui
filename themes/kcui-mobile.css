@@ -56,9 +56,9 @@ html.theme-mobile {
     min-height: 6rem;
 }
 
-/* Tab height follows its content and the module's active/inactive spacing. */
-.theme-mobile .tabs > [role="tablist"] > [role="tab"] {
-    min-height: 0;
+/* Only inactive tabs sit below the normal 48px button height. */
+.theme-mobile .tabs > [role="tablist"] > [role="tab"]:not([aria-selected="true"]) {
+    min-height: calc(48px - var(--pad) / 2);
 }
 
 .theme-mobile input[type="checkbox"].swi,
