@@ -150,7 +150,7 @@ html.theme-mobile {
 }
 
 /* Modal presentation */
-.theme-mobile dialog, .dlg {
+.theme-mobile dialog, .theme-mobile .dlg {
     width: min(100%, 28rem);
     min-width: 0;
     max-width: calc(100% - 2 * var(--pad));
