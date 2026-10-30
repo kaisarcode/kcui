@@ -124,7 +124,6 @@ nav a {
 
 nav a:hover {
     color: var(--tx-lnk);
-    text-decoration: underline;
 }
 
 *, ::before, ::after {
