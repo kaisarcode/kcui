@@ -31,15 +31,16 @@
 
 .tabs > [role="tablist"] > [role="tab"]:not([aria-selected="true"]) {
     opacity: 0.7;
-    padding-top: 0;
 }
 
 .tabs > [role="tablist"] > [role="tab"]:not([aria-selected="true"]):hover {
     opacity: 1;
+    padding-bottom: var(--pad);
 }
 
 .tabs > [role="tablist"] > [role="tab"][aria-selected="true"] {
     color: var(--tx-hdr);
+    padding-bottom: var(--pad);
     border-color: var(--bd-pnl);
     background-color: var(--bg-hdr);
     border-bottom-color: var(--bg-hdr);
@@ -59,6 +60,7 @@
 @media (prefers-reduced-motion: no-preference) {
     .tabs > [role="tablist"] > [role="tab"] {
         transition:
+        padding-bottom 0.12s ease,
         color 0.12s ease,
         opacity 0.12s ease,
         border-color 0.12s ease,
