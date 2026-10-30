@@ -119,15 +119,11 @@ a {
     text-decoration: none;
 }
 
-a:where(:hover, :focus-visible) {
-    color: var(--tx-lnk-hover);
-}
-
 nav a {
     color: inherit;
 }
 
-nav a:is(:hover, :focus-visible) {
+a:not(.btn):is(:hover, :focus-visible) {
     color: var(--tx-lnk-hover);
 }
 
