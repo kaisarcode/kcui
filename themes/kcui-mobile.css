@@ -56,6 +56,11 @@ html.theme-mobile {
     min-height: 6rem;
 }
 
+/* Tabs keep their touch target while the selected tab rises as a whole. */
+.theme-mobile .tabs > [role="tablist"] > [role="tab"]:is([aria-selected="true"], :hover) {
+    min-height: calc(48px + var(--pad) / 2);
+}
+
 .theme-mobile input[type="checkbox"].swi,
 .theme-mobile input[type="radio"].swi {
     min-height: 0;
