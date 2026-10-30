@@ -46,8 +46,7 @@ html.theme-mobile {
 }
 
 .theme-mobile button:focus-visible, .theme-mobile .btn:focus-visible,
-.theme-mobile input:focus-visible, .theme-mobile select:focus-visible,
-.theme-mobile textarea:focus-visible, .theme-mobile a:focus-visible {
+.theme-mobile a:focus-visible {
     outline: 2px solid var(--bd-prm);
     outline-offset: 2px;
 }
