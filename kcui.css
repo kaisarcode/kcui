@@ -123,7 +123,7 @@ nav a {
     color: inherit;
 }
 
-a:not(.btn):is(:hover, :focus-visible) {
+a:not(.btn):not(:is(h1, h2, h3, h4, h5, h6) a):is(:hover, :focus-visible) {
     color: var(--tx-lnk-hover);
 }
 
