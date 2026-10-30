@@ -344,6 +344,10 @@ dialog >:last-child {
     white-space: nowrap;
 }
 
+.hdr, nav {
+    font-weight: bold;
+}
+
 .hdr {
     color: var(--tx-hdr);
     background: var(--bg-hdr);
