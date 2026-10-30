@@ -1,0 +1,74 @@
+/**
+ * KCUI - Amber Color Palette
+ * Summary: Amber color values for KCUI semantic color variables.
+ *
+ * Author: KaisarCode
+ * Website: https://kaisarcode.com
+ * License: GNU General Public License v3.0
+ * License URL: https://www.gnu.org/licenses/gpl-3.0.txt
+ */
+
+:root.color-amber {
+
+
+    --bg: #000000;
+    --bd: #593000;
+    --tx: #ffb000;
+    --tx-lnk: #ffcc00;
+
+    --bg-sys: #0d0700;
+    --bd-sys: #804500;
+    --tx-sys: #ffb000;
+
+    --bg-cod: #050300;
+    --bd-cod: #402200;
+    --tx-cod: #ffc433;
+
+    --bg-hdr: #050300;
+    --bd-hdr: #402200;
+    --tx-hdr: #ffb000;
+
+    --bg-bdy: #000000;
+    --bd-bdy: #593000;
+    --tx-bdy: #ffb000;
+
+    --bg-ftr: #050300;
+    --bd-ftr: #402200;
+    --tx-ftr: #cc8800;
+
+    --bg-pnl: #0f0800;
+    --bd-pnl: #593000;
+    --tx-pnl: #ffb000;
+
+    --bg-prm: #ffb000;
+    --bd-prm: #ffb000;
+    --tx-prm: #000000;
+
+    --bg-sec: #ff8800;
+    --bd-sec: #ff8800;
+    --tx-sec: #000000;
+
+    --bg-inf: #ffd700;
+    --bd-inf: #ffd700;
+    --tx-inf: #000000;
+
+    --bg-scc: #ffb000;
+    --bd-scc: #ffb000;
+    --tx-scc: #000000;
+
+    --bg-wrn: #ffaa00;
+    --bd-wrn: #ffaa00;
+    --tx-wrn: #000000;
+
+    --bg-dng: #ff3300;
+    --bd-dng: #ff3300;
+    --tx-dng: #ffffff;
+
+    --bg-wht: #ffebd0;
+    --bd-wht: #ffebd0;
+    --tx-wht: #1a0a00;
+
+    --bg-blk: #000000;
+    --bd-blk: #000000;
+    --tx-blk: #ffb000;
+}
