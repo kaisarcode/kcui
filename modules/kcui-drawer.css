@@ -57,6 +57,10 @@
     clip-path: var(--drw-open-clip);
 }
 
+.drw.pnl {
+    --drw-overflow: hidden;
+}
+
 .drw > .hdr,
 .drw > .bdy,
 .drw > .ftr {
