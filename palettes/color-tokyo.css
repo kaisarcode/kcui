@@ -1,0 +1,161 @@
+/**
+ * KCUI - Tokyo Color Palette
+ * Summary: Semantic color values for KCUI.
+ *
+ * Author: KaisarCode
+ * Website: https://kaisarcode.com
+ * License: GNU General Public License v3.0
+ * License URL: https://www.gnu.org/licenses/gpl-3.0.txt
+ */
+
+:root.color-tokyo {
+    color-scheme: dark;
+    --bg: #11131D;
+    --bd: #52607F;
+    --tx: #E2E9FA;
+    --tx-lnk: #C6A5FF;
+    --bg-sys: #242A3D;
+    --bd-sys: #596685;
+    --tx-sys: #E2E9FA;
+    --bg-cod: #0C1020;
+    --bd-cod: #52607F;
+    --tx-cod: #D4E2FF;
+    --bg-hdr: #111727;
+    --bd-hdr: #52607F;
+    --tx-hdr: #EDF1FF;
+    --bg-bdy: #1B2030;
+    --bd-bdy: #52607F;
+    --tx-bdy: #CAD5EF;
+    --bg-ftr: #111727;
+    --bd-ftr: #52607F;
+    --tx-ftr: #EDF1FF;
+    --bg-pnl: #292F45;
+    --bd-pnl: #596685;
+    --tx-pnl: #EDF1FF;
+    --bg-prm: #533480;
+    --bd-prm: #533480;
+    --tx-prm: var(--tx-sys);
+    --bg-sec: #6A450B;
+    --bd-sec: #6A450B;
+    --tx-sec: var(--tx-sys);
+    --bg-inf: #185779;
+    --bd-inf: #185779;
+    --tx-inf: var(--tx-sys);
+    --bg-scc: #3B5B21;
+    --bd-scc: #3B5B21;
+    --tx-scc: var(--tx-sys);
+    --bg-wrn: #6A450B;
+    --bd-wrn: #6A450B;
+    --tx-wrn: var(--tx-sys);
+    --bg-dng: #85263A;
+    --bd-dng: #85263A;
+    --tx-dng: var(--tx-sys);
+    --bg-wht: #FFFFFF;
+    --bd-wht: #FFFFFF;
+    --tx-wht: #333333;
+    --bg-blk: #000000;
+    --bd-blk: #000000;
+    --tx-blk: #FFFFFF;
+}
+
+:root.color-tokyo.mode-light {
+    color-scheme: light;
+    --bg: #F2F5FC;
+    --bd: #9BAAC6;
+    --tx: #1F2945;
+    --tx-lnk: #6533A2;
+    --bg-sys: #FFFFFF;
+    --bd-sys: #9BAAC6;
+    --tx-sys: #1F2945;
+    --bg-cod: #E8EDF8;
+    --bd-cod: #9BAAC6;
+    --tx-cod: #1F2945;
+    --bg-hdr: #DFE7F5;
+    --bd-hdr: #9BAAC6;
+    --tx-hdr: #1F2945;
+    --bg-bdy: #F2F5FC;
+    --bd-bdy: #9BAAC6;
+    --tx-bdy: #283858;
+    --bg-ftr: #DFE7F5;
+    --bd-ftr: #9BAAC6;
+    --tx-ftr: #1F2945;
+    --bg-pnl: #FFFFFF;
+    --bd-pnl: #9BAAC6;
+    --tx-pnl: #1F2945;
+    --bg-prm: #6533A2;
+    --bd-prm: #6533A2;
+    --tx-prm: #FFFFFF;
+    --bg-sec: #8A5900;
+    --bd-sec: #8A5900;
+    --tx-sec: #FFFFFF;
+    --bg-inf: #006F88;
+    --bd-inf: #006F88;
+    --tx-inf: #FFFFFF;
+    --bg-scc: #447C29;
+    --bd-scc: #447C29;
+    --tx-scc: #FFFFFF;
+    --bg-wrn: #885F00;
+    --bd-wrn: #885F00;
+    --tx-wrn: #FFFFFF;
+    --bg-dng: #B6224D;
+    --bd-dng: #B6224D;
+    --tx-dng: #FFFFFF;
+    --bg-wht: #FFFFFF;
+    --bd-wht: #FFFFFF;
+    --tx-wht: #333333;
+    --bg-blk: #000000;
+    --bd-blk: #000000;
+    --tx-blk: #FFFFFF;
+}
+
+@media (prefers-color-scheme: light) {
+    :root.color-tokyo:not(.mode-light):not(.mode-dark) {
+        color-scheme: light;
+        --bg: #F2F5FC;
+        --bd: #9BAAC6;
+        --tx: #1F2945;
+        --tx-lnk: #6533A2;
+        --bg-sys: #FFFFFF;
+        --bd-sys: #9BAAC6;
+        --tx-sys: #1F2945;
+        --bg-cod: #E8EDF8;
+        --bd-cod: #9BAAC6;
+        --tx-cod: #1F2945;
+        --bg-hdr: #DFE7F5;
+        --bd-hdr: #9BAAC6;
+        --tx-hdr: #1F2945;
+        --bg-bdy: #F2F5FC;
+        --bd-bdy: #9BAAC6;
+        --tx-bdy: #283858;
+        --bg-ftr: #DFE7F5;
+        --bd-ftr: #9BAAC6;
+        --tx-ftr: #1F2945;
+        --bg-pnl: #FFFFFF;
+        --bd-pnl: #9BAAC6;
+        --tx-pnl: #1F2945;
+        --bg-prm: #6533A2;
+        --bd-prm: #6533A2;
+        --tx-prm: #FFFFFF;
+        --bg-sec: #8A5900;
+        --bd-sec: #8A5900;
+        --tx-sec: #FFFFFF;
+        --bg-inf: #006F88;
+        --bd-inf: #006F88;
+        --tx-inf: #FFFFFF;
+        --bg-scc: #447C29;
+        --bd-scc: #447C29;
+        --tx-scc: #FFFFFF;
+        --bg-wrn: #885F00;
+        --bd-wrn: #885F00;
+        --tx-wrn: #FFFFFF;
+        --bg-dng: #B6224D;
+        --bd-dng: #B6224D;
+        --tx-dng: #FFFFFF;
+        --bg-wht: #FFFFFF;
+        --bd-wht: #FFFFFF;
+        --tx-wht: #333333;
+        --bg-blk: #000000;
+        --bd-blk: #000000;
+        --tx-blk: #FFFFFF;
+    }
+}
