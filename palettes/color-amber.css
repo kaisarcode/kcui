@@ -40,29 +40,29 @@
     --bd-pnl: #593000;
     --tx-pnl: #ffb000;
 
-    --bg-prm: #ffb000;
-    --bd-prm: #ffb000;
-    --tx-prm: #000000;
+    --bg-prm: #4a2000;
+    --bd-prm: #4a2000;
+    --tx-prm: var(--tx-sys);
 
-    --bg-sec: #ff8800;
-    --bd-sec: #ff8800;
-    --tx-sec: #000000;
+    --bg-sec: #512600;
+    --bd-sec: #512600;
+    --tx-sec: var(--tx-sys);
 
-    --bg-inf: #ffd700;
-    --bd-inf: #ffd700;
-    --tx-inf: #000000;
+    --bg-inf: #443300;
+    --bd-inf: #443300;
+    --tx-inf: var(--tx-sys);
 
-    --bg-scc: #ffb000;
-    --bd-scc: #ffb000;
-    --tx-scc: #000000;
+    --bg-scc: #4a2000;
+    --bd-scc: #4a2000;
+    --tx-scc: var(--tx-sys);
 
-    --bg-wrn: #ffaa00;
-    --bd-wrn: #ffaa00;
-    --tx-wrn: #000000;
+    --bg-wrn: #473000;
+    --bd-wrn: #473000;
+    --tx-wrn: var(--tx-sys);
 
-    --bg-dng: #ff3300;
-    --bd-dng: #ff3300;
-    --tx-dng: #ffffff;
+    --bg-dng: #671400;
+    --bd-dng: #671400;
+    --tx-dng: var(--tx-sys);
 
     --bg-wht: #ffebd0;
     --bd-wht: #ffebd0;
