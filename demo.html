@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="modules/kcui-drawer.css">
         <link rel="stylesheet" href="modules/kcui-tabs.css">
         <link rel="stylesheet" href="themes/kcui-mobile.css">
+        <link rel="stylesheet" href="palettes/color-amber.css">
     </head>
     <body>
         <div class="grl">
@@ -26,16 +27,34 @@
                         <a href=""><i class="ico">⚀</i><span>Item</span></a>
                         <a href=""><i class="ico">⚁</i><span>Item</span></a>
                         <a href=""><i class="ico">⚂</i><span>Item</span></a>
-                        <select id="theme-selector" aria-label="Theme" style="width: auto">
-                            <option value="base">Base</option>
-                            <option value="mobile">Mobile</option>
-                        </select>
                     </nav>
                 </div>
             </header>
 
             <main class="bdy">
                 <div class="wrp row">
+
+                    <section class="pnl col10">
+                        <header class="hdr">
+                            <h2>Appearance</h2>
+                        </header>
+                        <section class="bdy grd">
+                            <div class="pnl">
+                                <label class="hdr" for="theme-selector">UI theme</label>
+                                <select class="bdy" id="theme-selector" autocomplete="off">
+                                    <option value="base">Base</option>
+                                    <option value="mobile">Mobile</option>
+                                </select>
+                            </div>
+                            <div class="pnl">
+                                <label class="hdr" for="palette-selector">Color palette</label>
+                                <select class="bdy" id="palette-selector" autocomplete="off">
+                                    <option value="default">Default</option>
+                                    <option value="amber">Amber</option>
+                                </select>
+                            </div>
+                        </section>
+                    </section>
 
                     <article class="pnl col10">
                         <header class="hdr">
@@ -203,6 +222,11 @@
             const themeSelector = document.querySelector("#theme-selector");
             themeSelector.addEventListener("change", () => {
                 document.documentElement.classList.toggle("theme-mobile", themeSelector.value === "mobile");
+            });
+
+            const paletteSelector = document.querySelector("#palette-selector");
+            paletteSelector.addEventListener("change", () => {
+                document.documentElement.classList.toggle("color-amber", paletteSelector.value === "amber");
             });
 
             const dialog = document.querySelector("#demo-dialog");
