@@ -12,6 +12,7 @@ input[type="radio"].swi,
 input[type="checkbox"].swi {
     --swi-thumb: 14px;
     --swi-inset: 3px;
+    --swi-thumb-color: var(--tx-sys);
 
     margin: 0;
     padding: 0;
@@ -27,7 +28,7 @@ input[type="checkbox"].swi {
     background-color: var(--bd-sys);
     background-image: radial-gradient(
         circle,
-        var(--tx-sys) 0 0.45rem,
+        var(--swi-thumb-color) 0 0.45rem,
         transparent 0.48rem
     );
     background-repeat: no-repeat;
@@ -43,6 +44,7 @@ input[type="checkbox"].swi {
 
 input[type="radio"].swi:checked,
 input[type="checkbox"].swi:checked {
+    --swi-thumb-color: var(--tx-prm);
     background-color: var(--bg-prm);
     background-position: right var(--swi-inset) center;
     box-shadow: none;
