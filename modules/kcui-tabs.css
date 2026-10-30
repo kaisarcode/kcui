@@ -21,24 +21,29 @@
 .tabs > [role="tablist"] > [role="tab"] {
     margin: 0;
     flex: 0 0 auto;
-    color: var(--tx-hdr);
+    color: var(--tx-bdy);
     border-color: var(--bd-pnl);
-    background-color: var(--bg-hdr);
+    background-color: var(--bg-bdy);
     padding: calc(var(--pad) / 2) var(--pad);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
 
+.tabs > [role="tablist"] > [role="tab"]:not([aria-selected="true"]) {
+    opacity: 0.7;
+}
+
 .tabs > [role="tablist"] > [role="tab"]:not([aria-selected="true"]):hover {
+    opacity: 1;
     padding-bottom: var(--pad);
 }
 
 .tabs > [role="tablist"] > [role="tab"][aria-selected="true"] {
-    color: var(--tx-pnl);
+    color: var(--tx-hdr);
     padding-bottom: var(--pad);
     border-color: var(--bd-pnl);
-    background-color: var(--bg-pnl);
-    border-bottom-color: var(--bg-pnl);
+    background-color: var(--bg-hdr);
+    border-bottom-color: var(--bg-hdr);
 }
 
 .tabs > [role="tabpanel"] {
