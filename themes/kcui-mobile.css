@@ -1,0 +1,266 @@
+/**
+ * KCUI - Mobile Theme
+ * Summary: Touch-oriented native-like appearance for existing KCUI markup.
+ *
+ * Author: KaisarCode
+ * Website: https://kaisarcode.com
+ * License: GNU General Public License v3.0
+ * License URL: https://www.gnu.org/licenses/gpl-3.0.txt
+ */
+
+/* Theme */
+:root {
+    color-scheme: dark;
+    --fsz: 16px;
+    --pad: 0.75rem;
+    --rad: 0.75rem;
+    --min: 0px;
+    --max: 768px;
+    --col: 13rem;
+
+    --bg: #101010;
+    --bd: #383838;
+    --tx: #F5F5F5;
+    --tx-lnk: #F5F5F5;
+
+    --bg-sys: #292929;
+    --bd-sys: #383838;
+    --tx-sys: #F5F5F5;
+
+    --bg-hdr: #171717;
+    --bd-hdr: #303030;
+    --tx-hdr: #FFFFFF;
+
+    --bg-bdy: #101010;
+    --bd-bdy: #303030;
+    --tx-bdy: #D6D6D6;
+
+    --bg-ftr: #171717;
+    --bd-ftr: #303030;
+    --tx-ftr: #FFFFFF;
+
+    --bg-pnl: #1C1C1C;
+    --bd-pnl: #303030;
+    --tx-pnl: #F5F5F5;
+}
+
+/* Typography and touch targets */
+html {
+    line-height: 1.4;
+    -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.25;
+}
+
+button, .btn,
+input, select, textarea, .ipt {
+    min-height: 48px;
+    font-size: 1rem;
+}
+
+button, .btn,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    font-weight: 600;
+}
+
+button:active, .btn:active {
+    filter: brightness(1.2);
+}
+
+button:focus-visible, .btn:focus-visible,
+input:focus-visible, select:focus-visible,
+textarea:focus-visible, a:focus-visible {
+    outline: 2px solid var(--bg-prm);
+    outline-offset: 2px;
+}
+
+input, select, textarea, .ipt {
+    background-color: #252525;
+}
+
+textarea {
+    min-height: 6rem;
+}
+
+input[type="checkbox"].swi,
+input[type="radio"].swi {
+    min-height: 0;
+    flex: 0 0 auto;
+}
+
+/* Screen regions */
+.grl > .hdr {
+    padding-top: calc(var(--pad) + env(safe-area-inset-top, 0px));
+}
+
+.grl > .ftr {
+    padding-bottom: calc(var(--pad) + env(safe-area-inset-bottom, 0px));
+}
+
+.grl > .hdr,
+.grl > .ftr {
+    background: #171717;
+}
+
+.grl > .bdy {
+    padding: var(--pad);
+    overscroll-behavior: contain;
+}
+
+.grl > .hdr > .wrp,
+.grl > .ftr > .wrp {
+    gap: var(--pad);
+}
+
+.grl > .hdr nav,
+.grl > .ftr nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.25rem;
+}
+
+.grl > .hdr nav a,
+.grl > .ftr nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    min-height: 44px;
+    padding: 0.375rem;
+    border-radius: 0.5rem;
+}
+
+.grl > .hdr nav a:active,
+.grl > .ftr nav a:active {
+    background: #292929;
+}
+
+/* Surfaces */
+.pnl {
+    border-color: var(--bd-pnl);
+    box-shadow: none;
+}
+
+.pnl > .hdr {
+    background: var(--bg-pnl);
+}
+
+.pnl > .bdy {
+    background: var(--bg-pnl);
+}
+
+.pnl > .ftr {
+    background: var(--bg-pnl);
+}
+
+fieldset.pnl > legend {
+    background: var(--bg-pnl);
+}
+
+.pnl > input.bdy,
+.pnl > select.bdy,
+.pnl > textarea.bdy {
+    background: #252525;
+}
+
+.pnl > label.hdr {
+    font-size: 0.875rem;
+    color: #B5B5B5;
+}
+
+.pnl > label.hdr:has(> .swi) {
+    min-height: 48px;
+    color: var(--tx-pnl);
+    font-size: 1rem;
+}
+
+/* Native-like grouped controls */
+form .pnl {
+    margin-bottom: var(--pad);
+}
+
+form .pnl > .hdr {
+    border-color: var(--bd-pnl);
+}
+
+form .pnl > .bdy {
+    padding: var(--pad);
+}
+
+form .pnl > input.bdy,
+form .pnl > select.bdy,
+form .pnl > textarea.bdy {
+    padding: var(--pad);
+}
+
+fieldset.pnl > .ftr {
+    gap: var(--pad);
+}
+
+fieldset.pnl > .ftr > * {
+    min-width: 0;
+}
+
+/* Modal presentation */
+dialog, .dlg {
+    width: min(100%, 28rem);
+    min-width: 0;
+    max-width: calc(100% - 2 * var(--pad));
+}
+
+dialog > .pnl {
+    margin: 0;
+    box-shadow: 0 12px 36px #0009;
+}
+
+/* Compact viewports */
+@media (max-width: 540px) {
+    .grl > .hdr,
+    .grl > .ftr {
+        padding-inline: var(--pad);
+    }
+
+    .grl > .ftr > .wrp {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+    }
+
+    .grl > .ftr > .wrp > * {
+        justify-self: center;
+    }
+
+    .grl > .ftr nav {
+        order: -1;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .grl > .ftr nav a {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    .grl > .ftr p {
+        font-size: 0.75rem;
+        color: #999999;
+    }
+
+    .grl > .bdy {
+        padding: var(--pad);
+    }
+
+    .grl > .bdy > .wrp > .pnl {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    button, .btn, a {
+        transition: background-color 0.15s ease, filter 0.15s ease;
+    }
+}
