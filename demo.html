@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="modules/kcui-dialog.css">
         <link rel="stylesheet" href="modules/kcui-drawer.css">
         <link rel="stylesheet" href="modules/kcui-tabs.css">
+        <link rel="stylesheet" href="themes/kcui-mobile.css">
     </head>
     <body>
         <div class="grl">
@@ -25,6 +26,10 @@
                         <a href=""><i class="ico">⚀</i><span>Item</span></a>
                         <a href=""><i class="ico">⚁</i><span>Item</span></a>
                         <a href=""><i class="ico">⚂</i><span>Item</span></a>
+                        <select id="theme-selector" aria-label="Theme" style="width: auto">
+                            <option value="base">Base</option>
+                            <option value="mobile">Mobile</option>
+                        </select>
                     </nav>
                 </div>
             </header>
@@ -170,6 +175,11 @@
         </dialog>
 
         <script>
+            const themeSelector = document.querySelector("#theme-selector");
+            themeSelector.addEventListener("change", () => {
+                document.documentElement.classList.toggle("theme-mobile", themeSelector.value === "mobile");
+            });
+
             const dialog = document.querySelector("#demo-dialog");
             const openDialog = document.querySelector("#open-dialog");
             const closeDialog = document.querySelector("#close-dialog");
