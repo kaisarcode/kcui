@@ -8,124 +8,89 @@
  * License URL: https://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-/* Theme */
-:root {
-    color-scheme: dark;
+/* Geometry only; colors remain owned by kcui.css. */
+html.theme-mobile {
     --fsz: 16px;
     --pad: 0.75rem;
     --rad: 0.75rem;
     --min: 0px;
     --max: 768px;
     --col: 13rem;
-
-    --bg: #101010;
-    --bd: #383838;
-    --tx: #F5F5F5;
-    --tx-lnk: #F5F5F5;
-
-    --bg-sys: #292929;
-    --bd-sys: #383838;
-    --tx-sys: #F5F5F5;
-
-    --bg-hdr: #171717;
-    --bd-hdr: #303030;
-    --tx-hdr: #FFFFFF;
-
-    --bg-bdy: #101010;
-    --bd-bdy: #303030;
-    --tx-bdy: #D6D6D6;
-
-    --bg-ftr: #171717;
-    --bd-ftr: #303030;
-    --tx-ftr: #FFFFFF;
-
-    --bg-pnl: #1C1C1C;
-    --bd-pnl: #303030;
-    --tx-pnl: #F5F5F5;
 }
 
 /* Typography and touch targets */
-html {
+html.theme-mobile {
     line-height: 1.4;
     -webkit-tap-highlight-color: transparent;
 }
 
-h1, h2, h3, h4, h5, h6 {
+.theme-mobile h1, .theme-mobile h2, .theme-mobile h3, .theme-mobile h4, .theme-mobile h5, .theme-mobile h6 {
     line-height: 1.25;
 }
 
-button, .btn,
-input, select, textarea, .ipt {
+.theme-mobile button, .theme-mobile .btn,
+.theme-mobile input, .theme-mobile select, .theme-mobile textarea, .theme-mobile .ipt {
     min-height: 48px;
     font-size: 1rem;
 }
 
-button, .btn,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+.theme-mobile button, .theme-mobile .btn,
+.theme-mobile input[type="button"],
+.theme-mobile input[type="reset"],
+.theme-mobile input[type="submit"] {
     font-weight: 600;
 }
 
-button:active, .btn:active {
+.theme-mobile button:active, .theme-mobile .btn:active {
     filter: brightness(1.2);
 }
 
-button:focus-visible, .btn:focus-visible,
-input:focus-visible, select:focus-visible,
-textarea:focus-visible, a:focus-visible {
-    outline: 2px solid var(--bg-prm);
+.theme-mobile button:focus-visible, .theme-mobile .btn:focus-visible,
+.theme-mobile input:focus-visible, .theme-mobile select:focus-visible,
+.theme-mobile textarea:focus-visible, .theme-mobile a:focus-visible {
+    outline: 2px solid var(--bd-prm);
     outline-offset: 2px;
 }
 
-input, select, textarea, .ipt {
-    background-color: #252525;
-}
-
-textarea {
+.theme-mobile textarea {
     min-height: 6rem;
 }
 
-input[type="checkbox"].swi,
-input[type="radio"].swi {
+.theme-mobile input[type="checkbox"].swi,
+.theme-mobile input[type="radio"].swi {
     min-height: 0;
     flex: 0 0 auto;
 }
 
 /* Screen regions */
-.grl > .hdr {
+.theme-mobile .grl > .hdr {
     padding-top: calc(var(--pad) + env(safe-area-inset-top, 0px));
 }
 
-.grl > .ftr {
+.theme-mobile .grl > .ftr {
     padding-bottom: calc(var(--pad) + env(safe-area-inset-bottom, 0px));
 }
 
-.grl > .hdr,
-.grl > .ftr {
-    background: #171717;
-}
-
-.grl > .bdy {
+.theme-mobile .grl > .bdy {
     padding: var(--pad);
     overscroll-behavior: contain;
 }
 
-.grl > .hdr > .wrp,
-.grl > .ftr > .wrp {
+.theme-mobile .grl > .hdr > .wrp,
+.theme-mobile .grl > .ftr > .wrp {
     gap: var(--pad);
 }
 
-.grl > .hdr nav,
-.grl > .ftr nav {
+.theme-mobile .grl > .hdr nav,
+.theme-mobile .grl > .ftr nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 0.25rem;
 }
 
-.grl > .hdr nav a,
-.grl > .ftr nav a {
+.theme-mobile .grl > .hdr nav a,
+.theme-mobile .grl > .ftr nav a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -135,132 +100,110 @@ input[type="radio"].swi {
     border-radius: 0.5rem;
 }
 
-.grl > .hdr nav a:active,
-.grl > .ftr nav a:active {
-    background: #292929;
+.theme-mobile .grl > .hdr nav a:active,
+.theme-mobile .grl > .ftr nav a:active {
+    background: var(--bg-sys);
 }
 
 /* Surfaces */
-.pnl {
+.theme-mobile .pnl {
     border-color: var(--bd-pnl);
     box-shadow: none;
 }
 
-.pnl > .hdr {
-    background: var(--bg-pnl);
-}
-
-.pnl > .bdy {
-    background: var(--bg-pnl);
-}
-
-.pnl > .ftr {
-    background: var(--bg-pnl);
-}
-
-fieldset.pnl > legend {
-    background: var(--bg-pnl);
-}
-
-.pnl > input.bdy,
-.pnl > select.bdy,
-.pnl > textarea.bdy {
-    background: #252525;
-}
-
-.pnl > label.hdr {
+.theme-mobile .pnl > label.hdr {
     font-size: 0.875rem;
-    color: #B5B5B5;
+    color: var(--tx-bdy);
 }
 
-.pnl > label.hdr:has(> .swi) {
+.theme-mobile .pnl > label.hdr:has(> .swi) {
     min-height: 48px;
     color: var(--tx-pnl);
     font-size: 1rem;
 }
 
 /* Native-like grouped controls */
-form .pnl {
+.theme-mobile form .pnl {
     margin-bottom: var(--pad);
 }
 
-form .pnl > .hdr {
+.theme-mobile form .pnl > .hdr {
     border-color: var(--bd-pnl);
 }
 
-form .pnl > .bdy {
+.theme-mobile form .pnl > .bdy {
     padding: var(--pad);
 }
 
-form .pnl > input.bdy,
-form .pnl > select.bdy,
-form .pnl > textarea.bdy {
+.theme-mobile form .pnl > input.bdy,
+.theme-mobile form .pnl > select.bdy,
+.theme-mobile form .pnl > textarea.bdy {
     padding: var(--pad);
 }
 
-fieldset.pnl > .ftr {
+.theme-mobile fieldset.pnl > .ftr {
     gap: var(--pad);
 }
 
-fieldset.pnl > .ftr > * {
+.theme-mobile fieldset.pnl > .ftr > * {
     min-width: 0;
 }
 
 /* Modal presentation */
-dialog, .dlg {
+.theme-mobile dialog, .dlg {
     width: min(100%, 28rem);
     min-width: 0;
     max-width: calc(100% - 2 * var(--pad));
 }
 
-dialog > .pnl {
+.theme-mobile dialog > .pnl {
     margin: 0;
-    box-shadow: 0 12px 36px #0009;
+    box-shadow: 0 12px 36px var(--bd-sys);
 }
 
 /* Compact viewports */
 @media (max-width: 540px) {
-    .grl > .hdr,
-    .grl > .ftr {
+    .theme-mobile .grl > .hdr,
+    .theme-mobile .grl > .ftr {
         padding-inline: var(--pad);
     }
 
-    .grl > .ftr > .wrp {
+    .theme-mobile .grl > .ftr > .wrp {
         grid-template-columns: 1fr;
         gap: 0.25rem;
     }
 
-    .grl > .ftr > .wrp > * {
+    .theme-mobile .grl > .ftr > .wrp > * {
         justify-self: center;
     }
 
-    .grl > .ftr nav {
+    .theme-mobile .grl > .ftr nav {
         order: -1;
         width: 100%;
         justify-content: space-around;
     }
 
-    .grl > .ftr nav a {
+    .theme-mobile .grl > .ftr nav a {
         flex: 1 1 0;
         min-width: 0;
     }
 
-    .grl > .ftr p {
+    .theme-mobile .grl > .ftr p {
         font-size: 0.75rem;
-        color: #999999;
+        color: var(--tx-bdy);
     }
 
-    .grl > .bdy {
+    .theme-mobile .grl > .bdy {
         padding: var(--pad);
     }
 
-    .grl > .bdy > .wrp > .pnl {
+    .theme-mobile .grl > .bdy > .wrp > .pnl {
         width: 100%;
     }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    button, .btn, a {
+    .theme-mobile button, .theme-mobile .btn, .theme-mobile a {
         transition: background-color 0.15s ease, filter 0.15s ease;
     }
 }
