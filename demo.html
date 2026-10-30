@@ -166,6 +166,86 @@
 
                                 <section class="pnl">
                                     <header class="hdr">
+                                        <h2>Tabs</h2>
+                                    </header>
+                                    <div class="bdy">
+                                        <div class="tabs">
+                                            <div role="tablist" aria-label="UI examples">
+                                                <button type="button" role="tab" id="tab-controls" aria-controls="panel-controls" aria-selected="true" tabindex="0">Controls</button>
+                                                <button type="button" role="tab" id="tab-status" aria-controls="panel-status" aria-selected="false" tabindex="-1">States</button>
+                                                <button type="button" role="tab" id="tab-content" aria-controls="panel-content" aria-selected="false" tabindex="-1">Content</button>
+                                            </div>
+
+                                            <section class="pnl" role="tabpanel" id="panel-controls" aria-labelledby="tab-controls">
+                                                <header class="hdr">
+                                                    <h3>Form controls</h3>
+                                                </header>
+                                                <div class="bdy">
+                                                    <div class="grd">
+                                                        <div class="pnl">
+                                                            <label class="hdr" for="tab-name">Name</label>
+                                                            <input class="bdy" id="tab-name" type="text" placeholder="Enter a name">
+                                                        </div>
+                                                        <div class="pnl">
+                                                            <label class="hdr" for="tab-choice">Option</label>
+                                                            <select class="bdy" id="tab-choice">
+                                                                <option>First</option>
+                                                                <option>Second</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="pnl">
+                                                            <label class="hdr">
+                                                                <span>Enabled</span>
+                                                                <input class="swi" type="checkbox" checked>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+
+                                            <section class="pnl" role="tabpanel" id="panel-status" aria-labelledby="tab-status" hidden>
+                                                <header class="hdr">
+                                                    <h3>Semantic colors</h3>
+                                                </header>
+                                                <div class="bdy">
+                                                    <p>Compare the foreground and background contrast in each palette.</p>
+                                                    <div class="row">
+                                                        <button type="button" class="prm">Primary</button>
+                                                        <button type="button" class="sec">Secondary</button>
+                                                        <button type="button" class="inf">Info</button>
+                                                        <button type="button" class="scc">Success</button>
+                                                        <button type="button" class="wrn">Warning</button>
+                                                        <button type="button" class="dng">Danger</button>
+                                                    </div>
+                                                </div>
+                                            </section>
+
+                                            <section class="pnl" role="tabpanel" id="panel-content" aria-labelledby="tab-content" hidden>
+                                                <header class="hdr">
+                                                    <h3>Text and links</h3>
+                                                </header>
+                                                <div class="bdy">
+                                                    <p>Normal content with a <a href="https://kaisarcode.com">regular link</a> and <code>inline code</code>.</p>
+                                                    <h4><a href="https://kaisarcode.com">Linked heading</a></h4>
+                                                    <p>Heading links retain their text color while ordinary links use the palette's link colors.</p>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="pnl">
+                                    <header class="hdr">
+                                        <h2>Drawer</h2>
+                                    </header>
+                                    <div class="bdy">
+                                        <p>The drawer uses the same panel regions and current palette.</p>
+                                        <button id="open-drawer" type="button" aria-controls="demo-drawer" aria-expanded="false">Open drawer</button>
+                                    </div>
+                                </section>
+
+                                <section class="pnl">
+                                    <header class="hdr">
                                         <h2>Multi panel</h2>
                                     </header>
 
@@ -227,6 +307,27 @@
             </footer>
         </div>
 
+        <aside id="demo-drawer" class="drw pnl" aria-labelledby="drawer-title" aria-hidden="true" inert>
+            <header class="hdr">
+                <h2 id="drawer-title">Drawer</h2>
+                <button id="close-drawer" type="button">Close</button>
+            </header>
+            <div class="bdy">
+                <p>This panel slides in from the side and uses KCUI's standard structural regions.</p>
+                <div class="pnl">
+                    <label class="hdr" for="drawer-input">Input</label>
+                    <input class="bdy" type="text" id="drawer-input" placeholder="Drawer control">
+                </div>
+                <label>
+                    <span>Switch</span>
+                    <input class="swi" type="checkbox" checked>
+                </label>
+            </div>
+            <footer class="ftr">
+                <button id="drawer-done" class="prm" type="button">Done</button>
+            </footer>
+        </aside>
+
         <dialog id="demo-dialog"class="dlg">
             <div class="pnl">
                 <div class="bdy">
@@ -268,6 +369,56 @@
             paletteSelector.addEventListener("change", updateAppearance);
             modeSelector.addEventListener("change", updateAppearance);
             updateAppearance();
+
+            document.querySelectorAll(".tabs").forEach(tabs => {
+                const tabButtons = [...tabs.querySelectorAll('[role="tablist"] > [role="tab"]')];
+
+                function selectTab(tab, focus = false) {
+                    tabButtons.forEach(button => {
+                        const selected = button === tab;
+                        button.setAttribute("aria-selected", String(selected));
+                        button.tabIndex = selected ? 0 : -1;
+                        document.getElementById(button.getAttribute("aria-controls")).hidden = !selected;
+                    });
+                    if (focus) tab.focus();
+                }
+
+                tabButtons.forEach((tab, index) => {
+                    tab.addEventListener("click", () => selectTab(tab));
+                    tab.addEventListener("keydown", event => {
+                        let next = index;
+                        if (event.key === "ArrowRight") next = (index + 1) % tabButtons.length;
+                        else if (event.key === "ArrowLeft") next = (index - 1 + tabButtons.length) % tabButtons.length;
+                        else if (event.key === "Home") next = 0;
+                        else if (event.key === "End") next = tabButtons.length - 1;
+                        else return;
+                        event.preventDefault();
+                        selectTab(tabButtons[next], true);
+                    });
+                });
+            });
+
+            const drawer = document.querySelector("#demo-drawer");
+            const openDrawer = document.querySelector("#open-drawer");
+            const closeDrawer = document.querySelector("#close-drawer");
+
+            function setDrawerOpen(open) {
+                drawer.toggleAttribute("open", open);
+                drawer.inert = !open;
+                drawer.setAttribute("aria-hidden", String(!open));
+                openDrawer.setAttribute("aria-expanded", String(open));
+                if (open) closeDrawer.focus();
+                else openDrawer.focus();
+            }
+
+            openDrawer.addEventListener("click", () => setDrawerOpen(true));
+            closeDrawer.addEventListener("click", () => setDrawerOpen(false));
+            document.querySelector("#drawer-done").addEventListener("click", () => setDrawerOpen(false));
+            document.addEventListener("keydown", event => {
+                if (event.key === "Escape" && drawer.hasAttribute("open")) {
+                    setDrawerOpen(false);
+                }
+            });
 
             const dialog = document.querySelector("#demo-dialog");
             const openDialog = document.querySelector("#open-dialog");
