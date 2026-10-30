@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="palettes/color-default.css">
         <link rel="stylesheet" href="palettes/color-amber.css">
         <link rel="stylesheet" href="palettes/color-monokai.css">
-        <link rel="stylesheet" href="palettes/color-tokyo-night.css">
+        <link rel="stylesheet" href="palettes/color-tokyo.css">
         <link rel="stylesheet" href="palettes/color-matrix.css">
     </head>
     <body>
@@ -57,7 +57,7 @@
                                         <option value="default">Default</option>
                                         <option value="amber">Amber</option>
                                         <option value="monokai">Monokai</option>
-                                        <option value="tokyo-night">Tokyo Night</option>
+                                        <option value="tokyo">Tokyo</option>
                                         <option value="matrix">Matrix</option>
                                     </select>
                                 </div>
@@ -244,7 +244,7 @@
 
             const paletteSelector = document.querySelector("#palette-selector");
             const modeSelector = document.querySelector("#mode-selector");
-            const paletteClasses = ["color-amber", "color-monokai", "color-tokyo-night", "color-matrix"];
+            const paletteClasses = ["color-amber", "color-monokai", "color-tokyo", "color-matrix"];
             const darkOnlyPalettes = ["amber", "matrix"];
 
             function updateAppearance() {
