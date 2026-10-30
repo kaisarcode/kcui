@@ -34,165 +34,168 @@
             <main class="bdy">
                 <div class="wrp row">
 
-                    <section class="pnl col10">
-                        <header class="hdr">
-                            <h2>Appearance</h2>
-                        </header>
-                        <section class="bdy grd">
-                            <div class="pnl">
-                                <label class="hdr" for="theme-selector">UI theme</label>
-                                <select class="bdy" id="theme-selector" autocomplete="off">
-                                    <option value="base">Base</option>
-                                    <option value="mobile">Mobile</option>
-                                </select>
-                            </div>
-                            <div class="pnl">
-                                <label class="hdr" for="palette-selector">Color palette</label>
-                                <select class="bdy" id="palette-selector" autocomplete="off">
-                                    <option value="default">Default</option>
-                                    <option value="amber">Amber</option>
-                                </select>
-                            </div>
-                        </section>
-                    </section>
-
-                    <article class="pnl col10">
-                        <header class="hdr">
-                            <h2>Article</h2>
-                        </header>
-                        <section class="bdy">
-                            <p>Main content.</p>
-                            <p>
-                                This content can grow vertically. The scroll remains
-                                inside the main region while the page header and
-                                footer remain visible.
-                            </p>
-
-                            <section class="pnl">
-                                <header class="hdr">
-                                    <h2>Styling layers</h2>
-                                </header>
-                                <section class="bdy">
-                                    <p>
-                                        KCUI provides stable semantic structures with minimal classes.
-                                        Themes style these structures without requiring different HTML.
-                                    </p>
-                                    <ol>
-                                        <li>Semantic HTML defines the content and its meaning.</li>
-                                        <li><code>kcui.css</code> provides the structural base and default variables.</li>
-                                        <li>Optional modules add reusable capabilities.</li>
-                                        <li>UI themes change shape, spacing, typography, and presentation.</li>
-                                        <li>Color palettes change the shared color variables independently of the UI theme.</li>
-                                        <li>Product CSS applies the final, project-specific adjustments.</li>
-                                    </ol>
-                                    <p>
-                                        UI themes and palettes can be combined freely. This demo uses
-                                        the same markup for Base and Mobile; the selector changes only
-                                        the active UI theme.
-                                    </p>
-                                </section>
+                    <div class="col10">
+                        <section class="pnl">
+                            <header class="hdr">
+                                <h2>Appearance</h2>
+                            </header>
+                            <section class="bdy grd">
+                                <div class="pnl">
+                                    <label class="hdr" for="theme-selector">UI theme</label>
+                                    <select class="bdy" id="theme-selector" autocomplete="off">
+                                        <option value="base">Base</option>
+                                        <option value="mobile">Mobile</option>
+                                    </select>
+                                </div>
+                                <div class="pnl">
+                                    <label class="hdr" for="palette-selector">Color palette</label>
+                                    <select class="bdy" id="palette-selector" autocomplete="off">
+                                        <option value="default">Default</option>
+                                        <option value="amber">Amber</option>
+                                    </select>
+                                </div>
                             </section>
+                        </section>
 
-                            <form method="post">
-                                <fieldset class="pnl">
-                                    <legend class="hdr">Form</legend>
+                        <article class="pnl">
+                            <header class="hdr">
+                                <h2>Article</h2>
+                            </header>
+                            <section class="bdy">
+                                <p>Main content.</p>
+                                <p>
+                                    This content can grow vertically. The scroll remains
+                                    inside the main region while the page header and
+                                    footer remain visible.
+                                </p>
 
+                                <section class="pnl">
+                                    <header class="hdr">
+                                        <h2>Styling layers</h2>
+                                    </header>
                                     <section class="bdy">
-
-                                        <div class="pnl">
-                                            <label class="hdr" for="demo-text">Input text</label>
-                                            <input class="bdy" id="demo-text" type="text" value="Initial value" autocomplete="off">
-                                        </div>
-
-                                        <div class="pnl">
-                                            <label class="hdr" for="demo-select">Select</label>
-                                            <select class="bdy" id="demo-select">
-                                                <option>Option 1</option>
-                                                <option>Option 2</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="pnl">
-                                            <label class="hdr" for="demo-textarea">Text area</label>
-                                            <textarea class="bdy" id="demo-textarea">Editable text</textarea>
-                                        </div>
-
-                                        <div class="pnl">
-                                            <label class="hdr">
-                                                <span>I accept the terms</span>
-                                                <input class="swi" type="checkbox" checked>
-                                            </label>
-                                        </div>
-
-                                        <div class="pnl">
-                                            <label class="hdr" for="browser">Choose a browser:</label>
-                                            <input class="bdy" list="browsers" id="browser" name="browser" placeholder="Start typing...">
-                                        </div>
-                                        <datalist id="browsers">
-                                            <option value="Firefox"></option>
-                                            <option value="Brave"></option>
-                                            <option value="Chrome"></option>
-                                            <option value="Edge"></option>
-                                            <option value="Safari"></option>
-                                        </datalist>
-
-                                        <button class="btn scc" id="open-dialog" type="button">Open dialog</button>
-
+                                        <p>
+                                            KCUI provides stable semantic structures with minimal classes.
+                                            Themes style these structures without requiring different HTML.
+                                        </p>
+                                        <ol>
+                                            <li>Semantic HTML defines the content and its meaning.</li>
+                                            <li><code>kcui.css</code> provides the structural base and default variables.</li>
+                                            <li>Optional modules add reusable capabilities.</li>
+                                            <li>UI themes change shape, spacing, typography, and presentation.</li>
+                                            <li>Color palettes change the shared color variables independently of the UI theme.</li>
+                                            <li>Product CSS applies the final, project-specific adjustments.</li>
+                                        </ol>
+                                        <p>
+                                            UI themes and palettes can be combined freely. This demo uses
+                                            the same markup for Base and Mobile; the selector changes only
+                                            the active UI theme.
+                                        </p>
                                     </section>
+                                </section>
 
-                                    <footer class="ftr">
-                                        <a class="btn dng" href="#">Cancel</a>
-                                        <button type="submit">Submit</button>
-                                    </footer>
+                                <form method="post">
+                                    <fieldset class="pnl">
+                                        <legend class="hdr">Form</legend>
 
-                                </fieldset>
-                            </form>
-
-                            <section class="pnl">
-                                <header class="hdr">
-                                    <h2>Multi panel</h2>
-                                </header>
-
-                                <section class="bdy grd">
-                                    <article class="pnl">
-                                        <header class="hdr">
-                                            <h3>Panel 1</h3>
-                                        </header>
                                         <section class="bdy">
-                                            <p>Panel 1 summary.</p>
-                                        </section>
-                                    </article>
 
-                                    <article class="pnl">
-                                        <header class="hdr">
-                                            <h3>Panel 2</h3>
-                                        </header>
-                                        <section class="bdy">
-                                            <p>Panel 2 summary.</p>
-                                        </section>
-                                    </article>
+                                            <div class="pnl">
+                                                <label class="hdr" for="demo-text">Input text</label>
+                                                <input class="bdy" id="demo-text" type="text" value="Initial value" autocomplete="off">
+                                            </div>
 
-                                    <article class="pnl">
-                                        <header class="hdr">
-                                            <h3>Panel 3</h3>
-                                        </header>
-                                        <section class="bdy">
-                                            <p>Panel 3 summary.</p>
-                                        </section>
-                                    </article>
+                                            <div class="pnl">
+                                                <label class="hdr" for="demo-select">Select</label>
+                                                <select class="bdy" id="demo-select">
+                                                    <option>Option 1</option>
+                                                    <option>Option 2</option>
+                                                </select>
+                                            </div>
 
-                                    <article class="pnl">
-                                        <header class="hdr">
-                                            <h3>Panel 4</h3>
-                                        </header>
-                                        <section class="bdy">
-                                            <p>Panel 4 summary.</p>
+                                            <div class="pnl">
+                                                <label class="hdr" for="demo-textarea">Text area</label>
+                                                <textarea class="bdy" id="demo-textarea">Editable text</textarea>
+                                            </div>
+
+                                            <div class="pnl">
+                                                <label class="hdr">
+                                                    <span>I accept the terms</span>
+                                                    <input class="swi" type="checkbox" checked>
+                                                </label>
+                                            </div>
+
+                                            <div class="pnl">
+                                                <label class="hdr" for="browser">Choose a browser:</label>
+                                                <input class="bdy" list="browsers" id="browser" name="browser" placeholder="Start typing...">
+                                            </div>
+                                            <datalist id="browsers">
+                                                <option value="Firefox"></option>
+                                                <option value="Brave"></option>
+                                                <option value="Chrome"></option>
+                                                <option value="Edge"></option>
+                                                <option value="Safari"></option>
+                                            </datalist>
+
+                                            <button class="btn scc" id="open-dialog" type="button">Open dialog</button>
+
                                         </section>
-                                    </article>
+
+                                        <footer class="ftr">
+                                            <a class="btn dng" href="#">Cancel</a>
+                                            <button type="submit">Submit</button>
+                                        </footer>
+
+                                    </fieldset>
+                                </form>
+
+                                <section class="pnl">
+                                    <header class="hdr">
+                                        <h2>Multi panel</h2>
+                                    </header>
+
+                                    <section class="bdy grd">
+                                        <article class="pnl">
+                                            <header class="hdr">
+                                                <h3>Panel 1</h3>
+                                            </header>
+                                            <section class="bdy">
+                                                <p>Panel 1 summary.</p>
+                                            </section>
+                                        </article>
+
+                                        <article class="pnl">
+                                            <header class="hdr">
+                                                <h3>Panel 2</h3>
+                                            </header>
+                                            <section class="bdy">
+                                                <p>Panel 2 summary.</p>
+                                            </section>
+                                        </article>
+
+                                        <article class="pnl">
+                                            <header class="hdr">
+                                                <h3>Panel 3</h3>
+                                            </header>
+                                            <section class="bdy">
+                                                <p>Panel 3 summary.</p>
+                                            </section>
+                                        </article>
+
+                                        <article class="pnl">
+                                            <header class="hdr">
+                                                <h3>Panel 4</h3>
+                                            </header>
+                                            <section class="bdy">
+                                                <p>Panel 4 summary.</p>
+                                            </section>
+                                        </article>
+                                    </section>
                                 </section>
                             </section>
-                        </section>
-                    </article>
+                        </article>
+
+                    </div>
 
                 </div>
             </main>
