@@ -158,7 +158,6 @@ html.theme-mobile {
 
 .theme-mobile dialog > .pnl {
     margin: 0;
-    box-shadow: 0 12px 36px var(--bd-sys);
 }
 
 /* Compact viewports */
